@@ -1,5 +1,5 @@
 // ============================================================
-// OMOTE-AI Type Definitions
+// FOMUS AI Type Definitions
 // ============================================================
 
 export type IndustryType = 'hotel' | 'restaurant' | 'salon' | 'clinic' | 'retail'
@@ -163,10 +163,10 @@ export const INDUSTRY_INFO: Record<IndustryType, { label: string; icon: string; 
 }
 
 export const PLAN_INFO: Record<Plan, { label: string; price: number; color: string }> = {
-  free:     { label: 'Free',     price: 0,     color: 'bg-gray-100 text-gray-600' },
-  light:    { label: 'Light',    price: 9800,  color: 'bg-blue-100 text-blue-700' },
-  standard: { label: 'Standard', price: 29800, color: 'bg-indigo-100 text-indigo-700' },
-  premium:  { label: 'Premium',  price: 59800, color: 'bg-amber-100 text-amber-700' },
+  free:     { label: 'Free',         price: 0,      color: 'bg-gray-100 text-gray-600' },
+  light:    { label: 'スタート',     price: 50000,  color: 'bg-blue-100 text-blue-700' },
+  standard: { label: 'ビジネス',     price: 150000, color: 'bg-indigo-100 text-indigo-700' },
+  premium:  { label: 'エンタープライズ', price: 300000, color: 'bg-amber-100 text-amber-700' },
 }
 
 export const CHANNEL_INFO: Record<Channel, { label: string; icon: string }> = {

@@ -45,7 +45,7 @@ function LoginContent() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="w-full max-w-sm px-6">
         <div className="text-center mb-8">
-          <Link href="/" className="text-xl font-bold">OMOTE-AI</Link>
+          <Link href="/" className="text-xl font-bold">FOMUS AI</Link>
           <p className="text-sm text-gray-500 mt-2">管理画面にログイン</p>
         </div>
 

@@ -6,8 +6,8 @@ const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'OMOTE-AI | 接客業向けAI多言語コンシェルジュ',
-  description: '旅館・ホテル・飲食店・美容・クリニック向けAI多言語対応SaaS',
+  title: 'FOMUS AI | 中小企業向けAI業務効率化プラットフォーム',
+  description: 'あなたのビジネスに合わせたAIを構築。多言語対応、レビュー管理、業務自動化。IT導入補助金2026対応。',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

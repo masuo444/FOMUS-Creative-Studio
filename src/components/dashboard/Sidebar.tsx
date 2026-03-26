@@ -43,7 +43,7 @@ export default function Sidebar({ facilities, currentFacilityId }: SidebarProps)
     <aside className="w-64 bg-[var(--sidebar-bg)] text-[var(--sidebar-text)] flex flex-col h-screen fixed left-0 top-0">
       <div className="p-5 border-b border-white/10">
         <Link href="/dashboard" className="text-lg font-bold text-white tracking-tight">
-          OMOTE-AI
+          FOMUS AI
         </Link>
       </div>
 

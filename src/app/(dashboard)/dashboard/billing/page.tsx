@@ -13,15 +13,15 @@ export default async function BillingPage() {
     .select('id, name, plan, stripe_subscription_id')
 
   const plans: { key: Plan; features: string[] }[] = [
-    { key: 'light', features: ['LINE 1チャネル', '月500メッセージ', 'Google レビュー管理', '5言語対応', 'メールサポート'] },
-    { key: 'standard', features: ['LINE + WhatsApp', '月3,000メッセージ', '全レビュー管理', '予約自動処理', '15言語対応', 'チャットサポート'] },
-    { key: 'premium', features: ['全チャネル無制限', 'メッセージ無制限', '全レビュー管理', '予約自動処理', '30言語以上', '専任サポート', 'API連携'] },
+    { key: 'light', features: ['1つのAI機能', '月500メッセージ', 'メールサポート', '基本レポート'] },
+    { key: 'standard', features: ['複数AI機能統合', '月3,000メッセージ', '全レビュー管理', '予約自動処理', '15言語対応', 'チャットサポート'] },
+    { key: 'premium', features: ['フルカスタムAI基盤', 'メッセージ無制限', '全機能利用可能', '専任サポート', 'API連携', 'オンプレミス対応'] },
   ]
 
   return (
     <div>
       <h1 className="text-2xl font-bold mb-2">プラン・請求</h1>
-      <p className="text-sm text-gray-500 mb-8">IT導入補助金2026対応 — 実質最大75%OFFで導入可能</p>
+      <p className="text-sm text-gray-500 mb-8">IT導入補助金2026対応 — お客様の実質負担を最大75%軽減</p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         {plans.map(plan => {
@@ -42,7 +42,7 @@ export default async function BillingPage() {
                 <span className="text-sm text-gray-500">/月</span>
               </div>
               <div className="bg-green-50 text-green-700 text-xs px-3 py-1.5 rounded-lg mb-4 text-center">
-                補助金適用で実質 &yen;{Math.round(info.price * 0.28).toLocaleString()}/月
+                補助金適用で実質 &yen;{Math.round(info.price * 0.25).toLocaleString()}/月
               </div>
               <ul className="space-y-2.5 mb-6">
                 {plan.features.map(f => (
