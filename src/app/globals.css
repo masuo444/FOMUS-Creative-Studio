@@ -79,13 +79,18 @@ body {
   transform-origin: left;
 }
 
-/* Project cards — each gets its own color */
+/* Project cards — hover with border-top color + lift */
 .project-card {
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-12px);
+}
+
+.project-card:hover > div:first-child {
+  border-top-color: var(--hover-border, var(--text));
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
 }
 
 /* Scrollbar */
