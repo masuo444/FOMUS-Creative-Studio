@@ -7,19 +7,19 @@ import MobileCTABar from '@/components/ui/MobileCTABar'
 /* ───────────────────────────── DATA ───────────────────────────── */
 
 const stats = [
-  { value: '50+', label: 'プロジェクト' },
-  { value: '30+', label: '対応業種' },
-  { value: '92%', label: 'リピート率' },
-  { value: '2週間', label: '最短導入' },
+  { value: '50+', label: 'プロジェクト', color: '#2563EB' },
+  { value: '30+', label: '対応業種', color: '#7C3AED' },
+  { value: '92%', label: 'リピート率', color: '#16A34A' },
+  { value: '2週間', label: '最短導入', color: '#D4451A' },
 ]
 
 const services = [
-  { id: 'AI', title: 'AI導入支援', desc: '業務自動化・チャットボット・データ分析の設計と実装', tags: ['ChatGPT', 'LINE Bot', '業務自動化'] },
-  { id: 'WEB', title: 'Web制作', desc: 'コーポレートサイト・LP・予約システムの構築', tags: ['Next.js', 'レスポンシブ', 'SEO'] },
-  { id: 'DX', title: 'DXコンサルティング', desc: '業務フロー分析から投資対効果の高い施策を特定', tags: ['業務分析', 'ROI設計', 'IT戦略'] },
-  { id: 'MNG', title: '漫画制作', desc: '採用・営業・ブランディング用の漫画コンテンツ', tags: ['採用漫画', 'SNS漫画', 'LP漫画'] },
-  { id: 'CRE', title: 'クリエイティブ制作', desc: 'ロゴ・名刺・動画・SNS運用素材のデザイン', tags: ['ロゴ', '動画', 'SNS'] },
-  { id: 'MNT', title: '保守・運用', desc: '月額保守で継続改善。障害対応・分析レポート付き', tags: ['月次レポート', '改善提案', '監視'] },
+  { id: 'AI', title: 'AI導入支援', desc: '業務自動化・チャットボット・データ分析の設計と実装', tags: ['ChatGPT', 'LINE Bot', '業務自動化'], color: '#2563EB', bg: '#EFF6FF' },
+  { id: 'WEB', title: 'Web制作', desc: 'コーポレートサイト・LP・予約システムの構築', tags: ['Next.js', 'レスポンシブ', 'SEO'], color: '#16A34A', bg: '#F0FDF4' },
+  { id: 'DX', title: 'DXコンサルティング', desc: '業務フロー分析から投資対効果の高い施策を特定', tags: ['業務分析', 'ROI設計', 'IT戦略'], color: '#7C3AED', bg: '#F5F3FF' },
+  { id: 'MNG', title: '漫画制作', desc: '採用・営業・ブランディング用の漫画コンテンツ', tags: ['採用漫画', 'SNS漫画', 'LP漫画'], color: '#DB2777', bg: '#FDF2F8' },
+  { id: 'CRE', title: 'クリエイティブ制作', desc: 'ロゴ・名刺・動画・SNS運用素材のデザイン', tags: ['ロゴ', '動画', 'SNS'], color: '#D4451A', bg: '#FDF2EC' },
+  { id: 'MNT', title: '保守・運用', desc: '月額保守で継続改善。障害対応・分析レポート付き', tags: ['月次レポート', '改善提案', '監視'], color: '#0891B2', bg: '#ECFEFF' },
 ]
 
 const projects = [
@@ -106,7 +106,7 @@ export default function Home() {
             ))}
             <Link
               href="/auth/register"
-              className="text-[12px] tracking-[0.1em] uppercase bg-[var(--text)] text-[var(--bg)] px-6 py-2.5 rounded-full hover:scale-[1.02] hover:shadow-lg transition-all duration-300"
+              className="text-[12px] tracking-[0.1em] uppercase bg-[var(--accent)] text-white px-6 py-2.5 rounded-full hover:scale-[1.02] hover:shadow-lg transition-all duration-300"
             >
               Contact
             </Link>
@@ -120,7 +120,7 @@ export default function Home() {
         <ScrollReveal>
           <h1 className="text-[clamp(48px,7vw,88px)] leading-[1.1] tracking-[-0.03em] font-light">
             仕組みで、
-            <span className="font-[family-name:var(--font-serif)] italic">勝つ。</span>
+            <span className="font-[family-name:var(--font-serif)] italic text-[var(--accent)]">勝つ。</span>
           </h1>
         </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-12 mt-12 md:mt-16 gap-8">
@@ -133,7 +133,7 @@ export default function Home() {
               <div className="mt-10">
                 <Link
                   href="/auth/register"
-                  className="inline-block bg-[var(--text)] text-[var(--bg)] px-8 py-4 rounded-full text-[13px] tracking-[0.05em] font-medium hover:scale-[1.02] hover:shadow-lg transition-all duration-300"
+                  className="inline-block bg-[var(--accent)] text-white px-8 py-4 rounded-full text-[13px] tracking-[0.05em] font-medium hover:scale-[1.02] hover:shadow-lg transition-all duration-300"
                 >
                   無料診断を予約する（30分・オンライン）
                 </Link>
@@ -149,7 +149,7 @@ export default function Home() {
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 py-8 md:py-10 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="text-[clamp(28px,4vw,40px)] font-light tracking-[-0.02em] leading-none mb-2">
+                <p className="text-[clamp(28px,4vw,40px)] font-light tracking-[-0.02em] leading-none mb-2" style={{ color: stat.color }}>
                   {stat.value}
                 </p>
                 <p className="text-[12px] tracking-[0.15em] uppercase text-[var(--text-muted)]">
@@ -174,8 +174,8 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, i) => (
             <ScrollReveal key={s.id} delay={i * 80}>
-              <div className="group border border-[var(--border)] rounded-lg p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-500 h-full">
-                <p className="text-[12px] tracking-[0.15em] uppercase text-[var(--text-muted)] mb-4 font-medium">
+              <div className="group border border-[var(--border)] rounded-lg p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-500 h-full" style={{ borderTopWidth: '3px', borderTopColor: s.color }}>
+                <p className="text-[12px] tracking-[0.15em] uppercase mb-4 font-medium" style={{ color: s.color }}>
                   {s.id}
                 </p>
                 <h3 className="text-[18px] font-medium leading-[1.4] mb-3">
@@ -186,7 +186,7 @@ export default function Home() {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {s.tags.map((tag) => (
-                    <span key={tag} className="text-[11px] text-[var(--text-muted)] border border-[var(--border)] px-3 py-1 rounded-full">
+                    <span key={tag} className="text-[11px] px-3 py-1 rounded-full" style={{ color: s.color, backgroundColor: s.bg }}>
                       {tag}
                     </span>
                   ))}

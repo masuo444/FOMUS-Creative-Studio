@@ -7,7 +7,12 @@
   --text-sub: #5C5B57;
   --text-muted: #A09E98;
   --border: #DDDBD6;
-  --accent: #141413;
+  --accent: #D4451A;
+  --accent-light: #FDF2EC;
+  --blue: #2563EB;
+  --blue-light: #EFF6FF;
+  --green: #16A34A;
+  --green-light: #F0FDF4;
 
   /* Dashboard */
   --background: #FAFAFA;
