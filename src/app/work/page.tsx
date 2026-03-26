@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import ScrollReveal from '@/components/ui/ScrollReveal'
+import SiteNav from '@/components/layout/SiteNav'
+import SiteFooter from '@/components/layout/SiteFooter'
 
 const cases = [
   {
@@ -43,6 +45,7 @@ const cases = [
 export default function WorkPage() {
   return (
     <div className="min-h-screen">
+      <SiteNav />
       <div className="h-[72px]" />
 
       {/* Hero */}
@@ -122,6 +125,8 @@ export default function WorkPage() {
           </ScrollReveal>
         </div>
       </section>
+
+      <SiteFooter />
     </div>
   )
 }

@@ -1,8 +1,10 @@
+import SiteNav from '@/components/layout/SiteNav'
+import SiteFooter from '@/components/layout/SiteFooter'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 
 export default function CompanyPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen"><SiteNav />
       <div className="h-[72px]" />
 
       <section className="py-20 md:py-28 px-6">
@@ -58,6 +60,7 @@ export default function CompanyPage() {
           </ScrollReveal>
         </div>
       </section>
+      <SiteFooter />
     </div>
   )
 }

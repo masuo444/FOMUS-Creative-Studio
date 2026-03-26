@@ -1,8 +1,10 @@
+import SiteNav from '@/components/layout/SiteNav'
+import SiteFooter from '@/components/layout/SiteFooter'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen"><SiteNav />
       <div className="h-[72px]" />
       <section className="py-20 md:py-28 px-6">
         <div className="max-w-[720px] mx-auto">
@@ -42,6 +44,7 @@ export default function PrivacyPage() {
           </div>
         </div>
       </section>
+      <SiteFooter />
     </div>
   )
 }

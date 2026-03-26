@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ui/ScrollReveal'
+import SiteNav from '@/components/layout/SiteNav'
+import SiteFooter from '@/components/layout/SiteFooter'
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', company: '', message: '' })
@@ -47,7 +49,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen"><SiteNav />
       <div className="h-[72px]" />
 
       <section className="py-20 md:py-28 px-6">
@@ -128,6 +130,7 @@ export default function ContactPage() {
           </ScrollReveal>
         </div>
       </section>
+      <SiteFooter />
     </div>
   )
 }
