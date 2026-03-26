@@ -1,33 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --void: #04040a;
-  --magenta: #e8006a;
-  --cyan: #00d4ff;
-  --gold: #f5c842;
-  --white: #f0eef8;
-  --dim: rgba(240, 238, 248, 0.82);
-  --dimmer: rgba(240, 238, 248, 0.55);
-  --border-dark: rgba(240, 238, 248, 0.07);
-
-  /* Light theme (LP) */
-  --bg: #FAFAF8;
-  --bg-warm: #F5F3EF;
-  --text: #1A1A18;
-  --text-sub: #6B6760;
-  --text-muted: #A8A49D;
-  --border: #E8E6E1;
-  --accent: #e8006a;
+  --bg: #F8F7F4;
+  --text: #1A1918;
+  --text-sub: #6B6860;
+  --text-muted: #B0ADA6;
+  --border: #E5E2DC;
+  --accent: #D4451A;
+  --accent-light: #FEF3EF;
 
   /* Dashboard */
   --background: #FAFAFA;
   --foreground: #0A0A0A;
   --color-primary: #0A0A0A;
-  --color-accent: #e8006a;
+  --color-accent: #D4451A;
   --color-border: #E5E5E5;
-  --sidebar-bg: #04040a;
-  --sidebar-text: rgba(240, 238, 248, 0.55);
-  --sidebar-active: #f0eef8;
+  --sidebar-bg: #0A0A0A;
+  --sidebar-text: #A3A3A3;
+  --sidebar-active: #FFFFFF;
 }
 
 @theme inline {
@@ -39,28 +29,54 @@
 }
 
 ::selection {
-  background: var(--accent);
-  color: #fff;
+  background: var(--text);
+  color: var(--bg);
 }
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
-/* Image placeholder */
-.img-placeholder {
-  background: linear-gradient(135deg, #E8E6E1 0%, #D4D1CA 100%);
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Image placeholder — looks intentional, not broken */
+.img-ph {
+  background: #EDEAE4;
+  position: relative;
+  overflow: hidden;
+}
+
+.img-ph::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.4) 100%);
+}
+
+/* Horizontal rule with character */
+.hr-label {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #A8A49D;
-  font-size: 12px;
-  letter-spacing: 2px;
+  gap: 20px;
+  color: var(--text-muted);
+  font-size: 10px;
+  letter-spacing: 4px;
   text-transform: uppercase;
 }
 
-/* Scrollbar (dashboard) */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+.hr-label::before,
+.hr-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
