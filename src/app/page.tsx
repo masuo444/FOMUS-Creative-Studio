@@ -45,11 +45,11 @@ export default function Home() {
             <span className="text-[15px] font-bold tracking-tight">FOMUS Creative Studio</span>
           </Link>
           <div className="hidden md:flex items-center gap-8">
-            <a href="#services" className="text-[14px] text-[var(--text-sub)] hover:text-[var(--text)] transition-colors">サービス</a>
-            <a href="#work" className="text-[14px] text-[var(--text-sub)] hover:text-[var(--text)] transition-colors">実績</a>
-            <a href="#process" className="text-[14px] text-[var(--text-sub)] hover:text-[var(--text)] transition-colors">導入の流れ</a>
+            <Link href="/services" className="text-[14px] text-[var(--text-sub)] hover:text-[var(--text)] transition-colors">サービス</Link>
+            <Link href="/work" className="text-[14px] text-[var(--text-sub)] hover:text-[var(--text)] transition-colors">実績</Link>
+            <Link href="/company" className="text-[14px] text-[var(--text-sub)] hover:text-[var(--text)] transition-colors">会社概要</Link>
             <a href="#faq" className="text-[14px] text-[var(--text-sub)] hover:text-[var(--text)] transition-colors">FAQ</a>
-            <Link href="/auth/register" className="text-[14px] bg-[var(--bg-dark)] text-white px-6 py-2.5 rounded-lg font-medium hover:opacity-90 transition-opacity">
+            <Link href="/contact" className="text-[14px] bg-[var(--bg-dark)] text-white px-6 py-2.5 rounded-lg font-medium hover:opacity-90 transition-opacity">
               無料で相談する
             </Link>
           </div>
@@ -76,7 +76,7 @@ export default function Home() {
             </p>
           </ScrollReveal>
           <ScrollReveal delay={100}>
-            <Link href="/auth/register" className="inline-block bg-[var(--bg-dark)] text-white px-8 py-4 rounded-lg text-[15px] font-medium hover:opacity-90 transition-opacity">
+            <Link href="/contact" className="inline-block bg-[var(--bg-dark)] text-white px-8 py-4 rounded-lg text-[15px] font-medium hover:opacity-90 transition-opacity">
               無料で相談する（30分・オンライン）
             </Link>
             <p className="text-[13px] text-[var(--text-muted)] mt-4">営業電話・しつこい後追いは一切行いません。</p>
@@ -237,7 +237,7 @@ export default function Home() {
             <p className="text-white/50 text-[15px] leading-[2] mb-10">
               オンラインで御社の業務課題をお聞きし、対応可能な施策と概算をその場でお伝えします。
             </p>
-            <Link href="/auth/register" className="inline-block bg-[var(--gold)] text-[var(--bg-dark)] px-10 py-4 rounded-lg text-[15px] font-bold hover:opacity-90 transition-opacity">
+            <Link href="/contact" className="inline-block bg-[var(--gold)] text-[var(--bg-dark)] px-10 py-4 rounded-lg text-[15px] font-bold hover:opacity-90 transition-opacity">
               無料で相談する
             </Link>
             <p className="text-white/25 text-[13px] mt-4">営業電話・しつこい後追いは一切行いません。</p>
@@ -254,11 +254,12 @@ export default function Home() {
               <p className="text-[15px] font-bold mb-1">FOMUS Creative Studio</p>
               <p className="text-[13px] text-[var(--text-muted)]">合同会社FOMUS</p>
             </div>
-            <div className="flex gap-8 text-[14px] text-[var(--text-sub)]">
-              <a href="#services" className="hover:text-[var(--text)] transition-colors">サービス</a>
-              <a href="#work" className="hover:text-[var(--text)] transition-colors">実績</a>
-              <a href="#process" className="hover:text-[var(--text)] transition-colors">導入の流れ</a>
-              <Link href="/auth/login" className="hover:text-[var(--text)] transition-colors">ログイン</Link>
+            <div className="flex flex-wrap gap-6 text-[14px] text-[var(--text-sub)]">
+              <Link href="/services" className="hover:text-[var(--text)] transition-colors">サービス</Link>
+              <Link href="/work" className="hover:text-[var(--text)] transition-colors">実績</Link>
+              <Link href="/company" className="hover:text-[var(--text)] transition-colors">会社概要</Link>
+              <Link href="/contact" className="hover:text-[var(--text)] transition-colors">お問い合わせ</Link>
+              <Link href="/privacy" className="hover:text-[var(--text)] transition-colors">プライバシーポリシー</Link>
             </div>
           </div>
           <p className="text-[13px] text-[var(--text-muted)]">&copy; 2026 合同会社FOMUS</p>

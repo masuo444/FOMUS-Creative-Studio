@@ -22,10 +22,10 @@ export default function MobileCTABar() {
     >
       <div className="bg-[var(--text)] px-5 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
         <Link
-          href="/auth/register"
-          className="block w-full text-center bg-[var(--bg)] text-[var(--text)] py-3 rounded-full text-[13px] tracking-[0.05em] font-medium"
+          href="/contact"
+          className="block w-full text-center bg-[var(--gold)] text-[var(--bg-dark)] py-3 rounded-lg text-[14px] font-bold"
         >
-          無料診断を予約する
+          無料で相談する
         </Link>
       </div>
     </div>
