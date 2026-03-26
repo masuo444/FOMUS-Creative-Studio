@@ -8,43 +8,37 @@ const services = [
     id: 'ai', en: 'AI Solutions', title: 'AI導入支援',
     desc: '業務の自動化・効率化を、AIの力で実現します。チャットボット構築、FAQ自動応答、多言語対応AI、レビュー自動返信、データ分析・可視化、予約管理の自動化まで対応。',
     image: '/images/demo-desktop.png',
-    specs: ['Claude AI / LINE / WhatsApp', '対応工数 -80%', '9言語対応', '月額5万円〜'],
   },
   {
     id: 'web', en: 'Web Production', title: 'Web制作・リニューアル',
     desc: '御社の「顔」となるWebサイトを、戦略的に構築します。コーポレートサイト、LP、予約システム、EC機能、多言語対応、CMS導入。',
     image: '/images/work-web.png',
-    specs: ['Next.js / Tailwind / Vercel', '予約数 +180%', '表示速度 2秒以内', '7万円〜'],
   },
   {
     id: 'dx', en: 'DX Consulting', title: 'DXコンサルティング',
     desc: '「何から始めるべきか」を、御社と一緒に設計します。業務フロー分析、IT投資の優先順位設計、ツール選定・導入支援、社内研修・定着支援。',
     image: '/images/hero-laptop.png',
-    specs: ['業務分析 → ROI試算', '業務効率 +60%', 'IT投資の無駄 -50%', '月額15万円〜'],
   },
   {
     id: 'creative', en: 'Manga & Creative', title: '漫画・クリエイティブ制作',
     desc: '言葉では伝わらないことを、ビジュアルで届けます。採用漫画、企業PR漫画、自己紹介漫画、ロゴデザイン、名刺、動画制作、SNS素材。',
     image: '/images/work-manga.png',
-    specs: ['最短1週間', '40言語対応', '応募数 ×3', '1話 9.8万円〜'],
   },
   {
     id: 'invoice', en: 'Invoice & Payment', title: '請求書・決済システム',
     desc: '請求から入金管理まで、一気通貫で自動化します。インボイス制度対応の適格請求書自動発行、Stripe決済連携、サブスクリプション管理。',
     image: '/images/demo-mobile.png',
-    specs: ['Stripe連携', '作成時間 -90%', '入金確認の自動化', '月額3万円〜'],
   },
   {
     id: 'maintenance', en: 'Maintenance', title: '保守・運用サポート',
     desc: '導入して終わりではなく、成果が出るまで伴走します。障害対応、セキュリティ更新、機能追加・改善、月次効果測定レポート、担当者への操作研修。',
     image: '/images/work-silva.png',
-    specs: ['専任担当者制', '24時間以内に回答', '月次レポート', '月額1万円〜'],
   },
 ]
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-[#0D1F1F]">
+    <div className="min-h-screen bg-[#1E1E1E]">
       <SiteNav />
 
       {/* ===== HERO ===== */}
@@ -62,49 +56,43 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ===== SERVICE CARDS (AI Lab layout) ===== */}
-      {services.map((s, i) => (
-        <section key={s.id} id={s.id} className="scroll-mt-[72px]">
-          <div className="max-w-[1200px] mx-auto px-6 md:px-10 pb-16 md:pb-24">
+      {/* ===== SERVICE CARDS ===== */}
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10 space-y-20 md:space-y-28 pb-20 md:pb-28">
+        {services.map((s, i) => (
+          <section key={s.id} id={s.id} className="scroll-mt-[72px]">
             <ScrollReveal>
-              <div className="relative grid grid-cols-1 md:grid-cols-12 min-h-[400px] md:min-h-[480px]">
-                {/* Left: dark card with text */}
-                <div className={`md:col-span-7 bg-[#162D2D] rounded-2xl md:rounded-3xl p-8 md:p-12 flex flex-col justify-center relative z-10 ${i % 2 === 1 ? 'md:col-start-6 md:order-2' : ''}`}>
-                  <p className="text-[var(--gold)] text-[12px] font-bold tracking-[0.2em] uppercase mb-4">{s.en}</p>
-                  <h2 className="text-white text-[28px] md:text-[36px] font-bold tracking-tight leading-[1.25] mb-5">
-                    {s.title}
+              {/* Card container */}
+              <div className="relative">
+                {/* Dark text card - left side, vertically centered */}
+                <div className="relative z-10 md:w-[55%] bg-[#2C2C2C] rounded-lg p-10 md:p-14">
+                  <h2 className="text-white text-[28px] md:text-[34px] font-bold tracking-tight leading-[1.3] mb-5">
+                    {s.en}
                   </h2>
-                  <p className="text-white/50 text-[15px] leading-[2] mb-8 max-w-[480px]">
+                  <p className="text-white/60 text-[15px] leading-[2] mb-6 max-w-[440px]">
                     {s.desc}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {s.specs.map((spec) => (
-                      <span key={spec} className="text-[12px] text-white/40 border border-white/10 px-3 py-1.5 rounded-full">
-                        {spec}
-                      </span>
-                    ))}
-                  </div>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 text-[14px] text-[var(--gold)] font-medium hover:opacity-80 transition-opacity self-start"
+                    className="inline-flex items-center text-white/40 hover:text-white transition-colors text-[18px]"
                   >
-                    このサービスについて相談する
-                    <span className="text-[16px]">›</span>
+                    ›
                   </Link>
                 </div>
 
-                {/* Right: photo that overlaps/extends */}
-                <div className={`md:col-span-7 md:absolute md:top-6 md:bottom-6 rounded-2xl md:rounded-3xl overflow-hidden mt-4 md:mt-0 ${i % 2 === 1 ? 'md:left-0' : 'md:right-0'}`}>
-                  <img src={s.image} alt={s.title} className="w-full h-full object-cover min-h-[240px]" />
+                {/* Photo - right side, offset down */}
+                <div className="md:absolute md:right-0 md:top-[15%] md:w-[52%] mt-4 md:mt-0">
+                  <div className="rounded-lg overflow-hidden">
+                    <img src={s.image} alt={s.title} className="w-full aspect-[16/11] object-cover" />
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
-          </div>
-        </section>
-      ))}
+          </section>
+        ))}
+      </div>
 
       {/* ===== CTA ===== */}
-      <section className="py-20 md:py-28 px-6">
+      <section className="bg-[#161616] py-20 md:py-28 px-6">
         <div className="max-w-[640px] mx-auto text-center">
           <ScrollReveal>
             <div className="gold-line w-12 mx-auto mb-8" />
