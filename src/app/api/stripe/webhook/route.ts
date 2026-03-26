@@ -47,10 +47,9 @@ export async function POST(request: Request) {
     }
 
     case 'customer.subscription.updated': {
-      const subscription = event.data.object as Stripe.Subscription
+      const subscription = event.data.object as Stripe.Subscription & { current_period_end?: number }
       const customerId = subscription.customer as string
 
-      // Find facility by stripe_customer_id
       const { data: facility } = await admin
         .from('facilities')
         .select('id')
@@ -65,7 +64,7 @@ export async function POST(request: Request) {
           .from('facilities')
           .update({
             plan,
-            plan_expires_at: subscription.status === 'active'
+            plan_expires_at: subscription.status === 'active' && subscription.current_period_end
               ? new Date(subscription.current_period_end * 1000).toISOString()
               : null,
             updated_at: new Date().toISOString(),

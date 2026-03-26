@@ -23,7 +23,7 @@ export default async function ConversationsPage({ params }: { params: Promise<{ 
     .limit(200)
 
   // Group by channel_user_id
-  const threads = new Map<string, typeof conversations>()
+  const threads = new Map<string, NonNullable<typeof conversations>>()
   for (const conv of conversations || []) {
     const key = conv.channel_user_id
     if (!threads.has(key)) threads.set(key, [])
@@ -32,8 +32,8 @@ export default async function ConversationsPage({ params }: { params: Promise<{ 
 
   // Sort threads by latest message
   const sortedThreads = [...threads.entries()].sort((a, b) => {
-    const aLatest = a[1][0]?.created_at || ''
-    const bLatest = b[1][0]?.created_at || ''
+    const aLatest = a[1]?.[0]?.created_at ?? ''
+    const bLatest = b[1]?.[0]?.created_at ?? ''
     return bLatest.localeCompare(aLatest)
   })
 
