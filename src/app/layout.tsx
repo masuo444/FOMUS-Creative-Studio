@@ -1,21 +1,15 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-import { Cormorant_Garamond, Noto_Sans_JP } from 'next/font/google'
+import { Geist, Geist_Mono, Noto_Sans_JP, Space_Mono } from 'next/font/google'
+import { Bebas_Neue } from 'next/font/google'
+import { Noto_Serif_JP } from 'next/font/google'
 import './globals.css'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })
-const cormorant = Cormorant_Garamond({
-  variable: '--font-cormorant',
-  subsets: ['latin'],
-  weight: ['300', '400', '600'],
-  style: ['normal', 'italic'],
-})
-const notoSansJP = Noto_Sans_JP({
-  variable: '--font-noto-sans-jp',
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '700'],
-})
+const bebasNeue = Bebas_Neue({ variable: '--font-display', subsets: ['latin'], weight: '400' })
+const notoSansJP = Noto_Sans_JP({ variable: '--font-noto-sans-jp', subsets: ['latin'], weight: ['300', '400', '700'] })
+const notoSerifJP = Noto_Serif_JP({ variable: '--font-serif-jp', subsets: ['latin'], weight: ['300', '600'] })
+const spaceMono = Space_Mono({ variable: '--font-space-mono', subsets: ['latin'], weight: ['400', '700'] })
 
 export const metadata: Metadata = {
   title: 'FOMUS Creative Studio | つくる、届ける、加速する。',
@@ -25,7 +19,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} ${notoSansJP.variable} font-sans antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} ${notoSansJP.variable} ${notoSerifJP.variable} ${spaceMono.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

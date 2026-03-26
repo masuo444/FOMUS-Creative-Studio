@@ -11,20 +11,22 @@ export default function FAQ({ items }: { items: FAQItem[] }) {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-0">
       {items.map((item, i) => (
         <div
           key={i}
-          className="border border-white/10 rounded-xl overflow-hidden transition-colors hover:border-white/20"
+          className="border-b border-[var(--border)] transition-colors"
         >
           <button
             onClick={() => setOpen(open === i ? null : i)}
-            className="w-full flex items-center justify-between p-5 text-left"
+            className="w-full flex items-center justify-between py-6 text-left group"
           >
-            <span className="text-sm font-medium text-white pr-4">{item.q}</span>
+            <span className="text-[15px] font-[family-name:var(--font-noto-sans-jp)] font-light text-[var(--white)] pr-4 group-hover:text-[var(--magenta)] transition-colors">
+              {item.q}
+            </span>
             <span
-              className={`text-white/40 text-xl transition-transform duration-300 flex-shrink-0 ${
-                open === i ? 'rotate-45' : ''
+              className={`font-[family-name:var(--font-display)] text-2xl text-[var(--dimmer)] transition-transform duration-300 flex-shrink-0 ${
+                open === i ? 'rotate-45 text-[var(--magenta)]' : ''
               }`}
             >
               +
@@ -35,7 +37,9 @@ export default function FAQ({ items }: { items: FAQItem[] }) {
               open === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
             }`}
           >
-            <p className="px-5 pb-5 text-sm text-white/60 leading-relaxed">{item.a}</p>
+            <p className="pb-6 text-[14px] text-[var(--dimmer)] leading-[2] font-[family-name:var(--font-noto-sans-jp)] font-light">
+              {item.a}
+            </p>
           </div>
         </div>
       ))}
