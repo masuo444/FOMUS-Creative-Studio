@@ -2,260 +2,219 @@ import Link from 'next/link'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import FAQ from '@/components/ui/FAQ'
 
-const services = [
+const painPoints = [
   {
-    icon: '🤖',
-    title: 'AI Solutions',
-    titleJa: 'AI業務自動化',
-    desc: '多言語チャット、レビュー自動返信、予約管理、FAQボット。あなたの業務に合わせたAIを構築。',
-    tags: ['LINE対応', '9言語', 'Claude AI', '24時間稼働'],
-    accent: '#00d4ff',
+    text: '「AIが便利らしいけど、うちには関係ないかな」',
+    detail: '実は、日々の業務の30%はAIで自動化できます。',
   },
   {
-    icon: '🌐',
-    title: 'Web Production',
-    titleJa: 'Web制作・リニューアル',
-    desc: '古くなったサイトを最短3日でリニューアル。チャットボット・多言語対応もワンストップ。',
-    tags: ['最短3日', 'レスポンシブ', 'SEO最適化', 'チャットボット'],
-    accent: '#f5c842',
+    text: '「ホームページが古いまま放置してしまっている」',
+    detail: '見た目だけで、お客様の50%が離脱しています。',
   },
   {
-    icon: '📕',
-    title: 'Manga & Creative',
-    titleJa: 'AI漫画・クリエイティブ制作',
-    desc: '採用漫画、企業PR漫画、自己紹介漫画。AI×ディレクションで最短1週間、40言語対応。',
-    tags: ['採用漫画', '40言語対応', '企業PR', 'MangaX'],
-    accent: '#e8006a',
+    text: '「外国語の問い合わせが来ても、対応できない」',
+    detail: 'インバウンド客の取りこぼしが毎月起きています。',
   },
   {
-    icon: '🏛️',
-    title: 'Government DX',
-    titleJa: '自治体サイト刷新',
-    desc: '既存CMSを触らずデザインだけ刷新。JIS X 8341-3準拠・アクセシビリティ対応。随意契約OK。',
-    tags: ['CMS不変', 'JIS準拠', 'PDF HTML化', 'アクセシビリティ'],
-    accent: '#6366f1',
+    text: '「口コミの返信、いつかやろうと思ってもう半年」',
+    detail: '放置された口コミは、新規客が一番最初に見る場所です。',
   },
   {
-    icon: '📊',
-    title: 'Invoice & Payment',
-    titleJa: '請求書・決済AI',
-    desc: 'インボイス制度対応の請求書をAIが自動生成。Stripe連携で決済から発行まで一気通貫。',
-    tags: ['適格請求書', 'AI生成', 'Stripe連携', '自動発行'],
-    accent: '#f5c842',
+    text: '「採用が全然うまくいかない」',
+    detail: '応募者は、会社の"人柄"が見えないと応募しません。',
   },
   {
-    icon: '💡',
-    title: 'AI Consulting',
-    titleJa: 'AIコンサルティング',
-    desc: '「AIで何ができるか分からない」から伴走。御社の業務を分析し、最適なAI活用プランを設計。',
-    tags: ['無料相談', '業務分析', 'ROI試算', '導入サポート'],
-    accent: '#a855f7',
+    text: '「ITに詳しい人が社内にいない」',
+    detail: 'だからこそ、外に"ITが分かるパートナー"が必要です。',
   },
 ]
 
+const portfolio = [
+  { label: 'Web Renewal', desc: '旅館サイトのリニューアル — 予約数1.8倍', img: 'PORTFOLIO 01' },
+  { label: 'AI Chatbot', desc: 'LINE多言語チャット導入 — 夜間対応を完全自動化', img: 'PORTFOLIO 02' },
+  { label: 'Manga', desc: '採用漫画制作 — 応募数が前年比3倍', img: 'PORTFOLIO 03' },
+]
+
 const faqItems = [
-  { q: 'AIの知識がなくても導入できますか？', a: 'まったく問題ありません。「AIで何ができるか分からない」状態からでも大丈夫です。ヒアリングで御社の業務を把握し、最適なAIツールをこちらで構築・導入します。' },
-  { q: '初期費用はかかりますか？', a: 'サービスによります。Web制作・漫画制作は一括納品のため初期費用のみ。AI業務自動化は初期構築費＋月額保守の形です。まずは無料相談でお見積もりします。' },
-  { q: '最短でどのくらいで導入できますか？', a: 'ヒアリングから1週間でプロトタイプをお見せします。Web制作は最短3日、AI業務自動化は2〜4週間が目安です。お急ぎの場合はご相談ください。' },
-  { q: '他社のAIサービスとの違いは？', a: '大手は大企業向けで高額、他社は単機能のみ。FOOMUSはAI・Web・クリエイティブを一社で完結でき、中小企業の予算感に合わせた提案ができる唯一のスタジオです。' },
-  { q: '契約期間の縛りはありますか？', a: 'AI月額プランは最低3ヶ月からですが、それ以降はいつでも解約可能です。Web制作・漫画制作は納品ベースのため、月額費用は発生しません。' },
-  { q: '海外向けにも対応していますか？', a: 'はい。AI多言語チャットは9言語対応、漫画制作は40言語対応。Dubai法人を通じた中東・東南アジア展開の実績もあります。' },
+  { q: 'ITやAIの知識がまったくないのですが、大丈夫ですか？', a: 'はい、むしろそういう方のためのサービスです。「何をすればいいか分からない」状態から、ヒアリングで課題を整理し、最適な仕組みをこちらで構築します。専門用語は使いません。' },
+  { q: '相談だけでも大丈夫ですか？', a: 'もちろんです。「今のうちの状況でAIって使えるの？」というレベルの相談で構いません。お話を聞いた上で、必要なければ無理に提案しません。' },
+  { q: 'どんな業種に対応していますか？', a: '旅館・ホテル、飲食店、美容サロン、クリニック、小売、不動産、士業、自治体など、業種を問わず対応します。大切なのは業種ではなく「何に困っているか」です。' },
+  { q: '費用感はどれくらいですか？', a: 'ホームページ制作は7万円〜、AI導入は月額5万円〜、漫画制作は1話9.8万円〜が目安です。ヒアリングの上で、御社に必要な範囲だけのお見積もりを出します。' },
+  { q: '導入までどれくらいかかりますか？', a: 'ヒアリングから最短1週間でプロトタイプをお見せします。Web制作は最短3日、AI導入は2〜4週間が目安です。' },
 ]
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[var(--void)] text-[var(--white)] overflow-x-hidden noise">
+    <div className="min-h-screen bg-[var(--bg)] text-[var(--text)]">
 
       {/* ========== NAV ========== */}
-      <nav className="fixed w-full z-50 px-6 md:px-14 h-[72px] flex items-center justify-between bg-transparent transition-all duration-300">
-        <Link href="/" className="font-[family-name:var(--font-display)] text-[clamp(14px,2.5vw,22px)] tracking-[3px] text-[var(--white)]">
-          FOMUS<span className="text-[var(--magenta)]" style={{ textShadow: '0 0 20px rgba(232,0,106,0.6)' }}>.</span>
-        </Link>
-        <div className="hidden md:flex items-center gap-10">
-          {['Services', 'Process', 'FAQ', 'Contact'].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="font-[family-name:var(--font-space-mono)] text-[10px] tracking-[3px] uppercase text-[var(--dimmer)] hover:text-[var(--white)] transition-colors"
-            >
-              {item}
-            </a>
-          ))}
-          <Link
-            href="/auth/register"
-            className="font-[family-name:var(--font-space-mono)] text-[10px] tracking-[3px] uppercase border border-[var(--magenta)] text-[var(--magenta)] px-7 py-3 hover:bg-[var(--magenta)] hover:text-[var(--void)] transition-all relative overflow-hidden"
-          >
-            Contact
+      <nav className="fixed w-full z-50 bg-[var(--bg)]/90 backdrop-blur-lg border-b border-[var(--border)]">
+        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+          <Link href="/" className="font-[family-name:var(--font-display)] text-[20px] tracking-[2px]">
+            FOMUS<span className="text-[var(--accent)]">.</span>
           </Link>
+          <div className="hidden md:flex items-center gap-8">
+            <a href="#about" className="text-xs text-[var(--text-sub)] hover:text-[var(--text)] transition-colors">私たちについて</a>
+            <a href="#work" className="text-xs text-[var(--text-sub)] hover:text-[var(--text)] transition-colors">実績</a>
+            <a href="#faq" className="text-xs text-[var(--text-sub)] hover:text-[var(--text)] transition-colors">よくある質問</a>
+            <Link
+              href="/auth/register"
+              className="text-xs bg-[var(--text)] text-white px-5 py-2.5 rounded-full font-medium hover:bg-[var(--text)]/80 transition-colors"
+            >
+              無料で相談する
+            </Link>
+          </div>
         </div>
       </nav>
 
       {/* ========== HERO ========== */}
-      <section className="relative min-h-screen flex items-center dot-grid overflow-hidden">
-        {/* Orbs */}
-        <div className="orb w-[560px] h-[560px] bg-[rgba(232,0,106,0.22)] -top-[15%] right-0 absolute" />
-        <div className="orb w-[420px] h-[420px] bg-[rgba(0,212,255,0.13)] bottom-0 left-[5%] absolute" style={{ animationDelay: '-3.5s' }} />
-        <div className="orb w-[280px] h-[280px] bg-[rgba(245,200,66,0.09)] top-[35%] left-[45%] absolute" style={{ animationDelay: '-6s' }} />
-
-        <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-14 pt-32 pb-20">
-          <ScrollReveal>
-            <div className="sec-label font-[family-name:var(--font-space-mono)] mb-7">
-              Creative Studio
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={100}>
-            <h1 className="font-[family-name:var(--font-display)] text-[clamp(72px,10vw,155px)] leading-[0.88] tracking-[2px] mb-10">
-              <span className="block text-[var(--white)]">CREATE.</span>
-              <span className="block" style={{ WebkitTextStroke: '2px var(--magenta)', color: 'transparent', textShadow: 'var(--glow-m)' }}>
-                DELIVER.
-              </span>
-              <span className="block text-[var(--cyan)]" style={{ textShadow: 'var(--glow-c)' }}>
-                ACCELERATE.
-              </span>
-            </h1>
-          </ScrollReveal>
-
-          <ScrollReveal delay={200}>
-            <p className="text-[17px] text-[var(--dim)] max-w-[500px] leading-[2] mb-12 font-[family-name:var(--font-noto-sans-jp)] font-light">
-              つくる、届ける、加速する。
-              <br />
-              AI業務自動化から、Web制作、漫画制作まで。
-              <br />
-              中小企業のDXを、構想から実装まで。
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal delay={300}>
-            <div className="flex flex-wrap items-center gap-6">
-              <Link href="/auth/register" className="btn-glow font-[family-name:var(--font-space-mono)] text-[11px] tracking-[3px] uppercase px-12 py-5 inline-block">
-                無料相談
-              </Link>
-              <a href="#services" className="font-[family-name:var(--font-space-mono)] text-[11px] tracking-[3px] uppercase text-[var(--dimmer)] hover:text-[var(--white)] transition-colors flex items-center gap-3">
-                Services <span className="text-lg">↓</span>
-              </a>
-            </div>
-          </ScrollReveal>
-
-          {/* Stats */}
-          <ScrollReveal delay={400}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-24">
-              {[
-                { n: '50+', l: 'Projects' },
-                { n: '1 Week', l: 'Prototype' },
-                { n: '6', l: 'Service Lines' },
-                { n: '9', l: 'Languages' },
-              ].map((s, i) => (
-                <div key={s.l} className="stat-card px-6 py-5" style={{ borderLeftColor: i === 0 ? 'var(--magenta)' : i === 1 ? 'var(--cyan)' : i === 2 ? 'var(--gold)' : 'var(--white)' }}>
-                  <div className="font-[family-name:var(--font-display)] text-[46px] leading-none">{s.n}</div>
-                  <div className="font-[family-name:var(--font-space-mono)] text-[9px] tracking-[3px] uppercase text-[var(--dimmer)] mt-1">{s.l}</div>
+      <section className="pt-32 pb-20 md:pt-40 md:pb-32">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <ScrollReveal>
+                <p className="text-[var(--accent)] text-sm font-medium mb-4 font-[family-name:var(--font-space-mono)] tracking-wide">
+                  FOMUS Creative Studio
+                </p>
+                <h1 className="text-4xl md:text-[56px] font-bold leading-[1.15] tracking-tight mb-6 font-[family-name:var(--font-noto-sans-jp)]">
+                  あなたの「困った」を、
+                  <br />
+                  <span className="text-[var(--accent)]">仕組み</span>で解決する。
+                </h1>
+                <p className="text-[var(--text-sub)] text-base md:text-lg leading-[2] mb-8 font-[family-name:var(--font-noto-sans-jp)] font-light">
+                  課題をヒアリングして、あなたの会社に合った
+                  <br className="hidden md:block" />
+                  AI・Web・クリエイティブの仕組みを構築します。
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={150}>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/auth/register"
+                    className="inline-flex items-center gap-2 bg-[var(--text)] text-white px-7 py-3.5 rounded-full text-sm font-medium hover:bg-[var(--text)]/80 transition-colors"
+                  >
+                    まずは話を聞かせてください
+                    <span>→</span>
+                  </Link>
                 </div>
-              ))}
+                <p className="text-xs text-[var(--text-muted)] mt-4">
+                  無料・オンライン・30分で完了。営業は一切しません。
+                </p>
+              </ScrollReveal>
             </div>
-          </ScrollReveal>
-        </div>
-
-        {/* Scroll hint */}
-        <div className="absolute bottom-10 right-14 z-10 font-[family-name:var(--font-space-mono)] text-[9px] tracking-[4px] uppercase text-[var(--dimmer)] hidden md:flex flex-col items-center gap-3" style={{ writingMode: 'vertical-rl' }}>
-          Scroll
-          <span className="w-[1px] h-[72px] bg-gradient-to-b from-transparent to-[var(--dimmer)]" style={{ animation: 'scrollLine 2.5s ease-in-out infinite' }} />
+            <ScrollReveal delay={200}>
+              <div className="img-placeholder rounded-2xl aspect-[4/3] md:aspect-square">
+                HERO IMAGE
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
-      {/* ========== MARQUEE ========== */}
-      <div className="border-y border-[var(--border)] bg-[rgba(232,0,106,0.04)] py-4 overflow-hidden">
-        <div className="marquee-track flex whitespace-nowrap w-max">
-          {[...Array(2)].map((_, i) => (
-            <div key={i} className="flex">
-              {['AI SOLUTIONS', 'WEB PRODUCTION', 'MANGA & CREATIVE', 'GOVERNMENT DX', 'INVOICE AI', 'CONSULTING'].map((t) => (
-                <span key={`${i}-${t}`} className="font-[family-name:var(--font-display)] text-[19px] tracking-[3px] text-[rgba(240,238,248,0.6)] px-7">
-                  {t} <span className="text-[var(--magenta)]">·</span>
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* ========== PAIN POINTS ========== */}
+      <section className="bg-[var(--bg-warm)] py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6">
+          <ScrollReveal>
+            <p className="text-[var(--accent)] text-sm font-medium mb-3 font-[family-name:var(--font-space-mono)] tracking-wide">
+              CHALLENGES
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-16 font-[family-name:var(--font-noto-sans-jp)]">
+              こんなこと、ありませんか？
+            </h2>
+          </ScrollReveal>
 
-      {/* ========== SERVICES ========== */}
-      <section id="services" className="max-w-7xl mx-auto px-6 md:px-14 py-32">
-        <ScrollReveal>
-          <div className="sec-label font-[family-name:var(--font-space-mono)] mb-5">Services</div>
-          <h2 className="font-[family-name:var(--font-display)] text-[clamp(48px,6vw,92px)] leading-[0.92] tracking-[1px] mb-20">
-            WHAT WE{' '}
-            <em className="font-[family-name:var(--font-serif-jp)] italic" style={{ WebkitTextStroke: '1.5px var(--cyan)', color: 'transparent', textShadow: 'var(--glow-c)' }}>
-              CREATE
-            </em>
-          </h2>
-        </ScrollReveal>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {services.map((service, i) => (
-            <ScrollReveal key={service.title} delay={i * 80}>
-              <div
-                className="service-card glass-card rounded-none p-7 h-full cursor-default"
-                style={{ '--card-accent': service.accent } as React.CSSProperties}
-              >
-                <span className="text-3xl block mb-5">{service.icon}</span>
-                <h3 className="font-[family-name:var(--font-display)] text-[28px] tracking-[2px] mb-1">
-                  {service.title}
-                </h3>
-                <p className="font-[family-name:var(--font-space-mono)] text-[9px] tracking-[2px] uppercase text-[var(--dimmer)] mb-4">
-                  {service.titleJa}
-                </p>
-                <p className="text-[15px] text-[var(--dim)] font-light leading-[1.9] mb-5 font-[family-name:var(--font-noto-sans-jp)]">
-                  {service.desc}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {service.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="font-[family-name:var(--font-space-mono)] text-[9px] tracking-[1px] px-3 py-1.5 border border-[var(--border)] text-[var(--dimmer)]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {painPoints.map((item, i) => (
+              <ScrollReveal key={i} delay={i * 60}>
+                <div className="bg-white rounded-xl p-6 border border-[var(--border)] hover:border-[var(--accent)]/20 hover:shadow-sm transition-all h-full">
+                  <p className="text-base font-medium leading-relaxed mb-3 font-[family-name:var(--font-noto-sans-jp)]">
+                    {item.text}
+                  </p>
+                  <p className="text-sm text-[var(--text-sub)] leading-relaxed font-[family-name:var(--font-noto-sans-jp)] font-light">
+                    {item.detail}
+                  </p>
                 </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ========== SOLUTION ========== */}
+      <section id="about" className="py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <ScrollReveal>
+              <div className="img-placeholder rounded-2xl aspect-[4/3]">
+                WORKING IMAGE
               </div>
             </ScrollReveal>
-          ))}
+            <ScrollReveal delay={100}>
+              <p className="text-[var(--accent)] text-sm font-medium mb-3 font-[family-name:var(--font-space-mono)] tracking-wide">
+                OUR APPROACH
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 font-[family-name:var(--font-noto-sans-jp)]">
+                答えは、あなたの話の中にある。
+              </h2>
+              <p className="text-[var(--text-sub)] text-base leading-[2] mb-8 font-[family-name:var(--font-noto-sans-jp)] font-light">
+                私たちは「これを売りたい」という会社ではありません。
+                <br /><br />
+                まず、あなたの業務を聞きます。何に時間がかかっているのか、何がストレスなのか、何を変えたいのか。
+                <br /><br />
+                その上で、AI・Web・クリエイティブの中から最適な「仕組み」を提案し、1週間で動くプロトタイプをお見せします。
+                <br /><br />
+                <strong>必要なのは、あなたの30分だけです。</strong>
+              </p>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
       {/* ========== PROCESS ========== */}
-      <section id="process" className="border-y border-[var(--border)]">
-        <div className="max-w-6xl mx-auto px-6 md:px-14 py-32">
+      <section className="bg-[var(--text)] text-white py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
-            <div className="sec-label font-[family-name:var(--font-space-mono)] mb-5">Process</div>
-            <h2 className="font-[family-name:var(--font-display)] text-[clamp(48px,6vw,92px)] leading-[0.92] tracking-[1px] mb-20">
-              HOW WE{' '}
-              <em className="font-[family-name:var(--font-serif-jp)] italic" style={{ WebkitTextStroke: '1.5px var(--magenta)', color: 'transparent', textShadow: 'var(--glow-m)' }}>
-                WORK
-              </em>
+            <p className="text-[var(--accent)] text-sm font-medium mb-3 font-[family-name:var(--font-space-mono)] tracking-wide">
+              PROCESS
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-16 font-[family-name:var(--font-noto-sans-jp)]">
+              進め方
             </h2>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
-              { step: '01', title: 'HEARING', ja: 'ヒアリング', desc: '「何に一番時間を取られていますか？」\n御社の業務課題を1時間で把握します。', note: '無料・オンライン対応' },
-              { step: '02', title: 'PROTOTYPE', ja: 'プロトタイプ', desc: '1週間で動くツールを構築。\n実際の業務データで試せる状態でお見せします。', note: '動くものを見てから判断' },
-              { step: '03', title: 'LAUNCH', ja: '導入・運用', desc: '本番導入後も月額保守で継続改善。\nAIの精度は使うほど向上します。', note: '月額保守で安心運用' },
+              {
+                step: '01',
+                title: 'ヒアリング',
+                desc: '御社の業務と課題を30分〜1時間お聞きします。オンライン対応。「何をすればいいか分からない」で大丈夫です。',
+                note: '無料',
+              },
+              {
+                step: '02',
+                title: 'プロトタイプ',
+                desc: '1週間で動くものをお見せします。実際に触って、効果を実感してから導入を判断してください。',
+                note: '1週間',
+              },
+              {
+                step: '03',
+                title: '導入・改善',
+                desc: '本番導入後も月額保守で継続改善。使えば使うほど、あなたの業務に最適化されていきます。',
+                note: '月額保守',
+              },
             ].map((item, i) => (
-              <ScrollReveal key={item.step} delay={i * 120}>
+              <ScrollReveal key={item.step} delay={i * 100}>
                 <div>
-                  <div className="font-[family-name:var(--font-display)] text-[120px] leading-none text-[rgba(240,238,248,0.03)] mb-2">
+                  <span className="font-[family-name:var(--font-display)] text-[80px] leading-none text-white/5 block">
                     {item.step}
-                  </div>
-                  <h3 className="font-[family-name:var(--font-display)] text-[32px] tracking-[3px] mb-1">
+                  </span>
+                  <h3 className="text-xl font-bold mb-3 -mt-4 font-[family-name:var(--font-noto-sans-jp)]">
                     {item.title}
                   </h3>
-                  <p className="font-[family-name:var(--font-space-mono)] text-[9px] tracking-[2px] uppercase text-[var(--magenta)] mb-5">
-                    {item.ja}
-                  </p>
-                  <p className="text-[15px] text-[var(--dim)] font-light leading-[2] whitespace-pre-line mb-5 font-[family-name:var(--font-noto-sans-jp)]">
+                  <p className="text-white/60 text-sm leading-[2] mb-4 font-[family-name:var(--font-noto-sans-jp)] font-light">
                     {item.desc}
                   </p>
-                  <span className="font-[family-name:var(--font-space-mono)] text-[9px] tracking-[2px] uppercase text-[var(--dimmer)] border border-[var(--border)] px-4 py-2 inline-block">
+                  <span className="text-xs text-[var(--accent)] font-[family-name:var(--font-space-mono)] tracking-wide">
                     {item.note}
                   </span>
                 </div>
@@ -265,79 +224,147 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ========== FAQ ========== */}
-      <section id="faq" className="max-w-3xl mx-auto px-6 md:px-14 py-32">
-        <ScrollReveal>
-          <div className="sec-label font-[family-name:var(--font-space-mono)] mb-5">FAQ</div>
-          <h2 className="font-[family-name:var(--font-display)] text-[clamp(48px,6vw,72px)] leading-[0.92] tracking-[1px] mb-16">
-            QUESTIONS
-          </h2>
-        </ScrollReveal>
+      {/* ========== PORTFOLIO ========== */}
+      <section id="work" className="py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6">
+          <ScrollReveal>
+            <p className="text-[var(--accent)] text-sm font-medium mb-3 font-[family-name:var(--font-space-mono)] tracking-wide">
+              WORKS
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-16 font-[family-name:var(--font-noto-sans-jp)]">
+              実績
+            </h2>
+          </ScrollReveal>
 
-        <ScrollReveal delay={100}>
-          <FAQ items={faqItems} />
-        </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {portfolio.map((item, i) => (
+              <ScrollReveal key={item.label} delay={i * 80}>
+                <div className="group cursor-pointer">
+                  <div className="img-placeholder rounded-xl aspect-[3/2] mb-4 group-hover:scale-[1.02] transition-transform duration-500">
+                    {item.img}
+                  </div>
+                  <p className="font-[family-name:var(--font-space-mono)] text-[10px] tracking-[2px] text-[var(--text-muted)] uppercase mb-1">
+                    {item.label}
+                  </p>
+                  <p className="text-sm font-medium font-[family-name:var(--font-noto-sans-jp)]">{item.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal delay={200}>
+            <div className="text-center mt-12">
+              <Link href="/services" className="text-sm text-[var(--text-sub)] hover:text-[var(--text)] transition-colors border-b border-[var(--border)] pb-0.5">
+                サービス詳細を見る →
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ========== FOUNDER ========== */}
+      <section className="bg-[var(--bg-warm)] py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <ScrollReveal>
+              <div className="img-placeholder rounded-2xl aspect-square max-w-[400px]">
+                FOUNDER PHOTO
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={100}>
+              <p className="text-[var(--accent)] text-sm font-medium mb-3 font-[family-name:var(--font-space-mono)] tracking-wide">
+                FOUNDER
+              </p>
+              <h2 className="text-3xl font-bold tracking-tight mb-2 font-[family-name:var(--font-noto-sans-jp)]">
+                増尾 圭亮
+              </h2>
+              <p className="text-sm text-[var(--text-muted)] mb-6 font-[family-name:var(--font-space-mono)]">
+                合同会社FOMUS 代表 / FOMUS Global Inc. CEO
+              </p>
+              <p className="text-[var(--text-sub)] text-base leading-[2] mb-6 font-[family-name:var(--font-noto-sans-jp)] font-light">
+                元ホテルマン。京都在住。Dubai法人経営。
+                <br /><br />
+                接客の現場で「人が足りない」「言葉が通じない」を目の当たりにし、テクノロジーで解決する道を選びました。
+                <br /><br />
+                伝統工芸（枡）の製造販売、AI開発、Web制作、漫画制作。一見バラバラに見えますが、すべて「人の手が届かないところに、仕組みで届ける」という同じ思想で動いています。
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {['元ホテルマン', 'AI実装', 'Dubai法人', '京都在住', '伝統工芸'].map((tag) => (
+                  <span key={tag} className="text-xs text-[var(--text-sub)] border border-[var(--border)] px-3 py-1.5 rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== FAQ ========== */}
+      <section id="faq" className="py-20 md:py-28">
+        <div className="max-w-3xl mx-auto px-6">
+          <ScrollReveal>
+            <p className="text-[var(--accent)] text-sm font-medium mb-3 font-[family-name:var(--font-space-mono)] tracking-wide">
+              FAQ
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-12 font-[family-name:var(--font-noto-sans-jp)]">
+              よくあるご質問
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={80}>
+            <FAQ items={faqItems} />
+          </ScrollReveal>
+        </div>
       </section>
 
       {/* ========== CTA ========== */}
-      <section id="contact" className="border-t border-[var(--border)]">
-        <div className="max-w-4xl mx-auto px-6 md:px-14 py-32 text-center">
+      <section className="bg-[var(--text)] text-white py-20 md:py-28">
+        <div className="max-w-3xl mx-auto px-6 text-center">
           <ScrollReveal>
-            <div className="sec-label font-[family-name:var(--font-space-mono)] justify-center mb-8">Contact</div>
-            <h2 className="font-[family-name:var(--font-display)] text-[clamp(48px,8vw,100px)] leading-[0.88] tracking-[2px] mb-8">
-              LET&apos;S{' '}
-              <span className="text-[var(--cyan)]" style={{ textShadow: 'var(--glow-c)' }}>TALK</span>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 font-[family-name:var(--font-noto-sans-jp)]">
+              まずは、話を聞かせてください。
             </h2>
-            <p className="text-[16px] text-[var(--dim)] font-light max-w-md mx-auto leading-[2] mb-12 font-[family-name:var(--font-noto-sans-jp)]">
-              「AIで何ができるか分からない」でもOK。
+            <p className="text-white/60 text-base leading-[2] mb-10 font-[family-name:var(--font-noto-sans-jp)] font-light">
+              「こんなこと相談していいのかな」で大丈夫です。
               <br />
-              御社の業務をお聞きして、最適なプランをご提案します。
+              30分のヒアリングで、御社に必要な仕組みが見えてきます。
             </p>
-            <Link href="/auth/register" className="btn-glow font-[family-name:var(--font-space-mono)] text-[11px] tracking-[3px] uppercase px-14 py-5 inline-block">
+            <Link
+              href="/auth/register"
+              className="inline-flex items-center gap-2 bg-white text-[var(--text)] px-8 py-4 rounded-full text-sm font-medium hover:bg-white/90 transition-colors"
+            >
               無料相談を予約する
+              <span>→</span>
             </Link>
+            <p className="text-xs text-white/30 mt-4">
+              無料・オンライン・30分。営業は一切しません。
+            </p>
           </ScrollReveal>
         </div>
       </section>
 
       {/* ========== FOOTER ========== */}
-      <footer className="border-t border-[var(--border)] py-16">
-        <div className="max-w-7xl mx-auto px-6 md:px-14">
+      <footer className="py-16 border-t border-[var(--border)]">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-start justify-between gap-8 mb-12">
             <div>
-              <p className="font-[family-name:var(--font-display)] text-[24px] tracking-[3px] mb-2">
-                FOMUS<span className="text-[var(--magenta)]">.</span>
+              <p className="font-[family-name:var(--font-display)] text-[20px] tracking-[2px] mb-1">
+                FOMUS<span className="text-[var(--accent)]">.</span>
               </p>
-              <p className="font-[family-name:var(--font-space-mono)] text-[9px] tracking-[3px] uppercase text-[var(--dimmer)]">
-                Creative Studio
-              </p>
+              <p className="text-xs text-[var(--text-muted)]">Creative Studio</p>
             </div>
-            <div className="grid grid-cols-2 gap-x-16 gap-y-3">
-              {[
-                { label: 'Services', href: '#services' },
-                { label: 'Process', href: '#process' },
-                { label: 'FAQ', href: '#faq' },
-                { label: 'Contact', href: '#contact' },
-                { label: 'Login', href: '/auth/login' },
-                { label: 'Dashboard', href: '/dashboard' },
-              ].map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="font-[family-name:var(--font-space-mono)] text-[10px] tracking-[2px] uppercase text-[var(--dimmer)] hover:text-[var(--white)] transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
+            <div className="grid grid-cols-2 gap-x-16 gap-y-3 text-xs text-[var(--text-sub)]">
+              <a href="#about" className="hover:text-[var(--text)] transition-colors">私たちについて</a>
+              <Link href="/auth/login" className="hover:text-[var(--text)] transition-colors">ログイン</Link>
+              <a href="#work" className="hover:text-[var(--text)] transition-colors">実績</a>
+              <Link href="/dashboard" className="hover:text-[var(--text)] transition-colors">ダッシュボード</Link>
+              <a href="#faq" className="hover:text-[var(--text)] transition-colors">よくある質問</a>
+              <Link href="/services" className="hover:text-[var(--text)] transition-colors">サービス詳細</Link>
             </div>
           </div>
-          <div className="border-t border-[var(--border)] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="font-[family-name:var(--font-space-mono)] text-[9px] tracking-[2px] text-[var(--dimmer)]">
-              &copy; 2026 FOMUS GLOBAL INC. / 合同会社FOMUS
-            </p>
-            <p className="font-[family-name:var(--font-space-mono)] text-[9px] tracking-[2px] text-[var(--dimmer)]">
-              伝統工芸 × テクノロジー × コミュニティ
-            </p>
+          <div className="border-t border-[var(--border)] pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[var(--text-muted)]">
+            <p>&copy; 2026 合同会社FOMUS / FOMUS Global Inc.</p>
+            <p>伝統工芸 × テクノロジー × コミュニティ</p>
           </div>
         </div>
       </footer>

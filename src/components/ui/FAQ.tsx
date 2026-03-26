@@ -11,22 +11,19 @@ export default function FAQ({ items }: { items: FAQItem[] }) {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <div className="space-y-0">
+    <div>
       {items.map((item, i) => (
-        <div
-          key={i}
-          className="border-b border-[var(--border)] transition-colors"
-        >
+        <div key={i} className="border-b border-[var(--border)]">
           <button
             onClick={() => setOpen(open === i ? null : i)}
-            className="w-full flex items-center justify-between py-6 text-left group"
+            className="w-full flex items-center justify-between py-5 text-left group"
           >
-            <span className="text-[15px] font-[family-name:var(--font-noto-sans-jp)] font-light text-[var(--white)] pr-4 group-hover:text-[var(--magenta)] transition-colors">
+            <span className="text-[15px] font-medium pr-4 group-hover:text-[var(--accent)] transition-colors font-[family-name:var(--font-noto-sans-jp)]">
               {item.q}
             </span>
             <span
-              className={`font-[family-name:var(--font-display)] text-2xl text-[var(--dimmer)] transition-transform duration-300 flex-shrink-0 ${
-                open === i ? 'rotate-45 text-[var(--magenta)]' : ''
+              className={`text-xl text-[var(--text-muted)] transition-transform duration-300 flex-shrink-0 ${
+                open === i ? 'rotate-45 text-[var(--accent)]' : ''
               }`}
             >
               +
@@ -37,7 +34,7 @@ export default function FAQ({ items }: { items: FAQItem[] }) {
               open === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
             }`}
           >
-            <p className="pb-6 text-[14px] text-[var(--dimmer)] leading-[2] font-[family-name:var(--font-noto-sans-jp)] font-light">
+            <p className="pb-5 text-sm text-[var(--text-sub)] leading-[2] font-[family-name:var(--font-noto-sans-jp)] font-light">
               {item.a}
             </p>
           </div>
