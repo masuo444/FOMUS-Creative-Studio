@@ -14,9 +14,9 @@ const services = [
 ]
 
 const projects = [
-  { title: '宿泊施設のサイト刷新で予約数+180%', desc: '老朽化した予約導線を再設計し、UI・コピー・ページ構成を全面改修。公開3ヶ月で直接予約数が2.8倍に増加。', metric: '+180%', metricLabel: '予約数', category: 'Web制作' },
-  { title: '9言語対応AIチャットボットで対応工数-80%', desc: 'インバウンド対応に追われていた現場の負荷を、多言語AIチャットボットで自動化。月間1,200件を人手なしで処理。', metric: '-80%', metricLabel: '対応工数', category: 'AI導入' },
-  { title: '採用漫画の導入で応募数が3倍に', desc: 'テキスト主体だった採用ページに漫画コンテンツを追加。求職者の滞在時間が4.2倍に伸び、エントリー数が3倍に。', metric: '×3', metricLabel: '応募数', category: '漫画制作' },
+  { title: '宿泊施設のサイト刷新で予約数+180%', desc: '老朽化した予約導線を再設計し、UI・コピー・ページ構成を全面改修。公開3ヶ月で直接予約数が2.8倍に増加。', metric: '+180%', metricLabel: '予約数', category: 'Web制作', image: '/images/work-web.png' },
+  { title: '9言語対応AIチャットボットで対応工数-80%', desc: 'インバウンド対応に追われていた現場の負荷を、多言語AIチャットボットで自動化。月間1,200件を人手なしで処理。', metric: '-80%', metricLabel: '対応工数', category: 'AI導入', image: '/images/demo-desktop.png' },
+  { title: '採用漫画の導入で応募数が3倍に', desc: 'テキスト主体だった採用ページに漫画コンテンツを追加。求職者の滞在時間が4.2倍に伸び、エントリー数が3倍に。', metric: '×3', metricLabel: '応募数', category: '漫画制作', image: '/images/work-manga.png' },
 ]
 
 const steps = [
@@ -87,7 +87,9 @@ export default function Home() {
       {/* ===== HERO IMAGE ===== */}
       <ScrollReveal>
         <div className="mx-6 max-w-[1100px] md:mx-auto">
-          <div className="img-ph w-full aspect-[2.2/1] rounded-2xl" />
+          <div className="relative w-full aspect-[2.2/1] rounded-2xl overflow-hidden bg-[var(--bg-dark)]">
+            <img src="/images/hero-laptop.png" alt="FOMUS Creative Studio" className="w-full h-full object-cover opacity-90" />
+          </div>
         </div>
       </ScrollReveal>
 
@@ -126,14 +128,18 @@ export default function Home() {
             {projects.map((p, i) => (
               <ScrollReveal key={p.title} delay={i * 80}>
                 <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:bg-white/8 hover:border-white/15 transition-all duration-500 h-full flex flex-col">
-                  <div className="px-7 pt-8 pb-6 border-b border-white/10">
-                    <p className="text-[var(--gold)] text-[12px] font-medium tracking-wide mb-2">{p.category}</p>
-                    <p className="text-[42px] font-bold leading-none tracking-tight">{p.metric}</p>
-                    <p className="text-white/40 text-[13px] mt-1">{p.metricLabel}</p>
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-4 left-5">
+                      <p className="text-[var(--gold)] text-[12px] font-medium tracking-wide mb-1">{p.category}</p>
+                      <p className="text-[36px] font-bold leading-none tracking-tight text-white">{p.metric}</p>
+                      <p className="text-white/50 text-[12px] mt-1">{p.metricLabel}</p>
+                    </div>
                   </div>
-                  <div className="px-7 py-6 flex-1">
-                    <h3 className="text-[15px] font-bold leading-[1.5] mb-3">{p.title}</h3>
-                    <p className="text-white/50 text-[14px] leading-[1.9]">{p.desc}</p>
+                  <div className="px-5 py-5 flex-1">
+                    <h3 className="text-[15px] font-bold leading-[1.5] mb-2">{p.title}</h3>
+                    <p className="text-white/50 text-[14px] leading-[1.8]">{p.desc}</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -193,7 +199,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
             <div className="md:col-span-4">
               <ScrollReveal>
-                <div className="img-ph aspect-[3/4] rounded-2xl" />
+                <img src="/images/founder.jpg" alt="増尾 圭亮" className="aspect-[3/4] rounded-2xl object-cover w-full" />
               </ScrollReveal>
             </div>
             <div className="md:col-span-7 md:col-start-6">

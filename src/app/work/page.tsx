@@ -7,6 +7,7 @@ const cases = [
     title: '宿泊施設のサイト刷新で予約数+180%',
     metric: '+180%',
     metricLabel: '直接予約数',
+    image: '/images/work-web.png',
     challenge: '公式サイトが10年以上前のデザインのまま放置されており、スマートフォン非対応。OTA経由の予約に依存し、手数料負担が年間数百万円に。',
     solution: 'UI/UXを全面刷新し、スマホファーストのレスポンシブデザインに。予約導線を3ステップに簡素化し、多言語対応（英・中・韓）を追加。Googleビジネスプロフィールとの連携も強化。',
     result: '公開3ヶ月で直接予約数が2.8倍に増加。OTA手数料の年間削減額は推定200万円以上。Google検索からの流入も1.5倍に。',
@@ -17,6 +18,7 @@ const cases = [
     category: 'AI導入',
     title: '9言語対応AIチャットボットで対応工数-80%',
     metric: '-80%',
+    image: '/images/demo-desktop.png',
     metricLabel: '対応工数',
     challenge: 'インバウンド観光客からの問い合わせが急増し、深夜・早朝の対応にスタッフが疲弊。英語以外の問い合わせ（中国語・韓国語・タイ語）には対応できず、機会損失が発生。',
     solution: 'LINE公式アカウントにAIチャットボットを導入。Claude AIによる自然な多言語応答で、施設案内・アクセス情報・FAQ・予約変更を24時間自動処理。スタッフには日本語で通知。',
@@ -29,6 +31,7 @@ const cases = [
     title: '採用漫画の導入で応募数が3倍に',
     metric: '×3',
     metricLabel: '応募数',
+    image: '/images/work-manga.png',
     challenge: '求人サイトに掲載しても応募が集まらない。テキスト中心の採用ページでは、社風や働く人の雰囲気が伝わらず、求職者が離脱。',
     solution: '社員インタビューを元に10ページの採用漫画を制作。入社1年目のストーリーを通じて、仕事内容・チームの雰囲気・成長環境をビジュアルで表現。SNS向けにショート版も制作。',
     result: '採用ページの滞在時間が4.2倍に増加。漫画のSNSシェアにより認知が拡大し、エントリー数が前年比3倍に。採用単価は60%削減。',
@@ -68,7 +71,7 @@ export default function WorkPage() {
                     <p className="text-white/40 text-[13px] mb-2">{c.metricLabel}</p>
                     <p className="text-white text-[56px] font-bold leading-none">{c.metric}</p>
                   </div>
-                  <div className="img-ph aspect-[16/10] rounded-xl" />
+                  <img src={c.image} alt={c.title} className="aspect-[16/10] rounded-xl object-cover w-full" />
                 </div>
 
                 {/* Right: Details */}
