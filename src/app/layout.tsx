@@ -17,7 +17,7 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   title: 'FOMUS Creative Studio | 中小企業のための業務改善パートナー',
-  description: 'AI導入・Web制作・クリエイティブ制作。御社の業務課題をヒアリングし、最適な仕組みを構築します。合同会社FOMUS',
+  description: 'AI導入・Web制作・クリエイティブ制作。御社の業務課題をヒアリングし、最適な仕組みを構築します。',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

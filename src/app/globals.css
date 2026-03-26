@@ -1,22 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #FFFFFF;
-  --bg-alt: #F5F5F0;
-  --text: #1A1A1A;
-  --text-sub: #555555;
-  --text-muted: #999999;
-  --border: #E0E0E0;
-  --accent: #1A5CFF;
-  --accent-bg: #EEF3FF;
+  --bg: #FAFAF7;
+  --bg-alt: #F0EFE9;
+  --bg-dark: #0C1220;
+  --text: #1A1A18;
+  --text-sub: #4A4A46;
+  --text-muted: #8E8D88;
+  --border: #D8D6D0;
+  --gold: #B8943E;
+  --gold-light: #F7F2E7;
+  --accent: #B8943E;
 
   /* Dashboard */
   --background: #FAFAFA;
   --foreground: #0A0A0A;
   --color-primary: #0A0A0A;
-  --color-accent: #1A5CFF;
+  --color-accent: #B8943E;
   --color-border: #E5E5E5;
-  --sidebar-bg: #0A0A0A;
+  --sidebar-bg: #0C1220;
   --sidebar-text: #A3A3A3;
   --sidebar-active: #FFFFFF;
 }
@@ -35,17 +37,33 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-::selection { background: var(--accent); color: #fff; }
+::selection { background: var(--gold); color: #fff; }
 
-.img-ph {
-  background: var(--bg-alt);
-  position: relative;
-  overflow: hidden;
+/* Gold accent line */
+.gold-line {
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light), transparent);
 }
 
-.divider { height: 1px; background: var(--border); }
+/* Image placeholder */
+.img-ph {
+  background: linear-gradient(145deg, #E8E6DE 0%, #D5D3CB 100%);
+}
+
+/* Luxury card */
+.lux-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 6px 24px rgba(0,0,0,0.03);
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.lux-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 20px 48px rgba(0,0,0,0.06);
+  transform: translateY(-4px);
+}
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
