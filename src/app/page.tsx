@@ -13,11 +13,6 @@ const services = [
   { title: '保守運用', en: 'Maintenance', desc: '月額保守で継続改善。障害対応・月次レポート付き。', href: '/services#maintenance' },
 ]
 
-const projects = [
-  { title: '宿泊施設のサイト刷新で予約数+180%', desc: '老朽化した予約導線を再設計し、UI・コピー・ページ構成を全面改修。公開3ヶ月で直接予約数が2.8倍に増加。', metric: '+180%', metricLabel: '予約数', category: 'Web制作', image: '/images/work-web.png' },
-  { title: '9言語対応AIチャットボットで対応工数-80%', desc: 'インバウンド対応に追われていた現場の負荷を、多言語AIチャットボットで自動化。月間1,200件を人手なしで処理。', metric: '-80%', metricLabel: '対応工数', category: 'AI導入', image: '/images/demo-desktop.png' },
-  { title: '採用漫画の導入で応募数が3倍に', desc: 'テキスト主体だった採用ページに漫画コンテンツを追加。求職者の滞在時間が4.2倍に伸び、エントリー数が3倍に。', metric: '×3', metricLabel: '応募数', category: '漫画制作', image: '/images/work-manga.png' },
-]
 
 const steps = [
   { num: '01', title: '業務分析・課題の特定', desc: '現場の業務フローをヒアリングし、ボトルネックを特定します。「AIを入れたい」ではなく「何を解決すべきか」から設計します。', note: 'オンライン面談60分 / 無料' },
@@ -115,61 +110,6 @@ export default function Home() {
               </ScrollReveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ===== WORK — CyberAgent Research Style ===== */}
-      <section id="work" className="bg-[#0D1F1F] py-24 md:py-32 px-6">
-        <div className="max-w-[1200px] mx-auto">
-          <ScrollReveal>
-            <div className="flex items-end justify-between mb-14">
-              <div>
-                <p className="text-[var(--gold)] text-[13px] font-medium tracking-[0.15em] uppercase mb-4">Selected Work</p>
-                <h2 className="text-white text-[32px] md:text-[42px] font-bold tracking-tight leading-[1.2]">導入実績</h2>
-                <p className="text-white/40 text-[15px] mt-3">業種を問わず、業務課題に対して具体的な成果を出しています。</p>
-              </div>
-              <Link href="/work" className="hidden md:inline-flex items-center text-[14px] text-[var(--gold)] font-medium hover:opacity-80 transition-opacity whitespace-nowrap">
-                View All →
-              </Link>
-            </div>
-          </ScrollReveal>
-
-          {/* 2-col grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {projects.map((p, i) => (
-              <ScrollReveal key={p.title} delay={i * 100} className={i === 2 ? 'md:col-span-2' : ''}>
-                <Link href="/work" className="group block bg-white/[0.04] border border-white/[0.08] rounded-2xl overflow-hidden hover:border-white/15 transition-all duration-500">
-                  {/* Image */}
-                  <div className="relative overflow-hidden" style={{ aspectRatio: i === 2 ? '21/9' : '16/10' }}>
-                    <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                  </div>
-                  {/* Content */}
-                  <div className="p-6 md:p-8">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-[var(--gold)] text-[12px] font-bold tracking-[0.1em] uppercase">{p.category}</span>
-                      <span className="w-px h-3 bg-white/20" />
-                      <span className="text-white/30 text-[12px]">{p.metricLabel}</span>
-                    </div>
-                    <div className="flex items-baseline gap-4 mb-3">
-                      <span className="text-[var(--gold)] text-[40px] md:text-[52px] font-bold leading-none tracking-tight">
-                        {p.metric}
-                      </span>
-                    </div>
-                    <h3 className="text-white text-[17px] md:text-[20px] font-bold leading-[1.4] mb-2">{p.title}</h3>
-                    <p className="text-white/40 text-[14px] leading-[1.8]">{p.desc}</p>
-                  </div>
-                </Link>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <ScrollReveal delay={200}>
-            <div className="text-center mt-10 md:hidden">
-              <Link href="/work" className="inline-flex items-center text-[15px] text-[var(--gold)] font-medium hover:opacity-80 transition-opacity">
-                全ての実績を詳しく見る →
-              </Link>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
 
