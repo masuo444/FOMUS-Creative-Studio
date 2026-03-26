@@ -71,6 +71,48 @@ body {
   table { font-size: 14px; }
 }
 
+/* Large image card — CyberAgent Research style */
+.img-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.img-card img {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.7s ease;
+}
+
+.img-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.img-card .card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+  transition: background 0.5s ease;
+}
+
+.img-card:hover .card-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.15) 50%, transparent 100%);
+}
+
+.img-card .card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .img-card .card-content {
+    padding: 32px;
+  }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: transparent; }
