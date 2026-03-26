@@ -13,7 +13,7 @@ export default function SiteNav() {
           <Link href="/services" className="text-[14px] text-[var(--text-sub)] hover:text-[var(--text)] transition-colors">サービス</Link>
           <Link href="/work" className="text-[14px] text-[var(--text-sub)] hover:text-[var(--text)] transition-colors">実績</Link>
           <Link href="/company" className="text-[14px] text-[var(--text-sub)] hover:text-[var(--text)] transition-colors">会社概要</Link>
-          <Link href="/contact" className="text-[14px] bg-[var(--bg-dark)] text-white px-6 py-2.5 rounded-lg font-medium hover:opacity-90 transition-opacity">
+          <Link href="/contact" className="text-[14px] bg-[var(--gold)] text-[var(--bg-dark)] px-6 py-2.5 rounded-lg font-bold hover:opacity-90 transition-opacity">
             無料で相談する
           </Link>
         </div>

@@ -15,6 +15,7 @@ const cases = [
     result: '公開3ヶ月で直接予約数が2.8倍に増加。OTA手数料の年間削減額は推定200万円以上。Google検索からの流入も1.5倍に。',
     period: '3日間（デザイン・実装・公開）',
     services: ['Web制作', 'UI/UX設計', 'SEO対策', '多言語対応'],
+    serviceLink: '/services#web',
   },
   {
     category: 'AI導入',
@@ -27,6 +28,7 @@ const cases = [
     result: '月間1,200件の問い合わせを人手なしで処理。スタッフの対応工数は80%削減。ゲスト満足度調査で「対応の速さ」が前年比+35ポイント。',
     period: '2週間（構築・テスト・導入）',
     services: ['AI導入', 'LINE Bot', '多言語対応', '業務自動化'],
+    serviceLink: '/services#ai',
   },
   {
     category: '漫画制作',
@@ -39,6 +41,7 @@ const cases = [
     result: '採用ページの滞在時間が4.2倍に増加。漫画のSNSシェアにより認知が拡大し、エントリー数が前年比3倍に。採用単価は60%削減。',
     period: '1週間（ヒアリング・制作・納品）',
     services: ['漫画制作', '採用ブランディング', 'SNSコンテンツ'],
+    serviceLink: '/services#creative',
   },
 ]
 
@@ -100,6 +103,11 @@ export default function WorkPage() {
                         <span key={s} className="text-[12px] text-[var(--gold)] bg-[var(--gold-light)] px-3 py-1 rounded-full">{s}</span>
                       ))}
                     </div>
+                    <div className="pt-2">
+                      <Link href={c.serviceLink} className="inline-flex items-center text-[14px] text-[var(--gold)] font-medium hover:opacity-80 transition-opacity">
+                        {c.category}サービスの詳細を見る →
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -116,12 +124,22 @@ export default function WorkPage() {
             <h2 className="text-[24px] md:text-[28px] font-bold tracking-tight mb-4">
               御社でも同じ成果を出せるか、まずはご相談ください。
             </h2>
-            <p className="text-white/50 text-[15px] leading-[2] mb-10">
+            <p className="text-white/50 text-[15px] leading-[2] mb-8">
               業種や規模に関係なく、業務課題があればお力になれます。
             </p>
-            <Link href="/contact" className="inline-block bg-[var(--gold)] text-[var(--bg-dark)] px-10 py-4 rounded-lg text-[15px] font-bold hover:opacity-90 transition-opacity">
-              無料で相談する
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--gold)] text-[var(--bg-dark)] px-10 py-4 rounded-lg text-[15px] font-bold hover:opacity-90 transition-opacity min-h-[52px]">
+                無料で相談する
+              </Link>
+              <Link href="/services" className="inline-flex items-center justify-center border-2 border-white/20 text-white px-8 py-4 rounded-lg text-[15px] font-medium hover:border-white/40 transition-colors min-h-[52px]">
+                サービス一覧を見る
+              </Link>
+            </div>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6 text-white/40 text-[13px]">
+              <span>相談無料</span>
+              <span>営業電話なし</span>
+              <span>契約の義務なし</span>
+            </div>
           </ScrollReveal>
         </div>
       </section>

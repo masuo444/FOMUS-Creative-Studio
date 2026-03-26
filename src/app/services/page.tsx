@@ -55,7 +55,7 @@ const services = [
     ],
   },
   {
-    id: 'maintenance', title: '保守・運用サポート', subtitle: '導入して終わりではなく、成果が出るまで伴走します。',
+    id: 'maintenance', title: '保守・運用サポート', subtitle: '導入して終わりではなく、成果が出るまで支援します。',
     image: '/images/work-silva.png',
     details: [
       { label: '対応範囲', text: '障害対応、セキュリティ更新、機能追加・改善、月次効果測定レポート、担当者への操作研修' },
@@ -104,12 +104,54 @@ export default function ServicesPage() {
                       </div>
                     ))}
                   </div>
+                  <div className="mt-8">
+                    <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--bg-dark)] text-white px-6 py-3 rounded-lg text-[14px] font-medium hover:opacity-90 transition-opacity min-h-[48px]">
+                      このサービスについて相談する
+                    </Link>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
           </div>
+
+          {/* 3サービスごとにミニCTA挿入 */}
+          {i === 2 && (
+            <div className="bg-[var(--bg-dark)] py-14 md:py-16 px-6">
+              <div className="max-w-[640px] mx-auto text-center">
+                <ScrollReveal>
+                  <p className="text-white text-[18px] md:text-[22px] font-bold tracking-tight mb-3">
+                    どのサービスが最適か分からない方へ
+                  </p>
+                  <p className="text-white/50 text-[14px] md:text-[15px] mb-6">
+                    30分のオンライン面談で、御社に必要な施策をご提案します。
+                  </p>
+                  <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--gold)] text-[var(--bg-dark)] px-8 py-4 rounded-lg text-[15px] font-bold hover:opacity-90 transition-opacity min-h-[52px]">
+                    無料で相談する
+                  </Link>
+                  <p className="text-white/30 text-[13px] mt-3">契約の義務なし / 営業電話なし</p>
+                </ScrollReveal>
+              </div>
+            </div>
+          )}
         </section>
       ))}
+
+      {/* 実績リンク */}
+      <section className="py-14 md:py-16 px-6">
+        <div className="max-w-[640px] mx-auto text-center">
+          <ScrollReveal>
+            <p className="text-[16px] md:text-[18px] font-bold tracking-tight mb-3">
+              実際の導入事例を見る
+            </p>
+            <p className="text-[14px] md:text-[15px] text-[var(--text-sub)] mb-6">
+              各サービスの具体的な成果と事例をご紹介しています。
+            </p>
+            <Link href="/work" className="inline-flex items-center justify-center border-2 border-[var(--border)] text-[var(--text)] px-8 py-3 rounded-lg text-[15px] font-medium hover:border-[var(--gold)] hover:text-[var(--gold)] transition-colors min-h-[48px]">
+              導入実績を見る →
+            </Link>
+          </ScrollReveal>
+        </div>
+      </section>
 
       <section className="bg-[var(--bg-dark)] text-white py-20 md:py-28 px-6">
         <div className="max-w-[640px] mx-auto text-center">
@@ -118,12 +160,17 @@ export default function ServicesPage() {
             <h2 className="text-[24px] md:text-[28px] font-bold tracking-tight mb-4">
               どのサービスが最適か、一緒に考えます。
             </h2>
-            <p className="text-white/50 text-[15px] leading-[2] mb-10">
+            <p className="text-white/50 text-[15px] leading-[2] mb-8">
               30分のオンライン面談で、御社に必要な施策の全体像をお伝えします。
             </p>
-            <Link href="/contact" className="inline-block bg-[var(--gold)] text-[var(--bg-dark)] px-10 py-4 rounded-lg text-[15px] font-bold hover:opacity-90 transition-opacity">
+            <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--gold)] text-[var(--bg-dark)] px-10 py-4 rounded-lg text-[16px] font-bold hover:opacity-90 transition-opacity min-h-[52px]">
               無料で相談する
             </Link>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6 text-white/40 text-[13px]">
+              <span>相談無料</span>
+              <span>営業電話なし</span>
+              <span>契約の義務なし</span>
+            </div>
           </ScrollReveal>
         </div>
       </section>

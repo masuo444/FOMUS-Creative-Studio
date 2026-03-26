@@ -57,54 +57,78 @@ export default function ContactPage() {
           <ScrollReveal>
             <div className="gold-line w-12 mb-6" />
             <h1 className="text-[clamp(28px,4vw,44px)] font-bold tracking-tight mb-4">お問い合わせ</h1>
-            <p className="text-[15px] text-[var(--text-sub)] leading-[2] mb-12">
+            <p className="text-[15px] md:text-[16px] text-[var(--text-sub)] leading-[2] mb-8">
               御社の課題について、30分のオンライン面談でお話を伺います。
               以下のフォームからお気軽にご連絡ください。
             </p>
           </ScrollReveal>
 
+          {/* 安心材料 */}
+          <ScrollReveal delay={40}>
+            <div className="bg-[var(--bg-alt)] rounded-xl p-5 mb-10">
+              <div className="flex flex-col gap-3 text-[14px] text-[var(--text-sub)]">
+                <div className="flex items-start gap-3">
+                  <span className="text-[var(--gold)] font-bold text-[16px] leading-none mt-0.5">&#10003;</span>
+                  <span>ご相談は<strong className="text-[var(--text)]">完全無料</strong>です（30分のオンライン面談）</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-[var(--gold)] font-bold text-[16px] leading-none mt-0.5">&#10003;</span>
+                  <span>営業電話・しつこい後追いは<strong className="text-[var(--text)]">一切しません</strong></span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-[var(--gold)] font-bold text-[16px] leading-none mt-0.5">&#10003;</span>
+                  <span>相談後に<strong className="text-[var(--text)]">契約の義務はありません</strong></span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-[var(--gold)] font-bold text-[16px] leading-none mt-0.5">&#10003;</span>
+                  <span><strong className="text-[var(--text)]">1営業日以内</strong>にご返信します</span>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
           <ScrollReveal delay={60}>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="block text-[14px] font-medium mb-2">お名前 <span className="text-[var(--gold)]">*</span></label>
+                <label className="block text-[14px] md:text-[15px] font-medium mb-2">お名前 <span className="text-[var(--gold)]">*</span></label>
                 <input
                   type="text"
                   required
                   value={form.name}
                   onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-                  className="w-full border border-[var(--border)] rounded-lg px-4 py-3 text-[15px] bg-white focus:outline-none focus:border-[var(--gold)] focus:ring-1 focus:ring-[var(--gold)]/20 transition-colors"
+                  className="w-full border border-[var(--border)] rounded-lg px-4 py-3.5 text-[16px] bg-white focus:outline-none focus:border-[var(--gold)] focus:ring-1 focus:ring-[var(--gold)]/20 transition-colors min-h-[48px]"
                   placeholder="山田 太郎"
                 />
               </div>
               <div>
-                <label className="block text-[14px] font-medium mb-2">メールアドレス <span className="text-[var(--gold)]">*</span></label>
+                <label className="block text-[14px] md:text-[15px] font-medium mb-2">メールアドレス <span className="text-[var(--gold)]">*</span></label>
                 <input
                   type="email"
                   required
                   value={form.email}
                   onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-                  className="w-full border border-[var(--border)] rounded-lg px-4 py-3 text-[15px] bg-white focus:outline-none focus:border-[var(--gold)] focus:ring-1 focus:ring-[var(--gold)]/20 transition-colors"
+                  className="w-full border border-[var(--border)] rounded-lg px-4 py-3.5 text-[16px] bg-white focus:outline-none focus:border-[var(--gold)] focus:ring-1 focus:ring-[var(--gold)]/20 transition-colors min-h-[48px]"
                   placeholder="info@example.com"
                 />
               </div>
               <div>
-                <label className="block text-[14px] font-medium mb-2">会社名</label>
+                <label className="block text-[14px] md:text-[15px] font-medium mb-2">会社名</label>
                 <input
                   type="text"
                   value={form.company}
                   onChange={e => setForm(f => ({ ...f, company: e.target.value }))}
-                  className="w-full border border-[var(--border)] rounded-lg px-4 py-3 text-[15px] bg-white focus:outline-none focus:border-[var(--gold)] focus:ring-1 focus:ring-[var(--gold)]/20 transition-colors"
+                  className="w-full border border-[var(--border)] rounded-lg px-4 py-3.5 text-[16px] bg-white focus:outline-none focus:border-[var(--gold)] focus:ring-1 focus:ring-[var(--gold)]/20 transition-colors min-h-[48px]"
                   placeholder="株式会社○○"
                 />
               </div>
               <div>
-                <label className="block text-[14px] font-medium mb-2">ご相談内容 <span className="text-[var(--gold)]">*</span></label>
+                <label className="block text-[14px] md:text-[15px] font-medium mb-2">ご相談内容 <span className="text-[var(--gold)]">*</span></label>
                 <textarea
                   required
                   value={form.message}
                   onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
                   rows={5}
-                  className="w-full border border-[var(--border)] rounded-lg px-4 py-3 text-[15px] bg-white focus:outline-none focus:border-[var(--gold)] focus:ring-1 focus:ring-[var(--gold)]/20 transition-colors resize-none"
+                  className="w-full border border-[var(--border)] rounded-lg px-4 py-3.5 text-[16px] bg-white focus:outline-none focus:border-[var(--gold)] focus:ring-1 focus:ring-[var(--gold)]/20 transition-colors resize-none"
                   placeholder="例：AIで業務を効率化したい / サイトをリニューアルしたい / 何から始めればいいか分からない"
                 />
               </div>
@@ -118,13 +142,13 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="w-full bg-[var(--bg-dark)] text-white py-4 rounded-lg text-[15px] font-medium hover:opacity-90 transition-opacity disabled:opacity-50"
+                className="w-full bg-[var(--gold)] text-[var(--bg-dark)] py-4 rounded-lg text-[16px] font-bold hover:opacity-90 transition-opacity disabled:opacity-50 min-h-[52px]"
               >
-                {status === 'sending' ? '送信中...' : '送信する'}
+                {status === 'sending' ? '送信中...' : '無料で相談する'}
               </button>
 
               <p className="text-[13px] text-[var(--text-muted)] text-center">
-                営業電話・しつこい後追いは一切行いません。1営業日以内にご返信します。
+                送信後、1営業日以内にご返信します。
               </p>
             </form>
           </ScrollReveal>

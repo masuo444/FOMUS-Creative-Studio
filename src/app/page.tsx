@@ -5,12 +5,12 @@ import MobileMenu from '@/components/ui/MobileMenu'
 import MobileCTABar from '@/components/ui/MobileCTABar'
 
 const services = [
-  { title: 'AI導入支援', desc: '業務自動化・チャットボット・データ分析の設計と実装。' },
-  { title: 'Web制作・リニューアル', desc: 'コーポレートサイト・LP・予約システムの構築。' },
-  { title: 'DXコンサルティング', desc: '業務フロー分析から投資対効果の高い施策を特定。' },
-  { title: '漫画・クリエイティブ制作', desc: '採用漫画・企業PR・ロゴ・動画のデザイン。' },
-  { title: '請求書・決済システム', desc: 'インボイス対応の請求書自動発行・Stripe連携。' },
-  { title: '保守・運用サポート', desc: '月額保守で継続改善。障害対応・月次レポート付き。' },
+  { title: 'AI導入支援', desc: '業務自動化・チャットボット・データ分析の設計と実装。', href: '/services#ai' },
+  { title: 'Web制作・リニューアル', desc: 'コーポレートサイト・LP・予約システムの構築。', href: '/services#web' },
+  { title: 'DXコンサルティング', desc: '業務フロー分析から投資対効果の高い施策を特定。', href: '/services#dx' },
+  { title: '漫画・クリエイティブ制作', desc: '採用漫画・企業PR・ロゴ・動画のデザイン。', href: '/services#creative' },
+  { title: '請求書・決済システム', desc: 'インボイス対応の請求書自動発行・Stripe連携。', href: '/services#invoice' },
+  { title: '保守・運用サポート', desc: '月額保守で継続改善。障害対応・月次レポート付き。', href: '/services#maintenance' },
 ]
 
 const projects = [
@@ -33,6 +33,12 @@ const faqItems = [
   { q: '導入後のサポートはありますか？', a: 'マニュアル整備、担当者研修、3ヶ月の改善対応を標準で含みます。月額保守プランでは月次レポートによる効果測定も実施します。' },
 ]
 
+const trustBadges = [
+  { num: '80%', label: '問い合わせ対応の自動化率' },
+  { num: '180%', label: '予約数の増加実績' },
+  { num: '3倍', label: '採用応募数の増加' },
+]
+
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -49,7 +55,7 @@ export default function Home() {
             <Link href="/work" className="text-[14px] text-[var(--text-sub)] hover:text-[var(--text)] transition-colors">実績</Link>
             <Link href="/company" className="text-[14px] text-[var(--text-sub)] hover:text-[var(--text)] transition-colors">会社概要</Link>
             <a href="#faq" className="text-[14px] text-[var(--text-sub)] hover:text-[var(--text)] transition-colors">FAQ</a>
-            <Link href="/contact" className="text-[14px] bg-[var(--bg-dark)] text-white px-6 py-2.5 rounded-lg font-medium hover:opacity-90 transition-opacity">
+            <Link href="/contact" className="text-[14px] bg-[var(--gold)] text-[var(--bg-dark)] px-6 py-2.5 rounded-lg font-bold hover:opacity-90 transition-opacity">
               無料で相談する
             </Link>
           </div>
@@ -58,31 +64,54 @@ export default function Home() {
       </nav>
 
       {/* ===== HERO ===== */}
-      <section className="pt-36 pb-20 md:pt-48 md:pb-28 px-6">
+      <section className="pt-32 pb-16 md:pt-44 md:pb-24 px-6">
         <div className="max-w-[1100px] mx-auto">
           <ScrollReveal>
-            <p className="text-[var(--gold)] text-[13px] font-medium tracking-wide mb-6">
-              中小企業専門のクリエイティブスタジオ
+            <p className="text-[var(--gold)] text-[14px] md:text-[15px] font-medium tracking-wide mb-5">
+              中小企業専門 / AI・Web・クリエイティブの一括支援
             </p>
-            <h1 className="text-[clamp(32px,5vw,52px)] font-bold leading-[1.35] tracking-tight mb-6">
-              御社の業務課題を分析し、
+            <h1 className="text-[clamp(28px,5.5vw,56px)] font-bold leading-[1.3] tracking-tight mb-5">
+              「売上を上げたい」
+              <br className="hidden md:block" />
+              「人手が足りない」——
               <br />
-              最適な
+              その課題、
               <span className="font-[family-name:var(--font-serif)] italic text-[var(--gold)]"> 仕組み </span>
-              を構築します。
+              で解決します。
             </h1>
-            <p className="text-[16px] text-[var(--text-sub)] leading-[2] max-w-[600px] mb-10">
-              AI導入・Web制作・クリエイティブ制作。ヒアリングから実装・運用定着まで、一貫して対応します。
+            <p className="text-[16px] md:text-[17px] text-[var(--text-sub)] leading-[2] max-w-[620px] mb-8">
+              AI導入・Web制作・漫画制作。ヒアリングから実装・運用定着まで、代表が直接対応します。中間マージンなし。
             </p>
           </ScrollReveal>
           <ScrollReveal delay={100}>
-            <Link href="/contact" className="inline-block bg-[var(--bg-dark)] text-white px-8 py-4 rounded-lg text-[15px] font-medium hover:opacity-90 transition-opacity">
-              無料で相談する（30分・オンライン）
-            </Link>
-            <p className="text-[13px] text-[var(--text-muted)] mt-4">営業電話・しつこい後追いは一切行いません。</p>
+            <div className="flex flex-col sm:flex-row gap-4 mb-4">
+              <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--gold)] text-[var(--bg-dark)] px-8 py-4 rounded-lg text-[16px] font-bold hover:opacity-90 transition-opacity min-h-[52px]">
+                無料で相談する（30分・オンライン）
+              </Link>
+              <Link href="/services" className="inline-flex items-center justify-center border-2 border-[var(--border)] text-[var(--text)] px-8 py-4 rounded-lg text-[15px] font-medium hover:border-[var(--gold)] hover:text-[var(--gold)] transition-colors min-h-[52px]">
+                サービスを見る
+              </Link>
+            </div>
+            <p className="text-[13px] md:text-[14px] text-[var(--text-muted)] mt-3">
+              相談無料 / 営業電話なし / 契約の義務なし
+            </p>
           </ScrollReveal>
         </div>
       </section>
+
+      {/* ===== TRUST NUMBERS ===== */}
+      <ScrollReveal>
+        <div className="mx-6 max-w-[1100px] md:mx-auto mb-8">
+          <div className="grid grid-cols-3 gap-4 md:gap-6">
+            {trustBadges.map((b) => (
+              <div key={b.label} className="text-center py-6 md:py-8 rounded-xl bg-[var(--bg-alt)]">
+                <p className="text-[clamp(24px,4vw,40px)] font-bold text-[var(--gold)] leading-none mb-2">{b.num}</p>
+                <p className="text-[12px] md:text-[13px] text-[var(--text-muted)]">{b.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </ScrollReveal>
 
       {/* ===== HERO IMAGE ===== */}
       <ScrollReveal>
@@ -98,21 +127,49 @@ export default function Home() {
         <div className="max-w-[1100px] mx-auto">
           <ScrollReveal>
             <div className="gold-line w-12 mb-6" />
-            <h2 className="text-[24px] md:text-[30px] font-bold tracking-tight mb-3">対応領域</h2>
-            <p className="text-[15px] text-[var(--text-sub)] mb-14">
+            <h2 className="text-[26px] md:text-[34px] font-bold tracking-tight mb-3">対応領域</h2>
+            <p className="text-[15px] md:text-[16px] text-[var(--text-sub)] mb-14">
               御社の課題に応じて、最適な施策を組み合わせて提案します。
             </p>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((s, i) => (
               <ScrollReveal key={s.title} delay={i * 60}>
-                <div className="lux-card rounded-xl p-7 h-full">
-                  <h3 className="text-[16px] font-bold mb-3">{s.title}</h3>
-                  <p className="text-[14px] text-[var(--text-sub)] leading-[1.9]">{s.desc}</p>
-                </div>
+                <Link href={s.href} className="block h-full">
+                  <div className="lux-card rounded-xl p-7 h-full">
+                    <h3 className="text-[17px] font-bold mb-3">{s.title}</h3>
+                    <p className="text-[14px] text-[var(--text-sub)] leading-[1.9] mb-4">{s.desc}</p>
+                    <span className="text-[13px] text-[var(--gold)] font-medium">詳しく見る →</span>
+                  </div>
+                </Link>
               </ScrollReveal>
             ))}
           </div>
+          <ScrollReveal delay={200}>
+            <div className="text-center mt-12">
+              <Link href="/services" className="inline-flex items-center text-[15px] text-[var(--gold)] font-medium hover:opacity-80 transition-opacity">
+                全サービスの詳細を見る →
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ===== MID-PAGE CTA ===== */}
+      <section className="bg-[var(--bg-alt)] py-14 md:py-16 px-6">
+        <div className="max-w-[800px] mx-auto text-center">
+          <ScrollReveal>
+            <p className="text-[18px] md:text-[22px] font-bold tracking-tight mb-4">
+              「うちの場合、何から始めればいい？」
+            </p>
+            <p className="text-[14px] md:text-[15px] text-[var(--text-sub)] mb-6">
+              30分のオンライン面談で、御社に最適な施策の全体像をお伝えします。
+            </p>
+            <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--gold)] text-[var(--bg-dark)] px-8 py-4 rounded-lg text-[15px] font-bold hover:opacity-90 transition-opacity min-h-[52px]">
+              無料で相談する
+            </Link>
+            <p className="text-[13px] text-[var(--text-muted)] mt-3">契約の義務なし / 1営業日以内にご返信</p>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -121,8 +178,8 @@ export default function Home() {
         <div className="max-w-[1100px] mx-auto">
           <ScrollReveal>
             <div className="h-px w-12 mb-6" style={{ background: 'linear-gradient(90deg, var(--gold), transparent)' }} />
-            <h2 className="text-[24px] md:text-[30px] font-bold tracking-tight mb-3">導入実績</h2>
-            <p className="text-white/50 text-[15px] mb-14">業種を問わず、業務課題に対して具体的な成果を出しています。</p>
+            <h2 className="text-[26px] md:text-[34px] font-bold tracking-tight mb-3">導入実績</h2>
+            <p className="text-white/50 text-[15px] md:text-[16px] mb-14">業種を問わず、業務課題に対して具体的な成果を出しています。</p>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {projects.map((p, i) => (
@@ -145,6 +202,13 @@ export default function Home() {
               </ScrollReveal>
             ))}
           </div>
+          <ScrollReveal delay={200}>
+            <div className="text-center mt-10">
+              <Link href="/work" className="inline-flex items-center text-[15px] text-[var(--gold)] font-medium hover:opacity-80 transition-opacity">
+                全ての実績を詳しく見る →
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -158,14 +222,14 @@ export default function Home() {
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={60}>
-            <p className="text-[15px] text-[var(--text-sub)] leading-[2.1] mb-5">
+            <p className="text-[15px] md:text-[16px] text-[var(--text-sub)] leading-[2.1] mb-5">
               AI活用企業の生産性は未導入企業の最大3倍。問い合わせ対応の80%自動化、レビュー返信の100%即時化、スタッフ採用コストの半減——すでに成果を出している中小企業が増えています。
             </p>
-            <p className="text-[15px] text-[var(--text-sub)] leading-[2.1] mb-5">
-              にもかかわらず、日本の中小企業のAI導入率はわずか5%。理由は明確です。<strong className="text-[var(--text)]">「何から始めればいいか分からない」から。</strong>
+            <p className="text-[15px] md:text-[16px] text-[var(--text-sub)] leading-[2.1] mb-5">
+              にもかかわらず、日本の中小企業のAI導入率はわずか5%。理由は明確です。<strong className="text-[var(--text)] text-[16px] md:text-[17px]">「何から始めればいいか分からない」から。</strong>
             </p>
-            <p className="text-[15px] text-[var(--text-sub)] leading-[2.1]">
-              FOMUSは、その最初の一歩から伴走するパートナーです。御社の業務を分析し、投資対効果の高い施策だけを特定。導入後の運用定着まで、一貫してサポートします。
+            <p className="text-[15px] md:text-[16px] text-[var(--text-sub)] leading-[2.1]">
+              FOMUSは、その最初の一歩から一緒に進めるパートナーです。御社の業務を分析し、投資対効果の高い施策だけを特定。導入後の運用定着まで、一貫してサポートします。
             </p>
           </ScrollReveal>
         </div>
@@ -176,16 +240,16 @@ export default function Home() {
         <div className="max-w-[1100px] mx-auto">
           <ScrollReveal>
             <div className="gold-line w-12 mb-6" />
-            <h2 className="text-[24px] md:text-[30px] font-bold tracking-tight mb-14">導入までの流れ</h2>
+            <h2 className="text-[26px] md:text-[34px] font-bold tracking-tight mb-14">導入までの流れ</h2>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {steps.map((step, i) => (
               <ScrollReveal key={step.num} delay={i * 80}>
                 <div className="lux-card rounded-xl p-7 h-full">
                   <span className="text-[var(--gold)] text-[13px] font-bold">STEP {step.num}</span>
-                  <h3 className="text-[17px] font-bold mt-3 mb-4">{step.title}</h3>
-                  <p className="text-[14px] text-[var(--text-sub)] leading-[1.9] mb-5">{step.desc}</p>
-                  <p className="text-[13px] text-[var(--text-muted)]">{step.note}</p>
+                  <h3 className="text-[18px] font-bold mt-3 mb-4">{step.title}</h3>
+                  <p className="text-[14px] md:text-[15px] text-[var(--text-sub)] leading-[1.9] mb-5">{step.desc}</p>
+                  <p className="text-[13px] text-[var(--gold)] font-medium bg-[var(--gold-light)] inline-block px-3 py-1 rounded-full">{step.note}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -206,13 +270,16 @@ export default function Home() {
               <ScrollReveal delay={60}>
                 <div className="gold-line w-12 mb-6" />
                 <p className="text-[var(--gold)] text-[13px] font-medium mb-3">代表</p>
-                <h2 className="text-[24px] md:text-[30px] font-bold tracking-tight mb-6">増尾 圭亮</h2>
-                <p className="text-[15px] text-[var(--text-sub)] leading-[2.1]">
+                <h2 className="text-[26px] md:text-[34px] font-bold tracking-tight mb-6">増尾 圭亮</h2>
+                <p className="text-[15px] md:text-[16px] text-[var(--text-sub)] leading-[2.1]">
                   合同会社FOMUS代表。AI開発、Web制作、漫画制作までを一人で設計・実装する技術者です。大規模な開発チームではなく、意思決定者が直接手を動かすことで、伝言コスト・管理コストを排除します。
                 </p>
-                <p className="text-[15px] text-[var(--text-sub)] leading-[2.1] mt-4">
+                <p className="text-[15px] md:text-[16px] text-[var(--text-sub)] leading-[2.1] mt-4 mb-6">
                   <strong className="text-[var(--text)]">信条は「不要なものは売らない」。</strong>御社に必要ない施策は、聞かれても断ります。
                 </p>
+                <Link href="/company" className="inline-flex items-center text-[15px] text-[var(--gold)] font-medium hover:opacity-80 transition-opacity">
+                  会社概要を見る →
+                </Link>
               </ScrollReveal>
             </div>
           </div>
@@ -224,7 +291,7 @@ export default function Home() {
         <div className="max-w-[720px] mx-auto">
           <ScrollReveal>
             <div className="gold-line w-12 mb-6" />
-            <h2 className="text-[24px] md:text-[30px] font-bold tracking-tight mb-10">よくあるご質問</h2>
+            <h2 className="text-[26px] md:text-[34px] font-bold tracking-tight mb-10">よくあるご質問</h2>
           </ScrollReveal>
           <ScrollReveal delay={60}>
             <FAQ items={faqItems} />
@@ -237,16 +304,21 @@ export default function Home() {
         <div className="max-w-[640px] mx-auto text-center">
           <ScrollReveal>
             <div className="gold-line w-12 mx-auto mb-8" />
-            <h2 className="text-[24px] md:text-[30px] font-bold tracking-tight mb-4">
+            <h2 className="text-[26px] md:text-[34px] font-bold tracking-tight mb-4">
               まず30分、現状を整理しませんか。
             </h2>
-            <p className="text-white/50 text-[15px] leading-[2] mb-10">
+            <p className="text-white/50 text-[15px] md:text-[16px] leading-[2] mb-8">
               オンラインで御社の業務課題をお聞きし、対応可能な施策と概算をその場でお伝えします。
             </p>
-            <Link href="/contact" className="inline-block bg-[var(--gold)] text-[var(--bg-dark)] px-10 py-4 rounded-lg text-[15px] font-bold hover:opacity-90 transition-opacity">
+            <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--gold)] text-[var(--bg-dark)] px-10 py-4 rounded-lg text-[16px] font-bold hover:opacity-90 transition-opacity min-h-[52px]">
               無料で相談する
             </Link>
-            <p className="text-white/25 text-[13px] mt-4">営業電話・しつこい後追いは一切行いません。</p>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6 text-white/40 text-[13px]">
+              <span>相談無料</span>
+              <span>営業電話なし</span>
+              <span>契約の義務なし</span>
+              <span>1営業日以内に返信</span>
+            </div>
           </ScrollReveal>
         </div>
       </section>
@@ -261,11 +333,11 @@ export default function Home() {
               <p className="text-[13px] text-[var(--text-muted)]">合同会社FOMUS</p>
             </div>
             <div className="flex flex-wrap gap-6 text-[14px] text-[var(--text-sub)]">
-              <Link href="/services" className="hover:text-[var(--text)] transition-colors">サービス</Link>
-              <Link href="/work" className="hover:text-[var(--text)] transition-colors">実績</Link>
-              <Link href="/company" className="hover:text-[var(--text)] transition-colors">会社概要</Link>
-              <Link href="/contact" className="hover:text-[var(--text)] transition-colors">お問い合わせ</Link>
-              <Link href="/privacy" className="hover:text-[var(--text)] transition-colors">プライバシーポリシー</Link>
+              <Link href="/services" className="hover:text-[var(--text)] transition-colors py-1">サービス</Link>
+              <Link href="/work" className="hover:text-[var(--text)] transition-colors py-1">実績</Link>
+              <Link href="/company" className="hover:text-[var(--text)] transition-colors py-1">会社概要</Link>
+              <Link href="/contact" className="hover:text-[var(--text)] transition-colors py-1">お問い合わせ</Link>
+              <Link href="/privacy" className="hover:text-[var(--text)] transition-colors py-1">プライバシーポリシー</Link>
             </div>
           </div>
           <p className="text-[13px] text-[var(--text-muted)]">&copy; 2026 合同会社FOMUS</p>

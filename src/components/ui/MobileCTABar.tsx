@@ -8,7 +8,7 @@ export default function MobileCTABar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setVisible(window.scrollY > 600)
+      setVisible(window.scrollY > 400)
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
@@ -20,12 +20,12 @@ export default function MobileCTABar() {
         visible ? 'translate-y-0' : 'translate-y-full'
       }`}
     >
-      <div className="bg-[var(--text)] px-5 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
+      <div className="bg-[var(--bg-dark)] px-5 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
         <Link
           href="/contact"
-          className="block w-full text-center bg-[var(--gold)] text-[var(--bg-dark)] py-3 rounded-lg text-[14px] font-bold"
+          className="block w-full text-center bg-[var(--gold)] text-[var(--bg-dark)] py-3.5 rounded-lg text-[15px] font-bold min-h-[48px] flex items-center justify-center"
         >
-          無料で相談する
+          無料で相談する（30分・オンライン）
         </Link>
       </div>
     </div>

@@ -63,6 +63,14 @@ body {
   transform: translateY(-4px);
 }
 
+/* Ensure tap targets on mobile */
+@media (max-width: 768px) {
+  a, button { min-height: 44px; }
+
+  /* Improve table readability on mobile */
+  table { font-size: 14px; }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: transparent; }
