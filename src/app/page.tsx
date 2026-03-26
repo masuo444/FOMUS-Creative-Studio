@@ -156,7 +156,7 @@ export default function Home() {
               中小企業のAI導入率は約5%。DX推進を掲げても、社内にIT専任者がいなければ計画は止まります。外注すれば数百万、採用すれば年間600万以上。しかも成果が出る保証はありません。
             </p>
             <p className="text-[15px] text-[var(--text-sub)] leading-[2.1]">
-              FOOMUSは「何をすべきか分からない」という段階から入ります。御社の業務を分析し、投資対効果の高い施策だけを特定します。<strong className="text-[var(--text)]">不要なものは提案しません。</strong>
+              FOMUSは「何をすべきか分からない」という段階から入ります。御社の業務を分析し、投資対効果の高い施策だけを特定します。<strong className="text-[var(--text)]">不要なものは提案しません。</strong>
             </p>
           </ScrollReveal>
         </div>
