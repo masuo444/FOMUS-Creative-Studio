@@ -161,10 +161,30 @@ export default function Home() {
               </ScrollReveal>
             ))}
           </div>
-          <ScrollReveal delay={200}>
-            <div className="text-center mt-14">
-              <p className="text-[17px] text-[#1A1A18] font-bold mb-2">これらの課題、すべて仕組みで解決できます。</p>
-              <p className="text-[15px] text-[#4A4A46]">放置すれば損失は拡大します。対策は早いほど効果が出ます。</p>
+        </div>
+      </section>
+
+      {/* ===== Impact Statement (dark, full-width) ===== */}
+      <section className="bg-[#1A1A1A] py-20 md:py-28 px-6 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#B8943E] opacity-[0.04] blur-[150px]" />
+        </div>
+        <div className="relative z-10 max-w-[900px] mx-auto text-center">
+          <ScrollReveal>
+            <h2 className="text-white text-[clamp(26px,5vw,48px)] font-bold tracking-tight leading-[1.4] mb-6">
+              これらの課題、
+              <br />
+              すべて
+              <span className="font-[family-name:var(--font-serif)] italic text-[var(--gold)]"> 仕組み </span>
+              で解決できます。
+            </h2>
+            <p className="text-white/40 text-[16px] md:text-[18px] leading-[2]">
+              放置すれば損失は拡大します。対策は早いほど効果が出ます。
+            </p>
+            <div className="mt-10">
+              <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--gold)] text-[#1A1A1A] px-10 py-4 rounded-lg text-[16px] font-bold hover:opacity-90 transition-opacity min-h-[52px]">
+                無料で相談する
+              </Link>
             </div>
           </ScrollReveal>
         </div>
