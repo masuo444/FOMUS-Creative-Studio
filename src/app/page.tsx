@@ -14,10 +14,10 @@ const services = [
 ]
 
 const painPoints = [
-  { icon: '01', title: '売上が伸びない', desc: '集客の仕組みがなく、既存の方法に限界を感じている。' },
-  { icon: '02', title: '人手が足りない', desc: '単純作業に時間を取られ、本来の業務に集中できない。' },
-  { icon: '03', title: 'ITが分からない', desc: 'ツールが多すぎて何を選べばいいか判断できない。' },
-  { icon: '04', title: '何から始めればいい', desc: 'やるべきことは分かっているが、進め方が分からない。' },
+  { icon: '01', title: '売上が頭打ちになっている', desc: 'Webからの問い合わせがゼロ。口コミ頼みの集客に限界を感じている。競合はネットから新規客を取っているのに、自社だけ取り残されている。', impact: '年間数百万円の機会損失' },
+  { icon: '02', title: '人がやらなくていい仕事に追われている', desc: '問い合わせ対応、予約管理、請求書作成、レビュー返信。毎日同じ作業の繰り返しで、経営に集中する時間がない。', impact: '1日3時間 = 年間750時間のロス' },
+  { icon: '03', title: '採用しても人が来ない・定着しない', desc: '求人を出しても応募がない。来ても続かない。会社の魅力が求職者に伝わっていない。採用コストだけが膨らむ。', impact: '採用単価50万円 × 離職で二重コスト' },
+  { icon: '04', title: 'AI導入が必要なのは分かるが、何をすればいいか分からない', desc: '周りはChatGPTだDXだと言うが、自社にどう関係するのか見えない。相談できる相手もいない。このままでは確実に取り残される。', impact: 'AI導入企業との生産性格差: 最大3倍' },
 ]
 
 const products = [
@@ -147,21 +147,25 @@ export default function Home() {
               こんな課題を抱えていませんか？
             </h2>
           </ScrollReveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {painPoints.map((p, i) => (
               <ScrollReveal key={p.title} delay={i * 80}>
-                <div className="bg-white rounded-2xl p-8 h-full border border-[#E8E6DE] hover:shadow-lg hover:-translate-y-1 transition-all duration-500">
+                <div className="bg-white rounded-2xl p-8 md:p-10 h-full border border-[#E8E6DE] hover:shadow-lg hover:-translate-y-1 transition-all duration-500">
                   <span className="inline-block text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] bg-[var(--gold-light)] px-3 py-1.5 rounded-full mb-5">{p.icon}</span>
-                  <h3 className="text-[18px] font-bold text-[#1A1A18] mb-3">{p.title}</h3>
-                  <p className="text-[14px] text-[#4A4A46] leading-[1.9]">{p.desc}</p>
+                  <h3 className="text-[20px] md:text-[22px] font-bold text-[#1A1A18] mb-4 leading-[1.4]">{p.title}</h3>
+                  <p className="text-[15px] text-[#4A4A46] leading-[2] mb-5">{p.desc}</p>
+                  <div className="border-t border-[#E8E6DE] pt-4">
+                    <p className="text-[14px] text-[#B8943E] font-bold">{p.impact}</p>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
           </div>
           <ScrollReveal delay={200}>
-            <p className="text-center text-[15px] text-[#4A4A46] mt-12">
-              これらの課題を<strong className="text-[#1A1A18]">3つの商品</strong>で解決します。
-            </p>
+            <div className="text-center mt-14">
+              <p className="text-[17px] text-[#1A1A18] font-bold mb-2">これらの課題、すべて仕組みで解決できます。</p>
+              <p className="text-[15px] text-[#4A4A46]">放置すれば損失は拡大します。対策は早いほど効果が出ます。</p>
+            </div>
           </ScrollReveal>
         </div>
       </section>
