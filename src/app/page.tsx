@@ -13,24 +13,57 @@ const services = [
   { title: '保守運用', en: 'Maintenance', desc: '月額保守で継続改善。障害対応・月次レポート付き。', href: '/services#maintenance' },
 ]
 
+const painPoints = [
+  { icon: '01', title: '売上が伸びない', desc: '集客の仕組みがなく、既存の方法に限界を感じている。' },
+  { icon: '02', title: '人手が足りない', desc: '単純作業に時間を取られ、本来の業務に集中できない。' },
+  { icon: '03', title: 'ITが分からない', desc: 'ツールが多すぎて何を選べばいいか判断できない。' },
+  { icon: '04', title: '何から始めればいい', desc: 'やるべきことは分かっているが、進め方が分からない。' },
+]
+
+const products = [
+  {
+    num: '01',
+    en: 'Business Diagnosis',
+    title: '業務診断',
+    desc: '御社の業務フローを分析し、ボトルネックを特定します。「何を改善すべきか」「どこにコストが漏れているか」を明確にし、投資対効果の高い施策を設計します。',
+    note: 'まずはヒアリングから',
+    image: '/images/demo-desktop.png',
+  },
+  {
+    num: '02',
+    en: 'System Building',
+    title: '仕組みの構築',
+    desc: '診断結果に基づき、必要な仕組みをすべて構築します。AI導入、Webサイト、業務システム、クリエイティブ——御社に最適なものだけを、最短で形にします。',
+    note: 'まずはヒアリングから',
+    image: '/images/hero-laptop.png',
+  },
+  {
+    num: '03',
+    en: 'IT Partner',
+    title: 'ITパートナー契約',
+    desc: '導入して終わりではなく、継続的に改善し続けます。月次レポート、障害対応、機能追加、新しい課題への対応——御社のIT部門として機能します。',
+    note: 'まずはヒアリングから',
+    image: '/images/work-web.png',
+  },
+]
 
 const steps = [
-  { num: '01', title: '業務分析・課題の特定', desc: '現場の業務フローをヒアリングし、ボトルネックを特定します。「AIを入れたい」ではなく「何を解決すべきか」から設計します。', note: 'オンライン面談60分 / 無料' },
-  { num: '02', title: 'プロトタイプの構築', desc: '最短2週間で動作するプロトタイプを提出します。実物を見てから判断できるため、仕様のズレやコストリスクを最小化します。', note: '費用は本契約時に全額充当' },
-  { num: '03', title: '本番導入・運用定着', desc: '納品して終わりではなく、社内に定着するまで支援します。マニュアル整備、担当者研修、3ヶ月の改善対応を含みます。', note: '月次レポートで効果を測定' },
+  { num: '01', title: 'ヒアリング', desc: '御社の業務フローと課題をオンラインで伺います。「何をすればいいか分からない」状態でも問題ありません。課題の整理から始めます。', note: 'オンライン面談 / 無料' },
+  { num: '02', title: 'プロトタイプ', desc: '最短2週間で動作するプロトタイプを提出します。実物を見てから判断できるため、仕様のズレやコストリスクを最小化します。', note: 'ヒアリング後にお見積もり' },
+  { num: '03', title: '導入・運用', desc: '納品して終わりではなく、社内に定着するまで支援します。マニュアル整備、担当者研修、改善対応を含みます。', note: '月次レポートで効果を測定' },
 ]
 
 const faqItems = [
   { q: 'ITやAIの知識がまったくなくても大丈夫ですか？', a: 'はい。むしろそういう方のためのサービスです。「何をすればいいか分からない」という状態から、課題を整理し、最適な仕組みを構築します。' },
-  { q: '相談だけでも構いませんか？', a: 'もちろんです。30分のオンライン面談で、課題の整理と施策の概要をお伝えします。相談後に契約の義務は一切ありません。' },
+  { q: '相談だけでも構いませんか？', a: 'もちろんです。オンライン面談で、課題の整理と施策の概要をお伝えします。相談後に契約の義務は一切ありません。' },
   { q: 'どのような業種に対応していますか？', a: '飲食、宿泊、美容、医療、小売、不動産、士業、自治体など幅広く対応しています。業種よりも「何に困っているか」が大切です。' },
-  { q: '費用感を教えてください。', a: 'Web制作は7万円〜、AI導入は月額5万円〜、漫画制作は1話9.8万円〜が目安です。ヒアリング後に必要な範囲だけお見積もりします。' },
-  { q: '導入後のサポートはありますか？', a: 'マニュアル整備、担当者研修、3ヶ月の改善対応を標準で含みます。月額保守プランでは月次レポートによる効果測定も実施します。' },
+  { q: '費用感を教えてください。', a: 'ヒアリング後に、必要な範囲だけお見積もりします。不要な施策を勧めることはありません。まずはお気軽にご相談ください。' },
+  { q: '導入後のサポートはありますか？', a: 'マニュアル整備、担当者研修、改善対応を標準で含みます。ITパートナー契約では、月次レポートによる効果測定と継続的な改善を実施します。' },
 ]
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#1A1A1A]">
 
       {/* ===== NAV (transparent over hero) ===== */}
       <nav className="fixed w-full z-50 top-0">
@@ -39,11 +72,11 @@ export default function Home() {
             FOMUS Creative Studio
           </Link>
           <div className="hidden md:flex items-center gap-8">
-            <Link href="/services" className="text-white/70 text-[14px] hover:text-white transition-colors">サービス</Link>
-            <Link href="/work" className="text-white/70 text-[14px] hover:text-white transition-colors">実績</Link>
-            <Link href="/company" className="text-white/70 text-[14px] hover:text-white transition-colors">会社概要</Link>
-            <a href="#faq" className="text-white/70 text-[14px] hover:text-white transition-colors">FAQ</a>
-            <Link href="/contact" className="text-[14px] bg-white/15 backdrop-blur-md text-white border border-white/20 px-6 py-2.5 rounded-lg font-medium hover:bg-white/25 transition-all">
+            <Link href="/services" className="text-white/60 text-[14px] hover:text-white transition-colors">サービス</Link>
+            <Link href="/work" className="text-white/60 text-[14px] hover:text-white transition-colors">実績</Link>
+            <Link href="/company" className="text-white/60 text-[14px] hover:text-white transition-colors">会社概要</Link>
+            <a href="#faq" className="text-white/60 text-[14px] hover:text-white transition-colors">FAQ</a>
+            <Link href="/contact" className="text-[14px] bg-[var(--gold)] text-[#1A1A1A] px-6 py-2.5 rounded-lg font-bold hover:opacity-90 transition-opacity">
               無料で相談する
             </Link>
           </div>
@@ -53,17 +86,15 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* ===== HERO ===== */}
-      <section className="relative min-h-[85vh] md:min-h-screen flex items-end bg-[#1A1A1A] overflow-hidden">
+      {/* ===== HERO (dark #1A1A1A) ===== */}
+      <section className="relative min-h-[85vh] md:min-h-screen flex items-end overflow-hidden">
         {/* Abstract visual background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#0D1F1F] via-[#1A1A1A] to-[#1A1A1A]" />
-          {/* Particle-like orbs */}
           <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] rounded-full bg-[#1a4a3a] opacity-20 blur-[120px]" />
           <div className="absolute bottom-[10%] left-[20%] w-[300px] h-[300px] rounded-full bg-[#B8943E] opacity-[0.06] blur-[100px]" />
-          <div className="absolute top-[40%] left-[40%] w-[200px] h-[200px] rounded-full bg-[#2a6a4a] opacity-15 blur-[80px]" />
-          {/* Dot grid */}
-          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+          <div className="absolute top-[40%] left-[40%] w-[200px] h-[200px] rounded-full bg-[#2D6A4F] opacity-15 blur-[80px]" />
+          <div className="absolute inset-0 dot-grid" />
         </div>
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 pt-[72px] pb-20 md:pb-28 w-full">
@@ -75,14 +106,12 @@ export default function Home() {
             </h1>
             <p className="text-white/40 text-[15px] md:text-[16px] leading-[2] max-w-[480px]">
               御社の業務課題を分析し、最適な仕組みを構築します。
-              <br />
-              AI導入・Web制作・クリエイティブ制作。
             </p>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* ===== SERVICES — Glass cards on photo bg ===== */}
+      {/* ===== SERVICES GRID — Glass cards on photo bg ===== */}
       <section className="relative py-16 md:py-20">
         <div className="absolute inset-0">
           <img src="/images/hero-laptop.png" alt="" className="w-full h-full object-cover" />
@@ -109,39 +138,72 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== PHILOSOPHY ===== */}
+      {/* ===== 課題セクション (warm cream #F5F3EE) ===== */}
       <section className="bg-[#F5F3EE] py-24 md:py-32 px-6">
         <div className="max-w-[1200px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
-            <div className="md:col-span-7 order-2 md:order-1">
-              <ScrollReveal>
-                <p className="text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase mb-6">Philosophy</p>
-                <h2 className="font-[family-name:var(--font-serif)] italic text-[clamp(22px,3.5vw,34px)] leading-[1.6] mb-8 text-[#1A1A18]">
-                  AI導入は、もはや選択肢ではなく前提条件です。
-                </h2>
+          <ScrollReveal>
+            <p className="text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">Pain Points</p>
+            <h2 className="text-[28px] md:text-[36px] font-bold tracking-tight mb-14 text-[#1A1A18]">
+              こんな課題を抱えていませんか？
+            </h2>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {painPoints.map((p, i) => (
+              <ScrollReveal key={p.title} delay={i * 80}>
+                <div className="bg-white rounded-2xl p-8 h-full border border-[#E8E6DE] hover:shadow-lg hover:-translate-y-1 transition-all duration-500">
+                  <span className="inline-block text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] bg-[var(--gold-light)] px-3 py-1.5 rounded-full mb-5">{p.icon}</span>
+                  <h3 className="text-[18px] font-bold text-[#1A1A18] mb-3">{p.title}</h3>
+                  <p className="text-[14px] text-[#4A4A46] leading-[1.9]">{p.desc}</p>
+                </div>
               </ScrollReveal>
-              <ScrollReveal delay={60}>
-                <p className="text-[15px] md:text-[16px] text-[#4A4A46] leading-[2.1] mb-5">
-                  AI活用企業の生産性は未導入企業の最大3倍。問い合わせ対応の80%自動化、レビュー返信の100%即時化、スタッフ採用コストの半減——すでに成果を出している中小企業が増えています。
-                </p>
-                <p className="text-[15px] md:text-[16px] text-[#4A4A46] leading-[2.1] mb-5">
-                  にもかかわらず、日本の中小企業のAI導入率はわずか5%。理由は明確です。<strong className="text-[#1A1A18]">「何から始めればいいか分からない」から。</strong>
-                </p>
-                <p className="text-[15px] md:text-[16px] text-[#4A4A46] leading-[2.1]">
-                  FOMUSは、その最初の一歩から伴走するパートナーです。御社の業務を分析し、投資対効果の高い施策だけを特定。導入後の運用定着まで、一貫してサポートします。
-                </p>
+            ))}
+          </div>
+          <ScrollReveal delay={200}>
+            <p className="text-center text-[15px] text-[#4A4A46] mt-12">
+              これらの課題を<strong className="text-[#1A1A18]">3つの商品</strong>で解決します。
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ===== 3つの商品 (dark #1A1A1A) ===== */}
+      <section className="bg-[#1A1A1A] py-24 md:py-32 px-6">
+        <div className="max-w-[1200px] mx-auto">
+          <ScrollReveal>
+            <p className="text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">Products</p>
+            <h2 className="text-white text-[28px] md:text-[36px] font-bold tracking-tight mb-16">3つの商品</h2>
+          </ScrollReveal>
+
+          <div className="space-y-20 md:space-y-28">
+            {products.map((p, i) => (
+              <ScrollReveal key={p.num} delay={i * 80}>
+                <div className="relative">
+                  {/* Dark text card - left side */}
+                  <div className="relative z-10 md:w-[55%] bg-[#2C2C2C] rounded-lg p-10 md:p-14">
+                    <span className="inline-block text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase bg-[var(--gold)]/10 px-3 py-1.5 rounded-full mb-5">{p.en}</span>
+                    <h3 className="text-white text-[28px] md:text-[34px] font-bold tracking-tight leading-[1.3] mb-5">
+                      {p.title}
+                    </h3>
+                    <p className="text-white/60 text-[15px] leading-[2] mb-6 max-w-[440px]">
+                      {p.desc}
+                    </p>
+                    <p className="text-[var(--gold)] text-[14px] font-medium">{p.note}</p>
+                  </div>
+
+                  {/* Photo - right side, offset down */}
+                  <div className="md:absolute md:right-0 md:top-[15%] md:w-[52%] mt-4 md:mt-0">
+                    <div className="rounded-lg overflow-hidden">
+                      <img src={p.image} alt={p.title} className="w-full aspect-[16/11] object-cover" />
+                    </div>
+                  </div>
+                </div>
               </ScrollReveal>
-            </div>
-            <div className="md:col-span-5 order-1 md:order-2">
-              <ScrollReveal delay={100}>
-                <div className="aspect-[3/4] rounded-2xl overflow-hidden img-ph" />
-              </ScrollReveal>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ===== PROCESS — Glass cards on dark bg ===== */}
+      {/* ===== PROCESS — Glass cards on dark teal ===== */}
       <section id="process" className="bg-[#0D1F1F] text-white py-24 md:py-32 px-6">
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
@@ -151,7 +213,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {steps.map((step, i) => (
               <ScrollReveal key={step.num} delay={i * 100}>
-                <div className="relative group bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 h-full hover:bg-white/[0.08] hover:border-white/[0.15] transition-all duration-700 overflow-hidden">
+                <div className="relative group glass-card p-8 h-full overflow-hidden">
                   {/* Subtle glow accent */}
                   <div className="absolute -top-20 -right-20 w-40 h-40 bg-[var(--gold)]/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   <div className="relative z-10">
@@ -167,7 +229,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== FOUNDER ===== */}
+      {/* ===== FOUNDER (warm cream) ===== */}
       <section className="bg-[#F5F3EE] py-24 md:py-32 px-6">
         <div className="max-w-[1100px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
@@ -184,8 +246,8 @@ export default function Home() {
                 <p className="text-[15px] md:text-[16px] text-[#4A4A46] leading-[2.1]">
                   合同会社FOMUS代表。AI開発、Web制作、漫画制作までを一人で設計・実装する技術者です。大規模な開発チームではなく、意思決定者が直接手を動かすことで、伝言コスト・管理コストを排除します。
                 </p>
-                <p className="text-[15px] md:text-[16px] text-[#4A4A46] leading-[2.1] mt-4 mb-6">
-                  <strong className="text-[#1A1A18]">信条は「不要なものは売らない」。</strong>御社に必要ない施策は、聞かれても断ります。
+                <p className="text-[15px] md:text-[16px] text-[#1A1A18] leading-[2.1] mt-4 mb-6 font-bold">
+                  ITのことで困ったら、まず私に相談してください。
                 </p>
                 <Link href="/company" className="inline-flex items-center text-[15px] text-[var(--gold)] font-medium hover:opacity-80 transition-opacity">
                   会社概要を見る →
@@ -196,7 +258,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== FAQ ===== */}
+      {/* ===== FAQ (warm cream) ===== */}
       <section id="faq" className="bg-[#F5F3EE] py-24 md:py-32 px-6">
         <div className="max-w-[720px] mx-auto">
           <ScrollReveal>
@@ -209,18 +271,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== CTA ===== */}
-      <section className="bg-[#0D1F1F] text-white py-24 md:py-32 px-6">
-        <div className="max-w-[640px] mx-auto text-center">
+      {/* ===== CTA (dark #1A1A1A) ===== */}
+      <section className="bg-[#1A1A1A] text-white py-24 md:py-32 px-6 relative overflow-hidden">
+        {/* Orb decoration */}
+        <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-[#2D6A4F] opacity-[0.06] blur-[120px]" />
+
+        <div className="relative z-10 max-w-[640px] mx-auto text-center">
           <ScrollReveal>
             <div className="h-px w-12 mx-auto mb-8" style={{ background: 'linear-gradient(90deg, var(--gold), transparent)' }} />
             <h2 className="text-[26px] md:text-[34px] font-bold tracking-tight mb-4">
-              まず30分、現状を整理しませんか。
+              まずは話を聞かせてください。
             </h2>
             <p className="text-white/50 text-[15px] md:text-[16px] leading-[2] mb-8">
-              オンラインで御社の業務課題をお聞きし、対応可能な施策と概算をその場でお伝えします。
+              オンラインで御社の業務課題をお聞きし、最適な施策をその場でお伝えします。
             </p>
-            <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--gold)] text-[#0D1F1F] px-10 py-4 rounded-lg text-[16px] font-bold hover:opacity-90 transition-opacity min-h-[52px]">
+            <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--gold)] text-[#1A1A1A] px-10 py-4 rounded-lg text-[16px] font-bold hover:opacity-90 transition-opacity min-h-[52px]">
               無料で相談する
             </Link>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6 text-white/40 text-[13px]">
@@ -233,7 +298,7 @@ export default function Home() {
       </section>
 
       {/* ===== FOOTER ===== */}
-      <footer className="bg-[#0D1F1F] border-t border-white/10 py-16 px-6">
+      <footer className="bg-[#1A1A1A] border-t border-white/[0.06] py-16 px-6">
         <div className="max-w-[1100px] mx-auto">
           <div className="h-px w-full mb-10" style={{ background: 'linear-gradient(90deg, var(--gold), transparent)' }} />
           <div className="flex flex-col md:flex-row justify-between gap-8 mb-10">

@@ -1,16 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #FAFAF7;
-  --bg-alt: #F0EFE9;
-  --bg-dark: #0C1220;
+  --bg: #1A1A1A;
+  --bg-alt: #2C2C2C;
+  --bg-dark: #1A1A1A;
+  --bg-cream: #F5F3EE;
+  --bg-teal: #0D1F1F;
   --text: #1A1A18;
   --text-sub: #4A4A46;
   --text-muted: #8E8D88;
   --border: #D8D6D0;
+  --border-dark: rgba(255,255,255,0.08);
   --gold: #B8943E;
   --gold-light: #F7F2E7;
   --accent: #B8943E;
+  --green: #2D6A4F;
 
   /* Dashboard */
   --background: #FAFAFA;
@@ -47,10 +51,10 @@ body {
 
 /* Image placeholder */
 .img-ph {
-  background: linear-gradient(145deg, #E8E6DE 0%, #D5D3CB 100%);
+  background: linear-gradient(145deg, #2C2C2C 0%, #1A1A1A 100%);
 }
 
-/* Luxury card */
+/* Luxury card — light bg */
 .lux-card {
   background: #FFFFFF;
   border: 1px solid var(--border);
@@ -63,12 +67,20 @@ body {
   transform: translateY(-4px);
 }
 
-/* Ensure tap targets on mobile */
-@media (max-width: 768px) {
-  a, button { min-height: 44px; }
+/* Glass morphism card — dark bg */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
 
-  /* Improve table readability on mobile */
-  table { font-size: 14px; }
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
 }
 
 /* Large image card — CyberAgent Research style */
@@ -111,6 +123,18 @@ body {
   .img-card .card-content {
     padding: 32px;
   }
+}
+
+/* Dot grid background utility */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Ensure tap targets on mobile */
+@media (max-width: 768px) {
+  a, button { min-height: 44px; }
+  table { font-size: 14px; }
 }
 
 /* Scrollbar */

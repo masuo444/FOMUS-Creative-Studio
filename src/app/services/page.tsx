@@ -31,26 +31,32 @@ const services = [
   },
   {
     id: 'maintenance', en: 'Maintenance', title: '保守・運用サポート',
-    desc: '導入して終わりではなく、成果が出るまで伴走します。障害対応、セキュリティ更新、機能追加・改善、月次効果測定レポート、担当者への操作研修。',
+    desc: '導入して終わりではなく、成果が出るまで支援し続けます。障害対応、セキュリティ更新、機能追加・改善、月次効果測定レポート、担当者への操作研修。',
     image: '/images/work-silva.png',
   },
 ]
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-[#1E1E1E]">
+    <div className="min-h-screen bg-[#1A1A1A]">
       <SiteNav />
 
       {/* ===== HERO ===== */}
-      <section className="pt-[72px]">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-20 md:py-28">
+      <section className="pt-[72px] relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-[30%] right-[15%] w-[400px] h-[400px] rounded-full bg-[#1a4a3a] opacity-15 blur-[120px]" />
+          <div className="absolute bottom-0 left-[10%] w-[300px] h-[300px] rounded-full bg-[#B8943E] opacity-[0.04] blur-[100px]" />
+          <div className="absolute inset-0 dot-grid" />
+        </div>
+        <div className="relative z-10 max-w-[1200px] mx-auto px-6 md:px-10 py-20 md:py-28">
           <ScrollReveal>
             <p className="text-[var(--gold)] text-[13px] font-medium tracking-[0.15em] uppercase mb-4">Services</p>
             <h1 className="text-white text-[clamp(32px,5vw,52px)] font-bold tracking-tight leading-[1.2] mb-4">
               サービス一覧
             </h1>
             <p className="text-white/40 text-[16px] leading-[2] max-w-[560px]">
-              御社の課題に応じて、最適な施策を組み合わせて提案します。
+              御社の課題に応じて、最適な施策を組み合わせて提案します。<br />
+              ヒアリング後にお見積もりします。
             </p>
           </ScrollReveal>
         </div>
@@ -58,12 +64,11 @@ export default function ServicesPage() {
 
       {/* ===== SERVICE CARDS ===== */}
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 space-y-20 md:space-y-28 pb-20 md:pb-28">
-        {services.map((s, i) => (
+        {services.map((s) => (
           <section key={s.id} id={s.id} className="scroll-mt-[72px]">
             <ScrollReveal>
-              {/* Card container */}
               <div className="relative">
-                {/* Dark text card - left side, vertically centered */}
+                {/* Dark text card - left side */}
                 <div className="relative z-10 md:w-[55%] bg-[#2C2C2C] rounded-lg p-10 md:p-14">
                   <h2 className="text-white text-[28px] md:text-[34px] font-bold tracking-tight leading-[1.3] mb-5">
                     {s.en}
@@ -71,11 +76,12 @@ export default function ServicesPage() {
                   <p className="text-white/60 text-[15px] leading-[2] mb-6 max-w-[440px]">
                     {s.desc}
                   </p>
+                  <p className="text-[var(--gold)] text-[14px] font-medium mb-4">まずはヒアリングから</p>
                   <Link
                     href="/contact"
                     className="inline-flex items-center text-white/40 hover:text-white transition-colors text-[18px]"
                   >
-                    ›
+                    →
                   </Link>
                 </div>
 
@@ -92,7 +98,7 @@ export default function ServicesPage() {
       </div>
 
       {/* ===== CTA ===== */}
-      <section className="bg-[#161616] py-20 md:py-28 px-6">
+      <section className="bg-[#0D1F1F] py-20 md:py-28 px-6">
         <div className="max-w-[640px] mx-auto text-center">
           <ScrollReveal>
             <div className="gold-line w-12 mx-auto mb-8" />
@@ -100,10 +106,10 @@ export default function ServicesPage() {
               どのサービスが最適か、一緒に考えます。
             </h2>
             <p className="text-white/40 text-[15px] leading-[2] mb-8">
-              30分のオンライン面談で、御社に必要な施策の全体像をお伝えします。
+              オンライン面談で、御社に必要な施策の全体像をお伝えします。
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--gold)] text-[#0C1220] px-10 py-4 rounded-lg text-[16px] font-bold hover:opacity-90 transition-opacity min-h-[52px]">
+              <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--gold)] text-[#1A1A1A] px-10 py-4 rounded-lg text-[16px] font-bold hover:opacity-90 transition-opacity min-h-[52px]">
                 無料で相談する
               </Link>
               <Link href="/work" className="inline-flex items-center justify-center border border-white/20 text-white px-8 py-4 rounded-lg text-[15px] font-medium hover:border-white/40 transition-colors min-h-[52px]">
