@@ -40,7 +40,7 @@ export default function RegisterPage() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="w-full max-w-sm px-6">
         <div className="text-center mb-8">
-          <Link href="/" className="text-xl font-bold">FOMUS AI</Link>
+          <Link href="/" className="text-xl font-bold">FOMUS Creative Studio</Link>
           <p className="text-sm text-gray-500 mt-2">無料アカウントを作成</p>
         </div>
 

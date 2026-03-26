@@ -1,19 +1,31 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+import { Cormorant_Garamond, Noto_Sans_JP } from 'next/font/google'
 import './globals.css'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })
+const cormorant = Cormorant_Garamond({
+  variable: '--font-cormorant',
+  subsets: ['latin'],
+  weight: ['300', '400', '600'],
+  style: ['normal', 'italic'],
+})
+const notoSansJP = Noto_Sans_JP({
+  variable: '--font-noto-sans-jp',
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '700'],
+})
 
 export const metadata: Metadata = {
-  title: 'FOMUS AI | 中小企業向けAI業務効率化プラットフォーム',
-  description: 'あなたのビジネスに合わせたAIを構築。多言語対応、レビュー管理、業務自動化。IT導入補助金2026対応。',
+  title: 'FOMUS Creative Studio | つくる、届ける、加速する。',
+  description: 'AI業務自動化、Web制作、漫画制作。中小企業のDXを構想から実装まで。IT導入補助金2026対応。合同会社FOMUS',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} ${notoSansJP.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

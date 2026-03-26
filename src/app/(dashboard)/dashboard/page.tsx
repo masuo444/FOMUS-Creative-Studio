@@ -37,7 +37,7 @@ export default async function DashboardPage() {
     return (
       <div className="max-w-2xl mx-auto py-20 text-center">
         <div className="text-6xl mb-6">🏢</div>
-        <h1 className="text-2xl font-bold mb-2">ようこそ、FOMUS AIへ</h1>
+        <h1 className="text-2xl font-bold mb-2">ようこそ、FOMUS Creative Studioへ</h1>
         <p className="text-gray-500 mb-8">まずは施設を登録して、AIツールの構築を始めましょう。</p>
         <Link
           href="/dashboard/facilities/new"
