@@ -23,24 +23,24 @@ const painPoints = [
 const products = [
   {
     num: '01',
-    en: 'Business Diagnosis',
-    title: '業務診断',
-    desc: '御社の業務フローを分析し、ボトルネックを特定します。「何を改善すべきか」「どこにコストが漏れているか」を明確にし、投資対効果の高い施策を設計します。',
-    note: 'まずはヒアリングから',
+    en: 'Discover',
+    title: '課題を見つける',
+    desc: '御社の業務を深く理解し、ボトルネックを特定します。何を改善すべきか、どこにコストが漏れているか。最適な打ち手を、根拠とともに設計します。',
+    note: 'オンライン面談 60分 / 無料',
     image: '/images/demo-desktop.png',
   },
   {
     num: '02',
-    en: 'System Building',
-    title: '仕組みの構築',
-    desc: '診断結果に基づき、必要な仕組みをすべて構築します。AI導入、Webサイト、業務システム、クリエイティブ——御社に最適なものだけを、最短で形にします。',
-    note: 'まずはヒアリングから',
+    en: 'Create',
+    title: '仕組みをつくる',
+    desc: 'AI、Web、デザイン、漫画——あらゆる手段を使って、御社だけの仕組みを構築します。既製品の導入ではなく、課題に合わせたオーダーメイド。最短2週間で動くプロトタイプを提出します。',
+    note: 'プロトタイプ費用は本契約時に全額充当',
     image: '/images/hero-laptop.png',
   },
   {
     num: '03',
-    en: 'IT Partner',
-    title: 'ITパートナー契約',
+    en: 'Grow',
+    title: '成果を伸ばし続ける',
     desc: '導入して終わりではなく、継続的に改善し続けます。月次レポート、障害対応、機能追加、新しい課題への対応——御社のIT部門として機能します。',
     note: 'まずはヒアリングから',
     image: '/images/work-web.png',
@@ -170,12 +170,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== 3つの商品 (dark #1A1A1A) ===== */}
+      {/* ===== Our Approach (dark #1A1A1A) ===== */}
       <section className="bg-[#1A1A1A] py-24 md:py-32 px-6">
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
-            <p className="text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">Products</p>
-            <h2 className="text-white text-[28px] md:text-[36px] font-bold tracking-tight mb-16">3つの商品</h2>
+            <p className="text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">Our Approach</p>
+            <h2 className="text-white text-[28px] md:text-[36px] font-bold tracking-tight mb-6">Discover. Create. Grow.</h2>
+            <p className="text-white/40 text-[15px] leading-[2] max-w-[560px] mb-16">課題の発見から、仕組みの構築、そして成果の拡大まで。<br />クリエイティブの力で、御社のビジネスを次のステージへ。</p>
           </ScrollReveal>
 
           <div className="space-y-20 md:space-y-28">
