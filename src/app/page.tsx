@@ -54,34 +54,30 @@ export default function Home() {
       </nav>
 
       {/* ===== HERO ===== */}
-      <section className="relative min-h-screen flex items-center">
+      <section className="relative min-h-[85vh] md:min-h-screen flex items-end bg-[#1A1A1A] overflow-hidden">
+        {/* Abstract visual background */}
         <div className="absolute inset-0">
-          <img src="/images/hero.jpg" alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0D1F1F] via-[#1A1A1A] to-[#1A1A1A]" />
+          {/* Particle-like orbs */}
+          <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] rounded-full bg-[#1a4a3a] opacity-20 blur-[120px]" />
+          <div className="absolute bottom-[10%] left-[20%] w-[300px] h-[300px] rounded-full bg-[#B8943E] opacity-[0.06] blur-[100px]" />
+          <div className="absolute top-[40%] left-[40%] w-[200px] h-[200px] rounded-full bg-[#2a6a4a] opacity-15 blur-[80px]" />
+          {/* Dot grid */}
+          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
         </div>
-        <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 pt-[72px] text-white">
+
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 pt-[72px] pb-20 md:pb-28 w-full">
           <ScrollReveal>
-            <p className="text-[var(--gold)] text-[14px] font-medium tracking-wide mb-5">
-              中小企業専門 / AI・Web・クリエイティブの一括支援
-            </p>
-            <h1 className="text-[clamp(32px,5.5vw,60px)] font-bold leading-[1.3] tracking-tight mb-6">
-              御社の課題を分析し、
+            <h1 className="text-white text-[clamp(36px,7vw,80px)] font-bold leading-[1.15] tracking-tight mb-5">
+              CREATIVE SOLUTIONS
               <br />
-              最適な仕組みを構築します。
+              FOR YOUR BUSINESS
             </h1>
-            <p className="text-white/60 text-[16px] md:text-[17px] leading-[2] max-w-[540px] mb-10">
-              ヒアリングから実装・運用定着まで、代表が直接対応。中間マージンなし。
+            <p className="text-white/40 text-[15px] md:text-[16px] leading-[2] max-w-[480px]">
+              御社の業務課題を分析し、最適な仕組みを構築します。
+              <br />
+              AI導入・Web制作・クリエイティブ制作。
             </p>
-          </ScrollReveal>
-          <ScrollReveal delay={150}>
-            <div className="flex flex-col sm:flex-row items-start gap-4">
-              <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--gold)] text-[#0C1220] px-8 py-4 rounded-lg text-[15px] font-bold hover:opacity-90 transition-opacity min-h-[52px]">
-                無料で相談する（30分・オンライン）
-              </Link>
-              <p className="text-white/30 text-[13px] self-center">
-                相談無料 / 営業電話なし / 契約の義務なし
-              </p>
-            </div>
           </ScrollReveal>
         </div>
       </section>
