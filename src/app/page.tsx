@@ -148,36 +148,31 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          {/* 2-col grid: first row 2 cards, second row 1 card full-width */}
+          {/* 2-col grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {projects.map((p, i) => (
               <ScrollReveal key={p.title} delay={i * 100} className={i === 2 ? 'md:col-span-2' : ''}>
-                <div className="img-card group cursor-pointer"
-                     style={{ aspectRatio: i === 2 ? '21/9' : '4/3' }}>
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="card-overlay" />
-                  <div className="card-content">
-                    <span className="inline-block text-[var(--gold)] text-[11px] md:text-[12px] font-bold tracking-[0.1em] uppercase bg-[var(--gold)]/15 backdrop-blur-sm px-3 py-1 rounded-full mb-3">
-                      {p.category}
-                    </span>
-                    <div className="flex items-end gap-4 mb-2">
-                      <span className="text-white text-[48px] md:text-[64px] font-bold leading-none tracking-tight">
+                <Link href="/work" className="group block bg-white/[0.04] border border-white/[0.08] rounded-2xl overflow-hidden hover:border-white/15 transition-all duration-500">
+                  {/* Image */}
+                  <div className="relative overflow-hidden" style={{ aspectRatio: i === 2 ? '21/9' : '16/10' }}>
+                    <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  </div>
+                  {/* Content */}
+                  <div className="p-6 md:p-8">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-[var(--gold)] text-[12px] font-bold tracking-[0.1em] uppercase">{p.category}</span>
+                      <span className="w-px h-3 bg-white/20" />
+                      <span className="text-white/30 text-[12px]">{p.metricLabel}</span>
+                    </div>
+                    <div className="flex items-baseline gap-4 mb-3">
+                      <span className="text-[var(--gold)] text-[40px] md:text-[52px] font-bold leading-none tracking-tight">
                         {p.metric}
                       </span>
-                      <span className="text-white/50 text-[13px] md:text-[14px] pb-2">
-                        {p.metricLabel}
-                      </span>
                     </div>
-                    <h3 className="text-white text-[16px] md:text-[20px] font-bold leading-[1.4] mb-1">{p.title}</h3>
-                    <p className="text-white/40 text-[13px] md:text-[14px] leading-[1.7] max-w-[600px] hidden md:block">
-                      {p.desc}
-                    </p>
+                    <h3 className="text-white text-[17px] md:text-[20px] font-bold leading-[1.4] mb-2">{p.title}</h3>
+                    <p className="text-white/40 text-[14px] leading-[1.8]">{p.desc}</p>
                   </div>
-                </div>
+                </Link>
               </ScrollReveal>
             ))}
           </div>
