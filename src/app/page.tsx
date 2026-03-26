@@ -148,15 +148,18 @@ export default function Home() {
           <ScrollReveal>
             <div className="gold-line w-12 mb-6" />
             <h2 className="font-[family-name:var(--font-serif)] italic text-[clamp(24px,4vw,36px)] leading-[1.6] mb-8 text-[var(--text)]">
-              IT人材不足は、経営リスクそのものです。
+              AI導入は、もはや選択肢ではなく前提条件です。
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={60}>
             <p className="text-[15px] text-[var(--text-sub)] leading-[2.1] mb-5">
-              中小企業のAI導入率は約5%。DX推進を掲げても、社内にIT専任者がいなければ計画は止まります。外注すれば数百万、採用すれば年間600万以上。しかも成果が出る保証はありません。
+              AI活用企業の生産性は未導入企業の最大3倍。問い合わせ対応の80%自動化、レビュー返信の100%即時化、スタッフ採用コストの半減——すでに成果を出している中小企業が増えています。
+            </p>
+            <p className="text-[15px] text-[var(--text-sub)] leading-[2.1] mb-5">
+              にもかかわらず、日本の中小企業のAI導入率はわずか5%。理由は明確です。<strong className="text-[var(--text)]">「何から始めればいいか分からない」から。</strong>
             </p>
             <p className="text-[15px] text-[var(--text-sub)] leading-[2.1]">
-              FOMUSは「何をすべきか分からない」という段階から入ります。御社の業務を分析し、投資対効果の高い施策だけを特定します。<strong className="text-[var(--text)]">不要なものは提案しません。</strong>
+              FOMUSは、その最初の一歩から伴走するパートナーです。御社の業務を分析し、投資対効果の高い施策だけを特定。導入後の運用定着まで、一貫してサポートします。
             </p>
           </ScrollReveal>
         </div>
