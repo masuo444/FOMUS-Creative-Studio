@@ -16,7 +16,7 @@ const services = [
     title: 'Web Production',
     titleJa: 'Web制作・リニューアル',
     desc: '古くなったサイトを最短3日でリニューアル。チャットボット・多言語対応もワンストップで。',
-    tags: ['最短3日', '補助金対応', 'レスポンシブ', 'SEO最適化'],
+    tags: ['最短3日', 'レスポンシブ', 'SEO最適化', 'チャットボット'],
     accent: '#16A34A',
   },
   {
@@ -48,16 +48,16 @@ const services = [
     title: 'AI Consulting',
     titleJa: 'AIコンサルティング',
     desc: '「AIで何ができるか分からない」から伴走。御社の業務を分析し、最適なAI活用プランを設計。',
-    tags: ['無料相談', '業務分析', 'ROI試算', '補助金申請支援'],
+    tags: ['無料相談', '業務分析', 'ROI試算', '導入サポート'],
     accent: '#A855F7',
   },
 ]
 
 const faqItems = [
   { q: 'AIの知識がなくても導入できますか？', a: 'はい。「AIで何ができるか分からない」状態からでも大丈夫です。ヒアリングで御社の業務を把握し、最適なAIツールをこちらで構築・導入します。操作は日本語のダッシュボードから簡単に行えます。' },
-  { q: 'IT導入補助金は本当に使えますか？', a: 'はい。当社はIT導入支援事業者として登録申請予定です。登録完了後、お客様はIT導入補助金を利用して最大75%OFFでサービスを導入できます。申請手続きもサポートします。' },
+  { q: '初期費用はかかりますか？', a: 'サービスによります。Web制作・漫画制作は一括納品のため初期費用のみ。AI業務自動化は初期構築費（ヒアリング〜プロトタイプ）＋月額保守の形です。まずは無料相談でお見積もりします。' },
   { q: '最短でどのくらいで導入できますか？', a: 'ヒアリングから1週間でプロトタイプをお見せします。Web制作は最短3日、AI業務自動化は2〜4週間が目安です。お急ぎの場合はご相談ください。' },
-  { q: '月額費用はどのくらいですか？', a: 'Web制作は一括7万円〜、AI業務自動化は月額5万円〜、漫画制作は1話9.8万円〜です。補助金適用で実質負担は最大75%軽減されます。' },
+  { q: '月額費用はどのくらいですか？', a: 'Web制作は一括7万円〜、AI業務自動化は月額5万円〜、漫画制作は1話9.8万円〜です。御社の規模と要件に合わせて最適なプランをご提案します。' },
   { q: '他社のAIサービスとの違いは？', a: '大手は大企業向けで高額、他社は単機能のみ。FOOMUSはAI・Web・クリエイティブを一社で完結でき、中小企業の予算感に合わせた提案ができる唯一のスタジオです。' },
   { q: '契約期間の縛りはありますか？', a: 'AI月額プランは最低3ヶ月からですが、それ以降はいつでも解約可能です。Web制作・漫画制作は納品ベースのため、月額費用は発生しません。' },
 ]
@@ -94,13 +94,6 @@ export default function Home() {
         <div className="hero-gradient hero-gradient-2" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-8 text-center pt-24 pb-20">
-          <ScrollReveal>
-            <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-xs px-4 py-2 rounded-full mb-10 text-white/60">
-              <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
-              IT導入補助金2026対応 — 最大75%OFF
-            </div>
-          </ScrollReveal>
-
           <ScrollReveal delay={100}>
             <div className="gold-line mx-auto mb-8" />
             <h1 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-8xl font-light tracking-tight leading-[0.95] mb-6">
@@ -148,7 +141,7 @@ export default function Home() {
               {[
                 { value: '50+', label: 'プロジェクト実績' },
                 { value: '1週間', label: '最短プロトタイプ' },
-                { value: '75%', label: '補助金で削減' },
+                { value: '6', label: 'サービスライン' },
                 { value: '9言語', label: 'AI多言語対応' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -260,7 +253,7 @@ export default function Home() {
                 title: 'Launch & Grow',
                 titleJa: '導入・運用',
                 desc: '本番導入後も月額保守で継続改善。\nAIの精度は使うほど向上します。',
-                detail: '補助金申請もサポート',
+                detail: '月額保守で安心運用',
               },
             ].map((item, i) => (
               <ScrollReveal key={item.step} delay={i * 120}>
@@ -318,7 +311,7 @@ export default function Home() {
                 Pricing
               </h2>
               <p className="text-sm text-white/30 tracking-[0.2em] uppercase">
-                IT導入補助金で最大75%OFF
+                明確な料金体系
               </p>
             </div>
           </ScrollReveal>
@@ -332,7 +325,7 @@ export default function Home() {
                 unit: '/月',
                 desc: '1つのAI機能を導入',
                 features: ['ヒアリング（1時間）', 'AI機能 1モジュール', 'LINE or Web対応', '月次レポート', 'メールサポート'],
-                subsidy: '実質 1.25万円〜',
+                note: '小規模事業者に最適',
                 popular: false,
               },
               {
@@ -342,7 +335,7 @@ export default function Home() {
                 unit: '/月',
                 desc: '複数AI機能を統合',
                 features: ['ヒアリング（2時間）', 'AI機能 3モジュールまで', '全チャネル対応', 'ダッシュボード', '優先チャットサポート', '月次改善提案'],
-                subsidy: '実質 3.75万円〜',
+                note: '成長企業に最適',
                 popular: true,
               },
               {
@@ -352,7 +345,7 @@ export default function Home() {
                 unit: '/月',
                 desc: 'フルカスタムAI基盤',
                 features: ['要件定義（無制限）', 'AI機能 無制限', 'API連携開発', '専用ダッシュボード', '専任担当者', 'SLA保証'],
-                subsidy: '実質 7.5万円〜',
+                note: 'フルカスタム対応',
                 popular: false,
               },
             ].map((plan, i) => (
@@ -374,8 +367,8 @@ export default function Home() {
                     <span className="text-sm text-white/30">{plan.unit}</span>
                   </div>
                   <p className="text-xs text-white/40 mb-4">{plan.desc}</p>
-                  <div className="bg-green-500/10 text-green-400 text-xs px-3 py-2 rounded-lg mb-5 text-center">
-                    補助金適用で {plan.subsidy}
+                  <div className="bg-white/5 text-white/40 text-xs px-3 py-2 rounded-lg mb-5 text-center">
+                    {plan.note}
                   </div>
                   <ul className="space-y-2.5">
                     {plan.features.map((f) => (
@@ -393,7 +386,7 @@ export default function Home() {
           <ScrollReveal delay={200}>
             <div className="text-center mt-12">
               <p className="text-xs text-white/30">
-                Web制作: 一括7万円〜 / 漫画制作: 1話9.8万円〜 / 自治体サイト: 20万円〜（すべて補助金適用可）
+                Web制作: 一括7万円〜 / 漫画制作: 1話9.8万円〜 / 自治体サイト: 20万円〜
               </p>
             </div>
           </ScrollReveal>
@@ -463,7 +456,6 @@ export default function Home() {
           <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/20">
             <p>&copy; 2026 合同会社FOMUS. All rights reserved.</p>
             <div className="flex gap-6">
-              <span>IT導入支援事業者（申請予定）</span>
               <span>伝統工芸 × テクノロジー × コミュニティ</span>
             </div>
           </div>

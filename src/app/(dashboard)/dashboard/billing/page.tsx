@@ -21,7 +21,7 @@ export default async function BillingPage() {
   return (
     <div>
       <h1 className="text-2xl font-bold mb-2">プラン・請求</h1>
-      <p className="text-sm text-gray-500 mb-8">IT導入補助金2026対応 — お客様の実質負担を最大75%軽減</p>
+      <p className="text-sm text-gray-500 mb-8">御社に合ったプランをお選びください</p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         {plans.map(plan => {
@@ -41,8 +41,8 @@ export default async function BillingPage() {
                 <span className="text-3xl font-bold">&yen;{info.price.toLocaleString()}</span>
                 <span className="text-sm text-gray-500">/月</span>
               </div>
-              <div className="bg-green-50 text-green-700 text-xs px-3 py-1.5 rounded-lg mb-4 text-center">
-                補助金適用で実質 &yen;{Math.round(info.price * 0.25).toLocaleString()}/月
+              <div className="bg-gray-50 text-gray-500 text-xs px-3 py-1.5 rounded-lg mb-4 text-center">
+                月額 &yen;{info.price.toLocaleString()}
               </div>
               <ul className="space-y-2.5 mb-6">
                 {plan.features.map(f => (

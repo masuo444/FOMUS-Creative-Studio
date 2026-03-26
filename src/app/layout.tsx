@@ -19,7 +19,7 @@ const notoSansJP = Noto_Sans_JP({
 
 export const metadata: Metadata = {
   title: 'FOMUS Creative Studio | つくる、届ける、加速する。',
-  description: 'AI業務自動化、Web制作、漫画制作。中小企業のDXを構想から実装まで。IT導入補助金2026対応。合同会社FOMUS',
+  description: 'AI業務自動化、Web制作、漫画制作。中小企業のDXを構想から実装まで。合同会社FOMUS',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
