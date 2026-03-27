@@ -83,10 +83,13 @@ export default function Home() {
             {/* Left: text */}
             <div>
               <ScrollReveal>
-                <h1 className="text-[#1F2937] text-[clamp(32px,6vw,64px)] font-bold leading-[1.2] tracking-tight mb-6">
-                  AI活用を、
-                  <br /><span className="text-[#059669]">成果</span>に変える実装力で、
-                  <br />企業の競争力を高める。
+                <h1 className="text-[#1F2937] font-bold tracking-tight mb-6">
+                  <span className="text-[clamp(24px,4vw,36px)] leading-[2]">AI活用を</span>
+                  <br />
+                  <span className="text-[clamp(48px,8vw,80px)] text-[#059669] leading-[1.1]">成果</span>
+                  <span className="text-[clamp(28px,4.5vw,42px)] leading-[1.3]">に変える実装力で、</span>
+                  <br />
+                  <span className="text-[clamp(28px,4.5vw,42px)] leading-[1.3]">企業の競争力を高める。</span>
                 </h1>
                 <p className="text-[#6B7280] text-[15px] md:text-[17px] leading-[2] max-w-[520px] mb-10">
                   業務課題の分析から、AI・Web・クリエイティブの仕組み構築、運用定着まで。御社のビジネスを次のステージへ。
@@ -150,8 +153,10 @@ export default function Home() {
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <p className="text-[#059669] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">Challenges</p>
-            <h2 className="text-[28px] md:text-[36px] font-bold tracking-tight mb-14 text-[#1F2937]">
-              こんな課題を抱えていませんか？
+            <h2 className="font-bold tracking-tight mb-14 text-[#1F2937]">
+              <span className="text-[24px] md:text-[28px]">こんな</span>
+              <span className="text-[36px] md:text-[48px] text-[#059669]">課題</span>
+              <span className="text-[24px] md:text-[28px]">を抱えていませんか？</span>
             </h2>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -187,9 +192,11 @@ export default function Home() {
         </div>
         <div className="relative z-10 max-w-[900px] mx-auto text-center">
           <ScrollReveal>
-            <h2 className="text-[#1F2937] text-[clamp(26px,5vw,48px)] font-bold tracking-tight leading-[1.4] mb-6">
-              これらの課題、
-              <br />すべて<span className="text-[#059669]"> 仕組み </span>で解決できます。
+            <h2 className="text-[#1F2937] font-bold tracking-tight leading-[1.4] mb-6">
+              <span className="text-[clamp(22px,3.5vw,32px)]">これらの課題、すべて</span>
+              <br />
+              <span className="text-[clamp(40px,7vw,72px)] text-[#059669]">仕組み</span>
+              <span className="text-[clamp(22px,3.5vw,32px)]">で解決できます。</span>
             </h2>
             <p className="text-[#6B7280] text-[16px] md:text-[18px] leading-[2]">
               放置すれば損失は拡大します。対策は早いほど効果が出ます。
@@ -208,8 +215,9 @@ export default function Home() {
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <p className="text-[#059669] text-[12px] font-bold tracking-[0.15em] uppercase mb-4 text-center">Results</p>
-            <h2 className="text-[28px] md:text-[36px] font-bold tracking-tight mb-3 text-[#1F2937] text-center">
-              導入で、業務はこう変わります
+            <h2 className="font-bold tracking-tight mb-3 text-[#1F2937] text-center">
+              <span className="text-[24px] md:text-[28px]">導入で、業務は</span>
+              <span className="text-[36px] md:text-[48px] text-[#059669]">こう変わります</span>
             </h2>
             <p className="text-[#6B7280] text-[15px] leading-[2] max-w-[560px] mx-auto mb-16 text-center">
               FOMUSのサービスを導入した企業の業務改善効果
@@ -362,7 +370,10 @@ export default function Home() {
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <p className="text-[#059669] text-[12px] font-bold tracking-[0.15em] uppercase mb-4 text-center">Why FOMUS</p>
-            <h2 className="text-[28px] md:text-[36px] font-bold tracking-tight mb-14 text-[#1F2937] text-center">選ばれる3つの理由</h2>
+            <h2 className="font-bold tracking-tight mb-14 text-[#1F2937] text-center">
+              <span className="text-[36px] md:text-[48px] text-[#059669]">選ばれる</span>
+              <span className="text-[24px] md:text-[28px]">3つの理由</span>
+            </h2>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -478,8 +489,10 @@ export default function Home() {
         </div>
         <div className="relative z-10 max-w-[640px] mx-auto text-center">
           <ScrollReveal>
-            <h2 className="text-[26px] md:text-[34px] font-bold tracking-tight mb-4">
-              まずは話を聞かせてください。
+            <h2 className="font-bold tracking-tight mb-4">
+              <span className="text-[24px] md:text-[28px]">まずは</span>
+              <span className="text-[36px] md:text-[48px] text-[#10B981]">話を聞かせて</span>
+              <span className="text-[24px] md:text-[28px]">ください。</span>
             </h2>
             <p className="text-white/60 text-[15px] md:text-[16px] leading-[2] mb-8">
               オンラインで御社の業務課題をお聞きし、最適な施策をその場でお伝えします。
