@@ -21,35 +21,14 @@ const painPoints = [
 ]
 
 const products = [
-  {
-    num: '01',
-    en: 'Discover',
-    title: '課題を見つける',
-    desc: '御社の業務を深く理解し、ボトルネックを特定します。何を改善すべきか、どこにコストが漏れているか。最適な打ち手を、根拠とともに設計します。',
-    note: 'オンライン面談 60分 / 無料',
-    image: '/images/demo-desktop.png',
-  },
-  {
-    num: '02',
-    en: 'Create',
-    title: '仕組みをつくる',
-    desc: 'AI、Web、デザイン、漫画——あらゆる手段を使って、御社だけの仕組みを構築します。既製品の導入ではなく、課題に合わせたオーダーメイド。最短2週間で動くプロトタイプを提出します。',
-    note: 'プロトタイプ費用は本契約時に全額充当',
-    image: '/images/hero-laptop.png',
-  },
-  {
-    num: '03',
-    en: 'Grow',
-    title: '成果を伸ばし続ける',
-    desc: '導入して終わりではなく、継続的に改善し続けます。月次レポート、障害対応、機能追加、新しい課題への対応——御社のIT部門として機能します。',
-    note: 'まずはヒアリングから',
-    image: '/images/work-web.png',
-  },
+  { num: '01', en: 'Discover', title: '課題を見つける', desc: '御社の業務を深く理解し、ボトルネックを特定します。何を改善すべきか、どこにコストが漏れているか。最適な打ち手を、根拠とともに設計します。', note: 'オンライン面談 60分 / 無料', image: '/images/demo-desktop.png' },
+  { num: '02', en: 'Create', title: '仕組みをつくる', desc: 'AI、Web、デザイン、漫画——あらゆる手段を使って、御社だけの仕組みを構築します。既製品の導入ではなく、課題に合わせたオーダーメイド。最短2週間で動くプロトタイプを提出します。', note: 'プロトタイプ費用は本契約時に全額充当', image: '/images/hero-laptop.png' },
+  { num: '03', en: 'Grow', title: '成果を伸ばし続ける', desc: '導入して終わりではなく、継続的に改善し続けます。月次レポート、障害対応、機能追加、新しい課題への対応——御社のIT部門として機能します。', note: 'まずはヒアリングから', image: '/images/work-web.png' },
 ]
 
 const steps = [
-  { num: '01', title: 'ヒアリング', desc: '御社の業務フローと課題をオンラインで伺います。「何をすればいいか分からない」状態でも問題ありません。課題の整理から始めます。', note: 'オンライン面談 / 無料' },
-  { num: '02', title: 'プロトタイプ', desc: '最短2週間で動作するプロトタイプを提出します。実物を見てから判断できるため、仕様のズレやコストリスクを最小化します。', note: 'ヒアリング後にお見積もり' },
+  { num: '01', title: 'ヒアリング', desc: '御社の業務フローと課題をオンラインで伺います。「何をすればいいか分からない」状態でも問題ありません。', note: 'オンライン面談 / 無料' },
+  { num: '02', title: 'プロトタイプ', desc: '最短2週間で動作するプロトタイプを提出します。実物を見てから判断できるため、コストリスクを最小化します。', note: 'ヒアリング後にお見積もり' },
   { num: '03', title: '導入・運用', desc: '納品して終わりではなく、社内に定着するまで支援します。マニュアル整備、担当者研修、改善対応を含みます。', note: '月次レポートで効果を測定' },
 ]
 
@@ -63,9 +42,9 @@ const faqItems = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#1A1A1A]">
+    <div className="min-h-screen">
 
-      {/* ===== NAV (transparent over hero) ===== */}
+      {/* ===== NAV ===== */}
       <nav className="fixed w-full z-50 top-0">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 flex items-center justify-between h-[72px]">
           <Link href="/" className="text-white text-[15px] font-bold tracking-tight">
@@ -80,29 +59,23 @@ export default function Home() {
               無料で相談する
             </Link>
           </div>
-          <div className="md:hidden">
-            <MobileMenu />
-          </div>
+          <div className="md:hidden"><MobileMenu /></div>
         </div>
       </nav>
 
-      {/* ===== HERO (dark #1A1A1A) ===== */}
-      <section className="relative min-h-[85vh] md:min-h-screen flex items-end overflow-hidden">
-        {/* Abstract visual background */}
+      {/* ===== HERO (dark) ===== */}
+      <section className="relative min-h-[85vh] md:min-h-screen flex items-end bg-[#1A1A1A] overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#0D1F1F] via-[#1A1A1A] to-[#1A1A1A]" />
           <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] rounded-full bg-[#1a4a3a] opacity-20 blur-[120px]" />
           <div className="absolute bottom-[10%] left-[20%] w-[300px] h-[300px] rounded-full bg-[#B8943E] opacity-[0.06] blur-[100px]" />
-          <div className="absolute top-[40%] left-[40%] w-[200px] h-[200px] rounded-full bg-[#2D6A4F] opacity-15 blur-[80px]" />
           <div className="absolute inset-0 dot-grid" />
         </div>
-
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 pt-[72px] pb-20 md:pb-28 w-full">
           <ScrollReveal>
             <h1 className="text-white text-[clamp(36px,7vw,80px)] font-bold leading-[1.15] tracking-tight mb-5">
               CREATIVE SOLUTIONS
-              <br />
-              FOR YOUR BUSINESS
+              <br />FOR YOUR BUSINESS
             </h1>
             <p className="text-white/40 text-[15px] md:text-[16px] leading-[2] max-w-[480px]">
               御社の業務課題を分析し、最適な仕組みを構築します。
@@ -111,7 +84,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== SERVICES GRID — Glass cards on photo bg ===== */}
+      {/* ===== SERVICES GRID (dark, glass cards on photo) ===== */}
       <section className="relative py-16 md:py-20">
         <div className="absolute inset-0">
           <img src="/images/hero-laptop.png" alt="" className="w-full h-full object-cover" />
@@ -121,10 +94,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             {services.map((s, i) => (
               <ScrollReveal key={s.title} delay={i * 60}>
-                <Link
-                  href={s.href}
-                  className="group relative bg-white/10 backdrop-blur-xl border border-white/15 rounded-xl p-5 md:p-7 hover:bg-white/20 hover:border-white/30 transition-all duration-500 overflow-hidden block"
-                >
+                <Link href={s.href} className="group relative bg-white/10 backdrop-blur-xl border border-white/15 rounded-xl p-5 md:p-7 hover:bg-white/20 hover:border-white/30 transition-all duration-500 overflow-hidden block">
                   <p className="text-white/40 text-[11px] md:text-[12px] tracking-wide mb-1">{s.en}</p>
                   <p className="text-white text-[17px] md:text-[20px] font-bold">{s.title}</p>
                   <div className="max-h-0 group-hover:max-h-24 overflow-hidden transition-all duration-500 ease-out">
@@ -138,11 +108,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== 課題セクション (warm cream #F5F3EE) ===== */}
-      <section className="bg-[#F5F3EE] py-24 md:py-32 px-6">
+      {/* ===== ここから明るい ===== */}
+
+      {/* ===== 課題セクション (white) ===== */}
+      <section className="bg-white py-24 md:py-32 px-6">
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
-            <p className="text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">Pain Points</p>
+            <p className="text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">Challenges</p>
             <h2 className="text-[28px] md:text-[36px] font-bold tracking-tight mb-14 text-[#1A1A18]">
               こんな課題を抱えていませんか？
             </h2>
@@ -150,7 +122,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {painPoints.map((p, i) => (
               <ScrollReveal key={p.title} delay={i * 80}>
-                <div className="bg-white rounded-2xl p-8 md:p-10 h-full border border-[#E8E6DE] hover:shadow-lg hover:-translate-y-1 transition-all duration-500">
+                <div className="bg-[#F8F7F4] rounded-2xl p-8 md:p-10 h-full border border-[#E8E6DE] hover:shadow-lg hover:-translate-y-1 transition-all duration-500">
                   <span className="inline-block text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] bg-[var(--gold-light)] px-3 py-1.5 rounded-full mb-5">{p.icon}</span>
                   <h3 className="text-[20px] md:text-[22px] font-bold text-[#1A1A18] mb-4 leading-[1.4]">{p.title}</h3>
                   <p className="text-[15px] text-[#4A4A46] leading-[2] mb-5">{p.desc}</p>
@@ -164,7 +136,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== Impact Statement (dark, full-width) ===== */}
+      {/* ===== Impact Statement (dark accent — only dark section in middle) ===== */}
       <section className="bg-[#1A1A1A] py-20 md:py-28 px-6 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#B8943E] opacity-[0.04] blur-[150px]" />
@@ -173,8 +145,7 @@ export default function Home() {
           <ScrollReveal>
             <h2 className="text-white text-[clamp(26px,5vw,48px)] font-bold tracking-tight leading-[1.4] mb-6">
               これらの課題、
-              <br />
-              すべて
+              <br />すべて
               <span className="font-[family-name:var(--font-serif)] italic text-[var(--gold)]"> 仕組み </span>
               で解決できます。
             </h2>
@@ -190,37 +161,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== Our Approach (dark #1A1A1A) ===== */}
-      <section className="bg-[#1A1A1A] py-24 md:py-32 px-6">
+      {/* ===== Our Approach (light) ===== */}
+      <section className="bg-white py-24 md:py-32 px-6">
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <p className="text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">Our Approach</p>
-            <h2 className="text-white text-[28px] md:text-[36px] font-bold tracking-tight mb-6">Discover. Create. Grow.</h2>
-            <p className="text-white/40 text-[15px] leading-[2] max-w-[560px] mb-16">課題の発見から、仕組みの構築、そして成果の拡大まで。<br />クリエイティブの力で、御社のビジネスを次のステージへ。</p>
+            <h2 className="text-[28px] md:text-[36px] font-bold tracking-tight mb-3 text-[#1A1A18]">Discover. Create. Grow.</h2>
+            <p className="text-[#4A4A46] text-[15px] leading-[2] max-w-[560px] mb-16">課題の発見から、仕組みの構築、そして成果の拡大まで。<br />クリエイティブの力で、御社のビジネスを次のステージへ。</p>
           </ScrollReveal>
 
-          <div className="space-y-20 md:space-y-28">
+          <div className="space-y-16 md:space-y-24">
             {products.map((p, i) => (
               <ScrollReveal key={p.num} delay={i * 80}>
-                <div className="relative">
-                  {/* Dark text card - left side */}
-                  <div className="relative z-10 md:w-[55%] bg-[#2C2C2C] rounded-lg p-10 md:p-14">
-                    <span className="inline-block text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase bg-[var(--gold)]/10 px-3 py-1.5 rounded-full mb-5">{p.en}</span>
-                    <h3 className="text-white text-[28px] md:text-[34px] font-bold tracking-tight leading-[1.3] mb-5">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+                  <div className={`md:col-span-5 ${i % 2 === 1 ? 'md:order-2 md:col-start-8' : ''}`}>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img src={p.image} alt={p.title} className="w-full aspect-[16/11] object-cover" />
+                    </div>
+                  </div>
+                  <div className={`md:col-span-6 ${i % 2 === 1 ? 'md:order-1 md:col-start-1' : 'md:col-start-7'}`}>
+                    <span className="inline-block text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase bg-[var(--gold-light)] px-3 py-1.5 rounded-full mb-5">{p.en}</span>
+                    <h3 className="text-[24px] md:text-[30px] font-bold tracking-tight leading-[1.3] mb-5 text-[#1A1A18]">
                       {p.title}
                     </h3>
-                    <p className="text-white/60 text-[15px] leading-[2] mb-6 max-w-[440px]">
+                    <p className="text-[#4A4A46] text-[15px] leading-[2] mb-6 max-w-[440px]">
                       {p.desc}
                     </p>
                     <p className="text-[var(--gold)] text-[14px] font-medium">{p.note}</p>
                   </div>
-
-                  {/* Photo - right side, offset down */}
-                  <div className="md:absolute md:right-0 md:top-[15%] md:w-[52%] mt-4 md:mt-0">
-                    <div className="rounded-lg overflow-hidden">
-                      <img src={p.image} alt={p.title} className="w-full aspect-[16/11] object-cover" />
-                    </div>
-                  </div>
                 </div>
               </ScrollReveal>
             ))}
@@ -228,25 +196,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== PROCESS — Glass cards on dark teal ===== */}
-      <section id="process" className="bg-[#0D1F1F] text-white py-24 md:py-32 px-6">
+      {/* ===== PROCESS (light cream) ===== */}
+      <section id="process" className="bg-[#F5F3EE] py-24 md:py-32 px-6">
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <p className="text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">Process</p>
-            <h2 className="text-[28px] md:text-[36px] font-bold tracking-tight mb-14">導入までの流れ</h2>
+            <h2 className="text-[28px] md:text-[36px] font-bold tracking-tight mb-14 text-[#1A1A18]">導入までの流れ</h2>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {steps.map((step, i) => (
               <ScrollReveal key={step.num} delay={i * 100}>
-                <div className="relative group glass-card p-8 h-full overflow-hidden">
-                  {/* Subtle glow accent */}
-                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-[var(--gold)]/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                  <div className="relative z-10">
-                    <span className="inline-block text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase bg-[var(--gold)]/10 px-3 py-1.5 rounded-full mb-5">Step {step.num}</span>
-                    <h3 className="text-[20px] font-bold mt-1 mb-4 leading-[1.4]">{step.title}</h3>
-                    <p className="text-white/50 text-[14px] md:text-[15px] leading-[1.9] mb-6">{step.desc}</p>
-                    <p className="text-[13px] text-[var(--gold)] font-medium">{step.note}</p>
-                  </div>
+                <div className="bg-white rounded-2xl p-8 h-full border border-[#E8E6DE] hover:shadow-lg hover:-translate-y-1 transition-all duration-500">
+                  <span className="inline-block text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] bg-[var(--gold-light)] px-3 py-1.5 rounded-full mb-5">Step {step.num}</span>
+                  <h3 className="text-[20px] font-bold mt-1 mb-4 leading-[1.4] text-[#1A1A18]">{step.title}</h3>
+                  <p className="text-[#4A4A46] text-[14px] md:text-[15px] leading-[1.9] mb-6">{step.desc}</p>
+                  <p className="text-[13px] text-[var(--gold)] font-medium">{step.note}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -254,8 +218,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== FOUNDER (warm cream) ===== */}
-      <section className="bg-[#F5F3EE] py-24 md:py-32 px-6">
+      {/* ===== FOUNDER (white) ===== */}
+      <section className="bg-white py-24 md:py-32 px-6">
         <div className="max-w-[1100px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
             <div className="md:col-span-4">
@@ -265,8 +229,7 @@ export default function Home() {
             </div>
             <div className="md:col-span-7 md:col-start-6">
               <ScrollReveal delay={60}>
-                <p className="text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">Founder</p>
-                <p className="text-[var(--gold)] text-[13px] font-medium mb-3">代表</p>
+                <p className="text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase mb-6">Founder</p>
                 <h2 className="text-[26px] md:text-[34px] font-bold tracking-tight mb-6 text-[#1A1A18]">増尾 圭亮</h2>
                 <p className="text-[15px] md:text-[16px] text-[#4A4A46] leading-[2.1]">
                   合同会社FOMUS代表。AI開発、Web制作、漫画制作までを一人で設計・実装する技術者です。大規模な開発チームではなく、意思決定者が直接手を動かすことで、伝言コスト・管理コストを排除します。
@@ -283,7 +246,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== FAQ (warm cream) ===== */}
+      {/* ===== FAQ (cream) ===== */}
       <section id="faq" className="bg-[#F5F3EE] py-24 md:py-32 px-6">
         <div className="max-w-[720px] mx-auto">
           <ScrollReveal>
@@ -296,12 +259,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== CTA (dark #1A1A1A) ===== */}
-      <section className="bg-[#1A1A1A] text-white py-24 md:py-32 px-6 relative overflow-hidden">
-        {/* Orb decoration */}
-        <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-[#2D6A4F] opacity-[0.06] blur-[120px]" />
-
-        <div className="relative z-10 max-w-[640px] mx-auto text-center">
+      {/* ===== CTA (dark — closing impact) ===== */}
+      <section className="bg-[#1A1A1A] text-white py-24 md:py-32 px-6">
+        <div className="max-w-[640px] mx-auto text-center">
           <ScrollReveal>
             <div className="h-px w-12 mx-auto mb-8" style={{ background: 'linear-gradient(90deg, var(--gold), transparent)' }} />
             <h2 className="text-[26px] md:text-[34px] font-bold tracking-tight mb-4">
@@ -322,10 +282,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== FOOTER ===== */}
+      {/* ===== FOOTER (dark) ===== */}
       <footer className="bg-[#1A1A1A] border-t border-white/[0.06] py-16 px-6">
         <div className="max-w-[1100px] mx-auto">
-          <div className="h-px w-full mb-10" style={{ background: 'linear-gradient(90deg, var(--gold), transparent)' }} />
           <div className="flex flex-col md:flex-row justify-between gap-8 mb-10">
             <div>
               <p className="text-[15px] font-bold mb-1 text-white">FOMUS Creative Studio</p>
