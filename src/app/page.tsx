@@ -338,6 +338,78 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== 選ばれる3つの理由 (white) ===== */}
+      <section className="bg-white py-24 md:py-32 px-6">
+        <div className="max-w-[1200px] mx-auto">
+          <ScrollReveal>
+            <p className="text-[#0D9668] text-[12px] font-bold tracking-[0.15em] uppercase mb-4 text-center">Why FOMUS</p>
+            <h2 className="text-[28px] md:text-[36px] font-bold tracking-tight mb-14 text-[#1A1A1A] text-center">選ばれる3つの理由</h2>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { num: '01', title: '代表が直接対応する', desc: '窓口から設計、実装、納品まで、代表の増尾が一貫して対応します。伝言ゲームによる認識のズレや、下請けへの丸投げがありません。意思決定が速く、コストも抑えられます。' },
+              { num: '02', title: 'AI・Web・クリエイティブを一社で完結', desc: 'AIチャットボット、Webサイト、漫画制作、業務システム。通常なら3-4社に分散する発注を、FOMUSは一社で完結します。窓口が一つだから、管理コストもゼロです。' },
+              { num: '03', title: '動くものを先に見せる', desc: '提案書だけでは判断できません。FOMUSは最短2週間で動作するプロトタイプを提出します。実物を触ってから導入を判断できるので、失敗のリスクを最小化できます。' },
+            ].map((item, i) => (
+              <ScrollReveal key={item.num} delay={i * 80}>
+                <div className="text-center md:text-left">
+                  <span className="inline-block text-[#0D9668] text-[48px] md:text-[56px] font-bold leading-none mb-4 opacity-20">{item.num}</span>
+                  <h3 className="text-[20px] md:text-[22px] font-bold text-[#1A1A1A] mb-4 leading-[1.4]">{item.title}</h3>
+                  <p className="text-[15px] text-[#555555] leading-[2]">{item.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 対応業種 (light green) ===== */}
+      <section className="bg-[#F0FAF5] py-16 md:py-20 px-6">
+        <div className="max-w-[1200px] mx-auto text-center">
+          <ScrollReveal>
+            <p className="text-[#0D9668] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">Industries</p>
+            <h2 className="text-[24px] md:text-[30px] font-bold tracking-tight mb-10 text-[#1A1A1A]">対応業種</h2>
+          </ScrollReveal>
+          <ScrollReveal delay={80}>
+            <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+              {['飲食店', '旅館・ホテル', '美容サロン', 'クリニック・歯科', '小売店', '不動産', '士業・コンサル', '自治体', '製造業', 'IT企業', 'EC事業者', 'スタートアップ'].map((industry) => (
+                <span key={industry} className="text-[14px] md:text-[15px] text-[#1A1A1A] border border-[#0D9668]/20 bg-white px-5 py-3 rounded-full">
+                  {industry}
+                </span>
+              ))}
+            </div>
+            <p className="text-[14px] text-[#555555] mt-8">業種よりも「何に困っているか」が大切です。上記以外の業種もお気軽にご相談ください。</p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ===== ミニCTA（課題別） ===== */}
+      <section className="bg-white py-20 md:py-24 px-6">
+        <div className="max-w-[1000px] mx-auto">
+          <ScrollReveal>
+            <h2 className="text-[24px] md:text-[30px] font-bold tracking-tight mb-10 text-[#1A1A1A] text-center">どんなご相談でも構いません</h2>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              { q: '売上を上げたい', a: 'Webサイト改善、AI集客、レビュー管理で新規顧客を獲得' },
+              { q: 'コストを下げたい', a: 'AIによる業務自動化で、人件費・外注費を大幅削減' },
+              { q: '人を採りたい', a: '採用漫画・採用サイトで応募数を増やし、採用単価を下げる' },
+              { q: 'AIを使いたいが分からない', a: 'ヒアリングで課題を整理し、何をすべきかを明確にする' },
+            ].map((item, i) => (
+              <ScrollReveal key={item.q} delay={i * 60}>
+                <Link href="/contact" className="flex items-center justify-between bg-[#F8FAFB] rounded-xl p-6 border border-[#E5E5E5] hover:border-[#0D9668] hover:shadow-md transition-all duration-300 group">
+                  <div>
+                    <p className="text-[17px] font-bold text-[#1A1A1A] mb-1">「{item.q}」</p>
+                    <p className="text-[14px] text-[#555555]">{item.a}</p>
+                  </div>
+                  <span className="text-[#0D9668] text-[20px] flex-shrink-0 ml-4 group-hover:translate-x-1 transition-transform">→</span>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===== FOUNDER (light green bg) ===== */}
       <section className="bg-[#F0FAF5] py-24 md:py-32 px-6">
         <div className="max-w-[1100px] mx-auto">
