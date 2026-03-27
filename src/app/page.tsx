@@ -255,6 +255,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== 実績ハイライト (cream) ===== */}
+      <section className="bg-[#F5F3EE] py-16 md:py-20 px-6">
+        <div className="max-w-[1200px] mx-auto">
+          <ScrollReveal>
+            <p className="text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase mb-4 text-center">Track Record</p>
+            <h2 className="text-[24px] md:text-[30px] font-bold tracking-tight mb-10 text-[#1A1A18] text-center">これまでに構築したもの</h2>
+          </ScrollReveal>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { num: '1,500+', label: '酒蔵データベース', sub: 'Terroir HUB SAKE' },
+              { num: '970+', label: '蒸留所データベース', sub: 'Terroir HUB SHOCHU' },
+              { num: '8', label: 'サイト・サービス構築', sub: 'Web / EC / SaaS' },
+              { num: '32', label: '多言語対応', sub: 'AI翻訳・検索' },
+            ].map((item, i) => (
+              <ScrollReveal key={item.label} delay={i * 60}>
+                <div className="bg-white rounded-xl p-6 text-center border border-[#E8E6DE]">
+                  <p className="text-[var(--gold)] text-[32px] md:text-[40px] font-bold leading-none mb-2">{item.num}</p>
+                  <p className="text-[14px] font-bold text-[#1A1A18] mb-1">{item.label}</p>
+                  <p className="text-[12px] text-[#8E8D88]">{item.sub}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+          <ScrollReveal delay={200}>
+            <div className="text-center mt-8">
+              <Link href="/work" className="inline-flex items-center text-[14px] text-[var(--gold)] font-medium hover:opacity-80 transition-opacity">
+                全ての実績を見る →
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* ===== PROCESS (light cream) ===== */}
       <section id="process" className="bg-[#F5F3EE] py-24 md:py-32 px-6">
         <div className="max-w-[1200px] mx-auto">

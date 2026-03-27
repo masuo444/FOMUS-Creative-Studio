@@ -3,47 +3,293 @@ import ScrollReveal from '@/components/ui/ScrollReveal'
 import SiteNav from '@/components/layout/SiteNav'
 import SiteFooter from '@/components/layout/SiteFooter'
 
-const cases = [
+/* ── Project data ── */
+
+type Project = {
+  id: number
+  category: string
+  title: string
+  subtitle: string
+  description: string
+  tech: string[]
+  metrics: string[]
+  image: string
+  url?: string
+  urlLabel?: string
+}
+
+const featured: Project[] = [
   {
-    category: 'Web制作',
-    title: '宿泊施設のサイト刷新で予約数+180%',
-    metric: '+180%',
-    metricLabel: '直接予約数',
+    id: 1,
+    category: 'Web Platform / AI',
+    title: 'Terroir HUB SAKE',
+    subtitle: '全国1,500蔵の酒蔵情報ポータル',
+    description:
+      '日本全国の酒蔵1,500蔵の情報を構造化データベースとして構築。AIコンシェルジュ「サクラ」による自然言語検索、多言語対応（32言語）。嘘をつかない情報設計を徹底し、データがない項目は非表示にする信頼性重視のアーキテクチャ。',
+    tech: ['Next.js', 'Supabase', 'Claude AI', 'Vercel'],
+    metrics: ['1,500蔵を網羅', 'AI検索搭載', '32言語対応'],
     image: '/images/work-web.png',
-    challenge: '公式サイトが10年以上前のデザインのまま放置されており、スマートフォン非対応。OTA経由の予約に依存し、手数料負担が増加。',
-    solution: 'UI/UXを全面刷新し、スマホファーストのレスポンシブデザインに。予約導線を3ステップに簡素化し、多言語対応（英・中・韓）を追加。Googleビジネスプロフィールとの連携も強化。',
-    result: '公開3ヶ月で直接予約数が2.8倍に増加。OTA手数料の大幅削減を実現。Google検索からの流入も1.5倍に。',
-    period: '3日間（デザイン・実装・公開）',
-    services: ['Web制作', 'UI/UX設計', 'SEO対策', '多言語対応'],
-    serviceLink: '/services#web',
+    url: 'https://terroir-hub.com',
+    urlLabel: 'Terroir HUBとして公開中',
   },
   {
-    category: 'AI導入',
-    title: '9言語対応AIチャットボットで対応工数-80%',
-    metric: '-80%',
+    id: 2,
+    category: 'Web Platform / AI',
+    title: 'Terroir HUB SHOCHU',
+    subtitle: '全国970蒸留所の焼酎・泡盛ポータル',
+    description:
+      '世界初の焼酎・泡盛蒸留所の構造化データベース。AIクロによるコンシェルジュ検索、琥珀色のデザインで酒蔵版との差別化。SAKE版と共通のアーキテクチャで効率的に構築。',
+    tech: ['Next.js', 'Supabase', 'Claude AI', 'Vercel'],
+    metrics: ['970蒸留所', '世界初の構造化DB', 'AI検索搭載'],
     image: '/images/demo-desktop.png',
-    metricLabel: '対応工数',
-    challenge: 'インバウンド観光客からの問い合わせが急増し、深夜・早朝の対応にスタッフが疲弊。英語以外の問い合わせには対応できず、機会損失が発生。',
-    solution: 'LINE公式アカウントにAIチャットボットを導入。Claude AIによる自然な多言語応答で、施設案内・アクセス情報・FAQ・予約変更を24時間自動処理。スタッフには日本語で通知。',
-    result: '月間1,200件の問い合わせを人手なしで処理。スタッフの対応工数は80%削減。ゲスト満足度調査で「対応の速さ」が前年比+35ポイント。',
-    period: '2週間（構築・テスト・導入）',
-    services: ['AI導入', 'LINE Bot', '多言語対応', '業務自動化'],
-    serviceLink: '/services#ai',
   },
   {
-    category: '漫画制作',
-    title: '採用漫画の導入で応募数が3倍に',
-    metric: '×3',
-    metricLabel: '応募数',
+    id: 4,
+    category: 'Web制作 / サービス構築',
+    title: 'FOMUS Manga Studio',
+    subtitle: 'AI漫画制作サービスのLP・プラットフォーム構築',
+    description:
+      'AI×クリエイティブディレクションによる漫画制作サービスのランディングページを設計・構築。多言語対応（日英）、料金プラン、制作フロー、FAQ、資料請求フォームを含む完全なサービスサイト。',
+    tech: ['HTML/CSS/JS', 'レスポンシブ', 'SEO最適化'],
+    metrics: ['40言語対応', '最短1週間納品', 'MangaXプラットフォーム連携'],
     image: '/images/work-manga.png',
-    challenge: '求人サイトに掲載しても応募が集まらない。テキスト中心の採用ページでは、社風や働く人の雰囲気が伝わらず、求職者が離脱。',
-    solution: '社員インタビューを元に10ページの採用漫画を制作。入社1年目のストーリーを通じて、仕事内容・チームの雰囲気・成長環境をビジュアルで表現。SNS向けにショート版も制作。',
-    result: '採用ページの滞在時間が4.2倍に増加。漫画のSNSシェアにより認知が拡大し、エントリー数が前年比3倍に。',
-    period: '1週間（ヒアリング・制作・納品）',
-    services: ['漫画制作', '採用ブランディング', 'SNSコンテンツ'],
-    serviceLink: '/services#creative',
+    url: 'https://creative-manga.fomusglobal.com',
+    urlLabel: 'creative-manga.fomusglobal.com',
+  },
+  {
+    id: 5,
+    category: 'Web制作 / サービス構築',
+    title: 'SAQT（サクッと）',
+    subtitle: 'Web制作サービスのブランドサイト構築',
+    description:
+      '「古いサイトを最短3日でリニューアル」をコンセプトとしたWeb制作サービスのLP。SEO対策、チャットボット連携、自治体向けページも含む包括的なサービスサイト。',
+    tech: ['HTML/CSS/JS', 'SEO最適化', 'チャットボット'],
+    metrics: ['最短3日納品', 'SEO最適化', 'チャットボット搭載'],
+    image: '/images/hero-laptop.png',
+    url: 'https://saqt-ai.com',
+    urlLabel: 'saqt-ai.com',
+  },
+  {
+    id: 8,
+    category: 'SaaS / Webアプリ',
+    title: 'FOMUS Creative Studio',
+    subtitle: 'AI業務効率化プラットフォームの設計・構築',
+    description:
+      '接客業向けAI多言語コンシェルジュSaaSを設計・構築。LINE Webhook、Claude AI統合、多言語チャット、レビュー管理、予約処理、Stripe課金、施設管理ダッシュボードを含むフルスタックアプリケーション。',
+    tech: ['Next.js 16', 'Supabase', 'Claude AI', 'Stripe', 'LINE API'],
+    metrics: ['9言語対応', '13テーブルDB', '21APIルート'],
+    image: '/images/hero-laptop.png',
   },
 ]
+
+const gridProjects: Project[] = [
+  {
+    id: 3,
+    category: 'Web制作',
+    title: '佐木島アートギャラリー',
+    subtitle: '瀬戸内海の離島アートギャラリーのサイト構築',
+    description:
+      '広島県・佐木島に誕生したコンテナ型・参加型アートギャラリーの公式サイトを制作。枡ウォール、レンタルスペース、アート展示の予約導線を構築。',
+    tech: ['Web制作', 'UI/UX'],
+    metrics: ['サイト構築', '予約導線設計'],
+    image: '/images/work-web.png',
+  },
+  {
+    id: 6,
+    category: 'Web制作 / サービス構築',
+    title: 'FOMUS AI Training',
+    subtitle: '法人向けAI研修サービスのLP構築',
+    description:
+      '業務活用特化型AI研修サービスのランディングページ。助成金活用シミュレーション、研修フロー、FAQ、お問い合わせフォームを含むリード獲得型のLP。',
+    tech: ['レスポンシブ', 'フォーム連携'],
+    metrics: ['助成金対応', 'リード獲得型LP'],
+    image: '/images/demo-desktop.png',
+    url: 'https://ai-training.fomus.jp',
+    urlLabel: 'ai-training.fomus.jp',
+  },
+  {
+    id: 7,
+    category: 'EC構築',
+    title: 'FOMUS SHOP',
+    subtitle: '伝統工芸「枡」のECサイト構築',
+    description:
+      '日本の伝統工芸「枡」を販売するECサイト。Stripe決済、会員管理、ポイントシステム、デジタルアイテム販売、多通貨対応（JPY/EUR）を実装した本格的なEC基盤。',
+    tech: ['Next.js 16', 'Supabase', 'Stripe', 'Resend'],
+    metrics: ['Stripe決済連携', '会員制度', '多通貨対応'],
+    image: '/images/work-silva.png',
+    url: 'https://shop.fomus.jp',
+    urlLabel: 'shop.fomus.jp',
+  },
+]
+
+/* ── Featured Card (full-width, alternating layout) ── */
+
+function FeaturedCard({ project, flip }: { project: Project; flip?: boolean }) {
+  return (
+    <section className="py-16 md:py-24 px-6">
+      <div className="max-w-[1200px] mx-auto">
+        <ScrollReveal>
+          <div className={`relative flex flex-col ${flip ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 md:gap-12 items-center`}>
+            {/* Image */}
+            <div className="w-full md:w-[55%] shrink-0">
+              <div className="rounded-xl overflow-hidden shadow-2xl">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full aspect-[16/10] object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Details */}
+            <div className="w-full md:w-[45%]">
+              <span className="inline-block text-[var(--gold)] text-[11px] font-bold tracking-[0.12em] uppercase bg-[var(--gold)]/10 px-3 py-1.5 rounded-full mb-4">
+                {project.category}
+              </span>
+              <h2 className="text-[#1A1A1A] text-[26px] md:text-[32px] font-bold tracking-tight leading-[1.3] mb-2">
+                {project.title}
+              </h2>
+              <p className="text-[#1A1A1A]/60 text-[15px] font-medium mb-4">
+                {project.subtitle}
+              </p>
+              <p className="text-[#1A1A1A]/50 text-[14px] leading-[1.9] mb-6">
+                {project.description}
+              </p>
+
+              {/* Metrics */}
+              <div className="flex flex-wrap gap-3 mb-6">
+                {project.metrics.map((m) => (
+                  <span
+                    key={m}
+                    className="text-[13px] font-medium text-[#1A1A1A]/70 bg-[#1A1A1A]/5 px-3 py-1.5 rounded-md"
+                  >
+                    {m}
+                  </span>
+                ))}
+              </div>
+
+              {/* Tech */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.tech.map((t) => (
+                  <span
+                    key={t}
+                    className="text-[11px] text-[var(--gold)] bg-[var(--gold)]/10 px-3 py-1 rounded-full"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              {/* Link */}
+              {project.url && (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[var(--gold)] text-[14px] font-medium hover:opacity-80 transition-opacity"
+                >
+                  <span>{project.urlLabel || 'サイトを見る'}</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                </a>
+              )}
+            </div>
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+  )
+}
+
+/* ── Grid Card (smaller, image on top) ── */
+
+function GridCard({ project }: { project: Project }) {
+  return (
+    <ScrollReveal>
+      <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow h-full flex flex-col">
+        <div className="overflow-hidden">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full aspect-[16/10] object-cover hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+        <div className="p-6 md:p-8 flex-1 flex flex-col">
+          <span className="inline-block self-start text-[var(--gold)] text-[11px] font-bold tracking-[0.12em] uppercase bg-[var(--gold)]/10 px-3 py-1.5 rounded-full mb-4">
+            {project.category}
+          </span>
+          <h3 className="text-[#1A1A1A] text-[20px] md:text-[22px] font-bold tracking-tight leading-[1.3] mb-1">
+            {project.title}
+          </h3>
+          <p className="text-[#1A1A1A]/60 text-[14px] font-medium mb-3">
+            {project.subtitle}
+          </p>
+          <p className="text-[#1A1A1A]/50 text-[13px] leading-[1.9] mb-5 flex-1">
+            {project.description}
+          </p>
+
+          {/* Metrics */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.metrics.map((m) => (
+              <span
+                key={m}
+                className="text-[12px] font-medium text-[#1A1A1A]/70 bg-[#1A1A1A]/5 px-2.5 py-1 rounded-md"
+              >
+                {m}
+              </span>
+            ))}
+          </div>
+
+          {/* Tech */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.tech.map((t) => (
+              <span
+                key={t}
+                className="text-[11px] text-[var(--gold)] bg-[var(--gold)]/10 px-3 py-1 rounded-full"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+
+          {/* Link */}
+          {project.url && (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[var(--gold)] text-[13px] font-medium hover:opacity-80 transition-opacity mt-auto"
+            >
+              <span>{project.urlLabel || 'サイトを見る'}</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          )}
+        </div>
+      </div>
+    </ScrollReveal>
+  )
+}
+
+/* ── Grid Row (2-up) ── */
+
+function GridRow({ projects }: { projects: Project[] }) {
+  return (
+    <section className="py-16 md:py-20 px-6">
+      <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-8">
+        {projects.map((p) => (
+          <GridCard key={p.id} project={p} />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+/* ── Dark separator ── */
+
+function Separator() {
+  return <div className="h-px bg-[#1A1A1A]/8 max-w-[1200px] mx-auto" />
+}
+
+/* ── Page ── */
 
 export default function WorkPage() {
   return (
@@ -54,72 +300,56 @@ export default function WorkPage() {
       {/* Hero */}
       <section className="py-20 md:py-28 px-6 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-[40%] right-[20%] w-[400px] h-[400px] rounded-full bg-[#1a4a3a] opacity-15 blur-[120px]" />
+          <div className="absolute top-[30%] left-[10%] w-[500px] h-[500px] rounded-full bg-[#1a4a3a] opacity-15 blur-[120px]" />
+          <div className="absolute bottom-[20%] right-[15%] w-[400px] h-[400px] rounded-full bg-[#3a2a1a] opacity-10 blur-[120px]" />
           <div className="absolute inset-0 dot-grid" />
         </div>
         <div className="relative z-10 max-w-[1100px] mx-auto">
           <ScrollReveal>
-            <div className="gold-line w-12 mb-6" />
-            <h1 className="text-white text-[clamp(28px,4vw,44px)] font-bold tracking-tight mb-4">導入実績</h1>
+            <span className="inline-block text-[var(--gold)] text-[12px] font-bold tracking-[0.2em] uppercase mb-4">
+              Our Work
+            </span>
+            <h1 className="text-white text-[clamp(32px,5vw,52px)] font-bold tracking-tight mb-4">
+              実績
+            </h1>
             <p className="text-[16px] text-white/40 leading-[2] max-w-[600px]">
-              業種・規模を問わず、具体的な成果を出しています。以下は代表的な事例です。
+              Webプラットフォーム、AI導入、EC構築、サービスLP。<br />
+              すべて自社で設計・実装した実案件です。
             </p>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Cases — AI Lab style */}
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10 space-y-24 md:space-y-32 pb-20 md:pb-28">
-        {cases.map((c) => (
-          <section key={c.title}>
-            <ScrollReveal>
-              <div className="relative">
-                {/* Dark text card - left side */}
-                <div className="relative z-10 md:w-[55%] bg-[#2C2C2C] rounded-lg p-10 md:p-14">
-                  <span className="inline-block text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase bg-[var(--gold)]/10 px-3 py-1.5 rounded-full mb-5">{c.category}</span>
-                  <h2 className="text-white text-[22px] md:text-[28px] font-bold tracking-tight leading-[1.4] mb-6">{c.title}</h2>
+      {/* Project sections on light background */}
+      <div className="bg-[#FAFAF8]">
 
-                  {/* Metric */}
-                  <div className="mb-6">
-                    <p className="text-white/40 text-[13px] mb-1">{c.metricLabel}</p>
-                    <p className="text-[var(--gold)] text-[48px] font-bold leading-none">{c.metric}</p>
-                  </div>
+        {/* 1. Featured: Terroir HUB SAKE */}
+        <FeaturedCard project={featured[0]} />
 
-                  <div className="space-y-4 mb-6">
-                    <div>
-                      <p className="text-[var(--gold)] text-[12px] font-medium mb-1">課題</p>
-                      <p className="text-white/50 text-[14px] leading-[1.9]">{c.challenge}</p>
-                    </div>
-                    <div>
-                      <p className="text-[var(--gold)] text-[12px] font-medium mb-1">施策</p>
-                      <p className="text-white/50 text-[14px] leading-[1.9]">{c.solution}</p>
-                    </div>
-                    <div>
-                      <p className="text-[var(--gold)] text-[12px] font-medium mb-1">成果</p>
-                      <p className="text-white/80 text-[14px] leading-[1.9] font-medium">{c.result}</p>
-                    </div>
-                  </div>
+        <Separator />
 
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="text-[12px] text-white/30">納期: {c.period}</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {c.services.map((s) => (
-                      <span key={s} className="text-[11px] text-[var(--gold)] bg-[var(--gold)]/10 px-3 py-1 rounded-full">{s}</span>
-                    ))}
-                  </div>
-                </div>
+        {/* 2. Featured: Terroir HUB SHOCHU (flipped) */}
+        <FeaturedCard project={featured[1]} flip />
 
-                {/* Photo - right side, offset down */}
-                <div className="md:absolute md:right-0 md:top-[15%] md:w-[52%] mt-4 md:mt-0">
-                  <div className="rounded-lg overflow-hidden">
-                    <img src={c.image} alt={c.title} className="w-full aspect-[16/11] object-cover" />
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-          </section>
-        ))}
+        <Separator />
+
+        {/* 3. Grid: 佐木島 + FOMUS Manga Studio */}
+        <GridRow projects={[gridProjects[0], featured[2]]} />
+
+        <Separator />
+
+        {/* 4. Featured: SAQT */}
+        <FeaturedCard project={featured[3]} />
+
+        <Separator />
+
+        {/* 5. Grid: AI Training + FOMUS SHOP */}
+        <GridRow projects={[gridProjects[1], gridProjects[2]]} />
+
+        <Separator />
+
+        {/* 6. Featured: FOMUS Creative Studio (flipped) */}
+        <FeaturedCard project={featured[4]} flip />
       </div>
 
       {/* CTA */}
@@ -128,16 +358,22 @@ export default function WorkPage() {
           <ScrollReveal>
             <div className="gold-line w-12 mx-auto mb-8" />
             <h2 className="text-[24px] md:text-[28px] font-bold tracking-tight mb-4">
-              御社でも同じ成果を出せるか、まずはご相談ください。
+              次のプロジェクトについて、お話しませんか。
             </h2>
             <p className="text-white/50 text-[15px] leading-[2] mb-8">
-              業種や規模に関係なく、業務課題があればお力になれます。
+              Webサイト、AI導入、EC構築。まずはお気軽にご相談ください。
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--gold)] text-[#1A1A1A] px-10 py-4 rounded-lg text-[15px] font-bold hover:opacity-90 transition-opacity min-h-[52px]">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center bg-[var(--gold)] text-[#1A1A1A] px-10 py-4 rounded-lg text-[15px] font-bold hover:opacity-90 transition-opacity min-h-[52px]"
+              >
                 無料で相談する
               </Link>
-              <Link href="/services" className="inline-flex items-center justify-center border border-white/20 text-white px-8 py-4 rounded-lg text-[15px] font-medium hover:border-white/40 transition-colors min-h-[52px]">
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center border border-white/20 text-white px-8 py-4 rounded-lg text-[15px] font-medium hover:border-white/40 transition-colors min-h-[52px]"
+              >
                 サービス一覧を見る
               </Link>
             </div>
