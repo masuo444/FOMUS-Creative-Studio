@@ -2,9 +2,9 @@ import Link from 'next/link'
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-[#1A1A1A] border-t border-white/[0.06] py-16 px-6">
+    <footer className="bg-[#0F2B1F] border-t border-white/[0.06] py-16 px-6">
       <div className="max-w-[1100px] mx-auto">
-        <div className="h-px w-full mb-10" style={{ background: 'linear-gradient(90deg, var(--gold), transparent)' }} />
+        <div className="h-px w-full mb-10" style={{ background: 'linear-gradient(90deg, #0D9668, #10B981, transparent)' }} />
         <div className="flex flex-col md:flex-row justify-between gap-8 mb-10">
           <div>
             <p className="text-[15px] font-bold mb-1 text-white">FOMUS Creative Studio</p>

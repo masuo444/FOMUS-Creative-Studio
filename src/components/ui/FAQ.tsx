@@ -15,11 +15,11 @@ export default function FAQ({ items }: { items: FAQItem[] }) {
             onClick={() => setOpen(open === i ? null : i)}
             className="w-full flex items-center justify-between py-5 md:py-6 text-left group min-h-[56px]"
           >
-            <span className="text-[15px] md:text-[16px] font-medium pr-6 group-hover:text-[var(--accent)] transition-colors">
+            <span className="text-[15px] md:text-[16px] font-medium pr-6 group-hover:text-[#0D9668] transition-colors">
               {item.q}
             </span>
-            <span className={`text-[20px] text-[var(--text-muted)] flex-shrink-0 transition-transform duration-300 w-[44px] h-[44px] flex items-center justify-center ${
-              open === i ? 'rotate-45 text-[var(--accent)]' : ''
+            <span className={`text-[20px] flex-shrink-0 transition-all duration-300 w-[44px] h-[44px] flex items-center justify-center ${
+              open === i ? 'rotate-45 text-[#0D9668]' : 'text-[var(--text-muted)]'
             }`}>
               +
             </span>

@@ -25,15 +25,15 @@ export default function MobileMenu() {
         className="md:hidden relative z-[60] w-10 h-10 flex flex-col items-center justify-center gap-[6px]"
         aria-label={open ? 'Close menu' : 'Open menu'}
       >
-        <span className={`block w-5 h-[1.5px] bg-white transition-all duration-300 ${open ? 'rotate-45 translate-y-[7.5px]' : ''}`} />
-        <span className={`block w-5 h-[1.5px] bg-white transition-all duration-300 ${open ? 'opacity-0' : ''}`} />
-        <span className={`block w-5 h-[1.5px] bg-white transition-all duration-300 ${open ? '-rotate-45 -translate-y-[7.5px]' : ''}`} />
+        <span className={`block w-5 h-[1.5px] transition-all duration-300 ${open ? 'rotate-45 translate-y-[7.5px] bg-[#1A1A1A]' : 'bg-[#1A1A1A]'}`} />
+        <span className={`block w-5 h-[1.5px] bg-[#1A1A1A] transition-all duration-300 ${open ? 'opacity-0' : ''}`} />
+        <span className={`block w-5 h-[1.5px] transition-all duration-300 ${open ? '-rotate-45 -translate-y-[7.5px] bg-[#1A1A1A]' : 'bg-[#1A1A1A]'}`} />
       </button>
 
-      <div className={`fixed inset-0 z-50 bg-[#1A1A1A] transition-opacity duration-500 md:hidden ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-        {/* Orb decorations */}
-        <div className="absolute top-[20%] right-[10%] w-[300px] h-[300px] rounded-full bg-[#1a4a3a] opacity-20 blur-[120px]" />
-        <div className="absolute bottom-[20%] left-[10%] w-[200px] h-[200px] rounded-full bg-[#B8943E] opacity-[0.06] blur-[100px]" />
+      <div className={`fixed inset-0 z-50 bg-white transition-opacity duration-500 md:hidden ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+        {/* Soft green blob decorations */}
+        <div className="absolute top-[20%] right-[10%] w-[300px] h-[300px] rounded-full bg-[#10B981] opacity-[0.06] blur-[120px]" />
+        <div className="absolute bottom-[20%] left-[10%] w-[200px] h-[200px] rounded-full bg-[#0D9668] opacity-[0.04] blur-[100px]" />
 
         <div className="flex flex-col items-start justify-center h-full px-10">
           <nav className="flex flex-col gap-8">
@@ -42,7 +42,7 @@ export default function MobileMenu() {
                 key={link.label}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-[28px] font-bold tracking-tight text-white hover:text-[var(--gold)] transition-colors"
+                className="text-[28px] font-bold tracking-tight text-[#1A1A1A] hover:text-[#0D9668] transition-colors"
                 style={{ transitionDelay: open ? `${i * 60}ms` : '0ms' }}
               >
                 {link.label}
@@ -53,7 +53,7 @@ export default function MobileMenu() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="inline-block bg-[var(--gold)] text-[#1A1A1A] px-8 py-4 rounded-lg text-[15px] font-bold hover:opacity-90 transition-opacity"
+              className="inline-block bg-[#0D9668] text-white px-8 py-4 rounded-lg text-[15px] font-bold hover:bg-[#0b8059] transition-colors"
             >
               無料で相談する
             </Link>
