@@ -38,23 +38,28 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-[#1A1A1A]">
+    <div className="min-h-screen bg-white">
       <SiteNav />
 
       {/* ===== HERO ===== */}
-      <section className="pt-[72px] relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-[30%] right-[15%] w-[400px] h-[400px] rounded-full bg-[#1a4a3a] opacity-15 blur-[120px]" />
-          <div className="absolute bottom-0 left-[10%] w-[300px] h-[300px] rounded-full bg-[#B8943E] opacity-[0.04] blur-[100px]" />
+      <section className="relative pt-[72px] overflow-hidden" style={{ background: 'linear-gradient(180deg, #F0FDF4 0%, #FFFFFF 60%)' }}>
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <svg className="absolute -top-[10%] -right-[20%] w-[70%] h-[120%] opacity-[0.06]" viewBox="0 0 800 800" fill="none">
+            <rect x="100" y="50" width="600" height="700" rx="300" stroke="url(#sg-svc)" strokeWidth="2" />
+            <rect x="200" y="150" width="500" height="550" rx="250" stroke="url(#sg-svc)" strokeWidth="1.5" />
+            <defs><linearGradient id="sg-svc" x1="0" y1="0" x2="800" y2="800"><stop stopColor="#059669" /><stop offset="1" stopColor="#10B981" /></linearGradient></defs>
+          </svg>
+          <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] rounded-full bg-[#10B981] opacity-[0.06] blur-[120px]" />
           <div className="absolute inset-0 dot-grid" />
         </div>
         <div className="relative z-10 max-w-[1200px] mx-auto px-6 md:px-10 py-20 md:py-28">
           <ScrollReveal>
-            <p className="text-[var(--gold)] text-[13px] font-medium tracking-[0.15em] uppercase mb-4">Services</p>
-            <h1 className="text-white text-[clamp(32px,5vw,52px)] font-bold tracking-tight leading-[1.2] mb-4">
-              サービス一覧
+            <p className="text-[#059669] text-[13px] font-bold tracking-[0.15em] uppercase mb-4">Services</p>
+            <h1 className="font-bold tracking-tight mb-6 text-[#1F2937]">
+              <span className="text-[48px] md:text-[64px] text-[#059669]">サービス</span>
+              <span className="text-[24px] md:text-[28px]">一覧</span>
             </h1>
-            <p className="text-white/40 text-[16px] leading-[2] max-w-[560px]">
+            <p className="text-[#6B7280] text-[16px] leading-[2] max-w-[560px]">
               御社の課題に応じて、最適な施策を組み合わせて提案します。<br />
               ヒアリング後にお見積もりします。
             </p>
@@ -63,33 +68,28 @@ export default function ServicesPage() {
       </section>
 
       {/* ===== SERVICE CARDS ===== */}
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10 space-y-20 md:space-y-28 pb-20 md:pb-28">
-        {services.map((s) => (
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10 space-y-16 md:space-y-24 py-20 md:py-28">
+        {services.map((s, idx) => (
           <section key={s.id} id={s.id} className="scroll-mt-[72px]">
             <ScrollReveal>
-              <div className="relative">
-                {/* Dark text card - left side */}
-                <div className="relative z-10 md:w-[55%] bg-[#2C2C2C] rounded-lg p-10 md:p-14">
-                  <h2 className="text-white text-[28px] md:text-[34px] font-bold tracking-tight leading-[1.3] mb-5">
-                    {s.en}
-                  </h2>
-                  <p className="text-white/60 text-[15px] leading-[2] mb-6 max-w-[440px]">
-                    {s.desc}
-                  </p>
-                  <p className="text-[var(--gold)] text-[14px] font-medium mb-4">まずはヒアリングから</p>
-                  <Link
-                    href={s.href}
-                    className="inline-flex items-center text-white/40 hover:text-white transition-colors text-[14px] gap-2"
-                  >
-                    詳しく見る →
-                  </Link>
-                </div>
-
-                {/* Photo - right side, offset down */}
-                <div className="md:absolute md:right-0 md:top-[15%] md:w-[52%] mt-4 md:mt-0">
-                  <div className="rounded-lg overflow-hidden">
+              <div className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 md:gap-12 items-center`}>
+                {/* Image */}
+                <div className="md:w-[48%] flex-shrink-0">
+                  <div className="rounded-2xl overflow-hidden shadow-lg">
                     <img src={s.image} alt={s.title} className="w-full aspect-[16/11] object-cover" />
                   </div>
+                </div>
+                {/* Text */}
+                <div className="md:w-[52%]">
+                  <p className="text-[#059669] text-[13px] font-bold tracking-[0.15em] uppercase mb-3">{s.en}</p>
+                  <h2 className="text-[24px] md:text-[30px] font-bold tracking-tight text-[#1F2937] mb-4">{s.title}</h2>
+                  <p className="text-[#6B7280] text-[15px] leading-[2] mb-6 max-w-[440px]">{s.desc}</p>
+                  <Link
+                    href={s.href}
+                    className="inline-flex items-center justify-center bg-[#059669] text-white px-8 py-3 rounded-full text-[14px] font-bold hover:bg-[#047857] transition-colors"
+                  >
+                    詳しく見る &rarr;
+                  </Link>
                 </div>
               </div>
             </ScrollReveal>
@@ -98,25 +98,24 @@ export default function ServicesPage() {
       </div>
 
       {/* ===== CTA ===== */}
-      <section className="bg-[#0D1F1F] py-20 md:py-28 px-6">
+      <section className="bg-[#065F46] py-20 md:py-28 px-6">
         <div className="max-w-[640px] mx-auto text-center">
           <ScrollReveal>
-            <div className="gold-line w-12 mx-auto mb-8" />
             <h2 className="text-white text-[24px] md:text-[30px] font-bold tracking-tight mb-4">
               どのサービスが最適か、一緒に考えます。
             </h2>
-            <p className="text-white/40 text-[15px] leading-[2] mb-8">
+            <p className="text-white/60 text-[15px] leading-[2] mb-8">
               オンライン面談で、御社に必要な施策の全体像をお伝えします。
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--gold)] text-[#1A1A1A] px-10 py-4 rounded-lg text-[16px] font-bold hover:opacity-90 transition-opacity min-h-[52px]">
+              <Link href="/contact" className="inline-flex items-center justify-center bg-white text-[#065F46] px-10 py-4 rounded-full text-[16px] font-bold hover:bg-white/90 transition-colors min-h-[52px]">
                 無料で相談する
               </Link>
-              <Link href="/work" className="inline-flex items-center justify-center border border-white/20 text-white px-8 py-4 rounded-lg text-[15px] font-medium hover:border-white/40 transition-colors min-h-[52px]">
+              <Link href="/work" className="inline-flex items-center justify-center border border-white/30 text-white px-8 py-4 rounded-full text-[15px] font-medium hover:border-white/60 transition-colors min-h-[52px]">
                 導入実績を見る
               </Link>
             </div>
-            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6 text-white/30 text-[13px]">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6 text-white/40 text-[13px]">
               <span>相談無料</span>
               <span>営業電話なし</span>
               <span>契約の義務なし</span>
