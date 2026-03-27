@@ -20,10 +20,10 @@ export default function MobileCTABar() {
         visible ? 'translate-y-0' : 'translate-y-full'
       }`}
     >
-      <div className="bg-white border-t border-[#E5E5E5] px-5 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
+      <div className="bg-white/95 backdrop-blur-lg border-t border-[#E5E7EB] px-5 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
         <Link
           href="/contact"
-          className="block w-full text-center bg-[#0D9668] text-white py-3.5 rounded-lg text-[15px] font-bold min-h-[48px] flex items-center justify-center hover:bg-[#0b8059] transition-colors"
+          className="block w-full text-center bg-[#059669] text-white py-3.5 rounded-full text-[15px] font-bold min-h-[48px] flex items-center justify-center hover:bg-[#047857] transition-colors"
         >
           無料で相談する
         </Link>
