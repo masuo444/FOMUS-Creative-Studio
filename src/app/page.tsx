@@ -20,11 +20,6 @@ const painPoints = [
   { icon: '04', title: 'AI導入が必要なのは分かるが、何をすればいいか分からない', desc: '周りはChatGPTだDXだと言うが、自社にどう関係するのか見えない。相談できる相手もいない。このままでは確実に取り残される。', impact: 'AI導入企業との生産性格差: 最大3倍' },
 ]
 
-const products = [
-  { num: '01', en: 'Discover', title: '課題を見つける', desc: '御社の業務を深く理解し、ボトルネックを特定します。何を改善すべきか、どこにコストが漏れているか。最適な打ち手を、根拠とともに設計します。', note: 'オンライン面談 60分 / 無料', image: '/images/demo-desktop.png' },
-  { num: '02', en: 'Create', title: '仕組みをつくる', desc: 'AI、Web、デザイン、漫画——あらゆる手段を使って、御社だけの仕組みを構築します。既製品の導入ではなく、課題に合わせたオーダーメイド。最短2週間で動くプロトタイプを提出します。', note: 'プロトタイプ費用は本契約時に全額充当', image: '/images/hero-laptop.png' },
-  { num: '03', en: 'Grow', title: '成果を伸ばし続ける', desc: '導入して終わりではなく、継続的に改善し続けます。月次レポート、障害対応、機能追加、新しい課題への対応——御社のIT部門として機能します。', note: 'まずはヒアリングから', image: '/images/work-web.png' },
-]
 
 const steps = [
   { num: '01', title: 'ヒアリング', desc: '御社の業務フローと課題をオンラインで伺います。「何をすればいいか分からない」状態でも問題ありません。', note: 'オンライン面談 / 無料' },
@@ -161,38 +156,102 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== Our Approach (light) ===== */}
+      {/* ===== 導入効果 (light) ===== */}
       <section className="bg-white py-24 md:py-32 px-6">
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
-            <p className="text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">Our Approach</p>
-            <h2 className="text-[28px] md:text-[36px] font-bold tracking-tight mb-3 text-[#1A1A18]">Discover. Create. Grow.</h2>
-            <p className="text-[#4A4A46] text-[15px] leading-[2] max-w-[560px] mb-16">課題の発見から、仕組みの構築、そして成果の拡大まで。<br />クリエイティブの力で、御社のビジネスを次のステージへ。</p>
+            <p className="text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase mb-4 text-center">Results</p>
+            <h2 className="text-[28px] md:text-[36px] font-bold tracking-tight mb-3 text-[#1A1A18] text-center">
+              導入で、業務はこう変わります
+            </h2>
+            <p className="text-[#4A4A46] text-[15px] leading-[2] max-w-[560px] mx-auto mb-16 text-center">
+              FOMUSのサービスを導入した企業の業務改善効果
+            </p>
           </ScrollReveal>
 
-          <div className="space-y-16 md:space-y-24">
-            {products.map((p, i) => (
-              <ScrollReveal key={p.num} delay={i * 80}>
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
-                  <div className={`md:col-span-5 ${i % 2 === 1 ? 'md:order-2 md:col-start-8' : ''}`}>
-                    <div className="rounded-2xl overflow-hidden">
-                      <img src={p.image} alt={p.title} className="w-full aspect-[16/11] object-cover" />
-                    </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                industry: '宿泊・飲食業界',
+                subtitle: '多言語対応・集客改善を実現',
+                items: [
+                  { label: '問い合わせ対応', before: '手動 / 日本語のみ', after: 'AI自動 / 9言語対応' },
+                  { label: '予約数', before: '月30件', after: '月84件' },
+                ],
+                metric: '+180%',
+                metricLabel: '予約数',
+                saving: '年間200万円以上のOTA手数料を削減',
+              },
+              {
+                industry: 'サービス・小売業界',
+                subtitle: '業務自動化・コスト削減を実現',
+                items: [
+                  { label: '問い合わせ対応', before: '月120時間', after: '月24時間' },
+                  { label: 'レビュー返信', before: '放置', after: '24h以内に100%返信' },
+                ],
+                metric: '-80%',
+                metricLabel: '対応工数',
+                saving: '年間336万円の人件費を削減',
+              },
+              {
+                industry: '全業種共通',
+                subtitle: '採用力・ブランディング強化を実現',
+                items: [
+                  { label: '応募数', before: '月5件', after: '月15件' },
+                  { label: '採用単価', before: '50万円', after: '20万円' },
+                ],
+                metric: '×3',
+                metricLabel: '応募数',
+                saving: '採用コスト年間180万円を削減',
+              },
+            ].map((card, i) => (
+              <ScrollReveal key={card.industry} delay={i * 100}>
+                <div className="bg-[#F8F7F4] rounded-2xl border border-[#E8E6DE] overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-500 h-full flex flex-col">
+                  {/* Header */}
+                  <div className="bg-[#1A1A1A] px-8 py-6">
+                    <p className="text-[var(--gold)] text-[12px] font-bold tracking-[0.1em] uppercase mb-1">{card.industry}</p>
+                    <p className="text-white/50 text-[13px]">{card.subtitle}</p>
                   </div>
-                  <div className={`md:col-span-6 ${i % 2 === 1 ? 'md:order-1 md:col-start-1' : 'md:col-start-7'}`}>
-                    <span className="inline-block text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase bg-[var(--gold-light)] px-3 py-1.5 rounded-full mb-5">{p.en}</span>
-                    <h3 className="text-[24px] md:text-[30px] font-bold tracking-tight leading-[1.3] mb-5 text-[#1A1A18]">
-                      {p.title}
-                    </h3>
-                    <p className="text-[#4A4A46] text-[15px] leading-[2] mb-6 max-w-[440px]">
-                      {p.desc}
-                    </p>
-                    <p className="text-[var(--gold)] text-[14px] font-medium">{p.note}</p>
+
+                  {/* Metric */}
+                  <div className="px-8 py-6 border-b border-[#E8E6DE] text-center">
+                    <p className="text-[var(--gold)] text-[48px] md:text-[56px] font-bold leading-none">{card.metric}</p>
+                    <p className="text-[#4A4A46] text-[13px] mt-2">{card.metricLabel}</p>
+                  </div>
+
+                  {/* Before/After */}
+                  <div className="px-8 py-6 flex-1">
+                    {card.items.map((item) => (
+                      <div key={item.label} className="mb-5 last:mb-0">
+                        <p className="text-[12px] text-[#8E8D88] font-medium mb-2">{item.label}</p>
+                        <div className="flex items-center gap-3">
+                          <span className="text-[14px] text-[#8E8D88] line-through">{item.before}</span>
+                          <span className="text-[14px] text-[#8E8D88]">→</span>
+                          <span className="text-[14px] text-[#1A1A18] font-bold">{item.after}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Bottom saving */}
+                  <div className="px-8 py-5 bg-[var(--gold-light)] border-t border-[#E8E6DE]">
+                    <p className="text-[14px] text-[var(--gold)] font-bold text-center">{card.saving}</p>
                   </div>
                 </div>
               </ScrollReveal>
             ))}
           </div>
+
+          <ScrollReveal delay={200}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-14">
+              <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--gold)] text-[#1A1A1A] px-8 py-4 rounded-lg text-[15px] font-bold hover:opacity-90 transition-opacity min-h-[52px]">
+                無料で相談する
+              </Link>
+              <Link href="/work" className="inline-flex items-center justify-center border-2 border-[#E8E6DE] text-[#1A1A18] px-8 py-4 rounded-lg text-[15px] font-medium hover:border-[var(--gold)] hover:text-[var(--gold)] transition-colors min-h-[52px]">
+                導入実績を詳しく見る
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
