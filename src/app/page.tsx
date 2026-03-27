@@ -210,6 +210,41 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== SERVICES DETAIL (white bg) ===== */}
+      <section className="bg-white py-24 md:py-32 px-6">
+        <div className="max-w-[1200px] mx-auto">
+          <ScrollReveal>
+            <p className="text-[#059669] text-[12px] font-bold tracking-[0.15em] uppercase mb-4 text-center">Services</p>
+            <h2 className="font-bold tracking-tight mb-4 text-[#1F2937] text-center">
+              <span className="text-[24px] md:text-[28px]">御社の課題に合わせた</span>
+              <span className="text-[36px] md:text-[48px] text-[#059669]">6つのサービス</span>
+            </h2>
+            <p className="text-[#6B7280] text-[15px] leading-[2] max-w-[560px] mx-auto mb-16 text-center">
+              AI・Web・クリエイティブ・研修。必要なものだけを、組み合わせて提案します。
+            </p>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((s, i) => (
+              <ScrollReveal key={s.title} delay={i * 60}>
+                <Link href={s.href} className="group block h-full">
+                  <div className="soft-card rounded-2xl p-8 h-full flex flex-col">
+                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#D1FAE5] text-[#059669] text-[14px] font-bold mb-5">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <h3 className="text-[18px] font-bold text-[#1F2937] mb-2">{s.title}</h3>
+                    <p className="text-[12px] text-[#059669] font-medium tracking-wide mb-3">{s.en}</p>
+                    <p className="text-[14px] text-[#6B7280] leading-[1.9] flex-1">{s.desc}</p>
+                    <div className="mt-5 pt-5 border-t border-[#E5E7EB]">
+                      <span className="text-[14px] text-[#059669] font-medium group-hover:underline">詳しく見る →</span>
+                    </div>
+                  </div>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===== RESULTS (white bg, rounded cards with green header) ===== */}
       <section className="bg-white py-24 md:py-32 px-6">
         <div className="max-w-[1200px] mx-auto">
