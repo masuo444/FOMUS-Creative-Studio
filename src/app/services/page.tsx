@@ -25,9 +25,9 @@ const services = [
     image: '/images/work-manga.png',
   },
   {
-    id: 'invoice', en: 'Invoice & Payment', title: '請求書・決済システム',
-    desc: '請求から入金管理まで、一気通貫で自動化します。インボイス制度対応の適格請求書自動発行、Stripe決済連携、サブスクリプション管理。',
-    image: '/images/demo-mobile.png',
+    id: 'training', en: 'AI Training', title: '法人向けAI研修',
+    desc: 'ツール操作ではなく、御社の業務を起点にAIを組み込む設計力を育てます。ChatGPT、Gemini、画像生成AI等を業務で活用する10時間の実務特化型研修。人材開発支援助成金（リスキリング支援）で最大75%OFF。',
+    image: '/images/demo-desktop.png',
   },
   {
     id: 'maintenance', en: 'Maintenance', title: '保守・運用サポート',
