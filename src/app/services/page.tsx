@@ -5,32 +5,32 @@ import SiteFooter from '@/components/layout/SiteFooter'
 
 const services = [
   {
-    id: 'ai', en: 'AI Solutions', title: 'AI導入支援',
+    id: 'ai', en: 'AI Solutions', title: 'AI導入支援', href: '/services/ai',
     desc: '業務の自動化・効率化を、AIの力で実現します。チャットボット構築、FAQ自動応答、多言語対応AI、レビュー自動返信、データ分析・可視化、予約管理の自動化まで対応。',
     image: '/images/demo-desktop.png',
   },
   {
-    id: 'web', en: 'Web Production', title: 'Web制作・リニューアル',
+    id: 'web', en: 'Web Production', title: 'Web制作・リニューアル', href: '/services/web',
     desc: '御社の「顔」となるWebサイトを、戦略的に構築します。コーポレートサイト、LP、予約システム、EC機能、多言語対応、CMS導入。',
     image: '/images/work-web.png',
   },
   {
-    id: 'dx', en: 'DX Consulting', title: 'DXコンサルティング',
+    id: 'dx', en: 'DX Consulting', title: 'DXコンサルティング', href: '/services/dx',
     desc: '「何から始めるべきか」を、御社と一緒に設計します。業務フロー分析、IT投資の優先順位設計、ツール選定・導入支援、社内研修・定着支援。',
     image: '/images/hero-laptop.png',
   },
   {
-    id: 'creative', en: 'Manga & Creative', title: '漫画・クリエイティブ制作',
+    id: 'creative', en: 'Manga & Creative', title: '漫画・クリエイティブ制作', href: '/services/manga',
     desc: '言葉では伝わらないことを、ビジュアルで届けます。採用漫画、企業PR漫画、自己紹介漫画、ロゴデザイン、名刺、動画制作、SNS素材。',
     image: '/images/work-manga.png',
   },
   {
-    id: 'training', en: 'AI Training', title: '法人向けAI研修',
+    id: 'training', en: 'AI Training', title: '法人向けAI研修', href: '/services/training',
     desc: 'ツール操作ではなく、御社の業務を起点にAIを組み込む設計力を育てます。ChatGPT、Gemini、画像生成AI等を業務で活用する10時間の実務特化型研修。人材開発支援助成金（リスキリング支援）で最大75%OFF。',
     image: '/images/demo-desktop.png',
   },
   {
-    id: 'maintenance', en: 'Maintenance', title: '保守・運用サポート',
+    id: 'maintenance', en: 'Maintenance', title: '保守・運用サポート', href: '/services/maintenance',
     desc: '導入して終わりではなく、成果が出るまで支援し続けます。障害対応、セキュリティ更新、機能追加・改善、月次効果測定レポート、担当者への操作研修。',
     image: '/images/work-silva.png',
   },
@@ -78,10 +78,10 @@ export default function ServicesPage() {
                   </p>
                   <p className="text-[var(--gold)] text-[14px] font-medium mb-4">まずはヒアリングから</p>
                   <Link
-                    href="/contact"
-                    className="inline-flex items-center text-white/40 hover:text-white transition-colors text-[18px]"
+                    href={s.href}
+                    className="inline-flex items-center text-white/40 hover:text-white transition-colors text-[14px] gap-2"
                   >
-                    →
+                    詳しく見る →
                   </Link>
                 </div>
 
