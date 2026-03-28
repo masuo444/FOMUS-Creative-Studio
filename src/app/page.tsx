@@ -5,12 +5,12 @@ import MobileMenu from '@/components/ui/MobileMenu'
 import MobileCTABar from '@/components/ui/MobileCTABar'
 
 const services = [
-  { title: 'AI導入', en: 'AI Solutions', desc: '業務自動化・チャットボット・データ分析の設計と実装。', href: '/services#ai' },
-  { title: 'Web制作', en: 'Web Production', desc: 'コーポレートサイト・LP・予約システムの構築。', href: '/services#web' },
-  { title: 'DX推進', en: 'DX Consulting', desc: '業務フロー分析から投資対効果の高い施策を特定。', href: '/services#dx' },
-  { title: '漫画制作', en: 'Manga & Creative', desc: '採用漫画・企業PR・ロゴ・動画のデザイン。', href: '/services#creative' },
-  { title: 'AI研修', en: 'AI Training', desc: '業務起点のAI活用研修。助成金で最大75%OFF。', href: '/services#training' },
-  { title: '保守運用', en: 'Maintenance', desc: '月額保守で継続改善。障害対応・月次レポート付き。', href: '/services#maintenance' },
+  { title: 'AI導入', en: 'AI Solutions', desc: '業務自動化・チャットボット・データ分析の設計と実装。', href: '/services/ai', image: '/images/demo-desktop.png' },
+  { title: 'Web制作', en: 'Web Production', desc: 'コーポレートサイト・LP・予約システムの構築。', href: '/services/web', image: '/images/work-web.png' },
+  { title: 'DX推進', en: 'DX Consulting', desc: '業務フロー分析から投資対効果の高い施策を特定。', href: '/services/dx', image: '/images/hero-laptop.png' },
+  { title: '漫画制作', en: 'Manga & Creative', desc: '採用漫画・企業PR・ロゴ・動画のデザイン。', href: '/services/manga', image: '/images/work-manga.png' },
+  { title: 'AI研修', en: 'AI Training', desc: '業務起点のAI活用研修。助成金で最大75%OFF。', href: '/services/training', image: '/images/demo-mobile.png' },
+  { title: '保守運用', en: 'Maintenance', desc: '月額保守で継続改善。障害対応・月次レポート付き。', href: '/services/maintenance', image: '/images/work-silva.png' },
 ]
 
 const painPoints = [
@@ -114,6 +114,15 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== FULL-WIDTH TRUST IMAGE BAR ===== */}
+      <ScrollReveal>
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-1">
+          <img src="/images/work-web.png" alt="Web制作実績" className="w-full aspect-[16/9] object-cover" />
+          <img src="/images/demo-desktop.png" alt="AI導入実績" className="w-full aspect-[16/9] object-cover" />
+          <img src="/images/work-manga.png" alt="漫画制作実績" className="w-full aspect-[16/9] object-cover" />
+        </div>
+      </ScrollReveal>
+
       {/* ===== CHALLENGES (white bg, soft cards) ===== */}
       <section className="bg-white py-24 md:py-32 px-6">
         <div className="max-w-[1200px] mx-auto">
@@ -142,33 +151,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== Impact Statement (light green bg — NOT dark) ===== */}
-      <section className="bg-[#F0FDF4] py-20 md:py-28 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <svg className="absolute top-0 left-0 w-full h-full opacity-[0.05]" viewBox="0 0 1200 400" fill="none">
-            <ellipse cx="600" cy="200" rx="500" ry="180" stroke="url(#impact-grad)" strokeWidth="1.5" />
-            <ellipse cx="600" cy="200" rx="400" ry="140" stroke="url(#impact-grad)" strokeWidth="1" />
-            <defs>
-              <linearGradient id="impact-grad" x1="0" y1="0" x2="1200" y2="400">
-                <stop stopColor="#059669" />
-                <stop offset="1" stopColor="#10B981" />
-              </linearGradient>
-            </defs>
-          </svg>
+      {/* ===== Impact Statement (photo bg + overlay) ===== */}
+      <section className="relative py-24 md:py-32 px-6 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="/images/hero.jpg" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-[#065F46]/85" />
         </div>
         <div className="relative z-10 max-w-[900px] mx-auto text-center">
           <ScrollReveal>
-            <h2 className="text-[#1F2937] font-bold tracking-tight leading-[1.4] mb-6">
+            <h2 className="text-white font-bold tracking-tight leading-[1.4] mb-6">
               <span className="text-[clamp(22px,3.5vw,32px)]">これらの課題、すべて</span>
               <br />
-              <span className="text-[clamp(40px,7vw,72px)] text-[#059669]">仕組み</span>
+              <span className="text-[clamp(40px,7vw,72px)] text-[#34D399]">仕組み</span>
               <span className="text-[clamp(22px,3.5vw,32px)]">で解決できます。</span>
             </h2>
-            <p className="text-[#6B7280] text-[16px] md:text-[18px] leading-[2]">
+            <p className="text-white/60 text-[16px] md:text-[18px] leading-[2]">
               放置すれば損失は拡大します。対策は早いほど効果が出ます。
             </p>
             <div className="mt-10">
-              <Link href="/contact" className="inline-flex items-center justify-center bg-[#059669] text-white px-10 py-4 rounded-full text-[16px] font-bold hover:bg-[#047857] transition-all hover:shadow-lg hover:shadow-[#059669]/20 min-h-[52px]">
+              <Link href="/contact" className="inline-flex items-center justify-center bg-white text-[#065F46] px-10 py-4 rounded-full text-[16px] font-bold hover:bg-white/90 transition-all min-h-[52px]">
                 無料で相談する
               </Link>
             </div>
@@ -193,15 +194,22 @@ export default function Home() {
             {services.map((s, i) => (
               <ScrollReveal key={s.title} delay={i * 60}>
                 <Link href={s.href} className="group block h-full">
-                  <div className="soft-card rounded-2xl p-8 h-full flex flex-col">
-                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#D1FAE5] text-[#059669] text-[14px] font-bold mb-5">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <h3 className="text-[18px] font-bold text-[#1F2937] mb-2">{s.title}</h3>
-                    <p className="text-[12px] text-[#059669] font-medium tracking-wide mb-3">{s.en}</p>
-                    <p className="text-[14px] text-[#6B7280] leading-[1.9] flex-1">{s.desc}</p>
-                    <div className="mt-5 pt-5 border-t border-[#E5E7EB]">
-                      <span className="text-[14px] text-[#059669] font-medium group-hover:underline">詳しく見る →</span>
+                  <div className="soft-card rounded-2xl overflow-hidden h-full flex flex-col">
+                    <div className="relative aspect-[16/9] overflow-hidden">
+                      <img src={s.image} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                      <div className="absolute top-3 left-3">
+                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/90 text-[#059669] text-[12px] font-bold">
+                          {String(i + 1).padStart(2, '0')}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-6 flex-1 flex flex-col">
+                      <h3 className="text-[18px] font-bold text-[#1F2937] mb-1">{s.title}</h3>
+                      <p className="text-[12px] text-[#059669] font-medium tracking-wide mb-3">{s.en}</p>
+                      <p className="text-[14px] text-[#6B7280] leading-[1.9] flex-1">{s.desc}</p>
+                      <div className="mt-4 pt-4 border-t border-[#E5E7EB]">
+                        <span className="text-[14px] text-[#059669] font-medium group-hover:underline">詳しく見る →</span>
+                      </div>
                     </div>
                   </div>
                 </Link>
