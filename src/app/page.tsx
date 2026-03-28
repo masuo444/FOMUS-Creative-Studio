@@ -114,40 +114,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== SERVICES GRID (dark green #065F46, glass cards) ===== */}
-      <section id="services" className="relative py-20 md:py-28 overflow-hidden" style={{ background: 'linear-gradient(135deg, #065F46 0%, #064E3B 100%)' }}>
-        {/* Background effects */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-[10%] right-[15%] w-[400px] h-[400px] rounded-full bg-[#10B981] opacity-[0.1] blur-[120px]" />
-          <div className="absolute bottom-[10%] left-[10%] w-[300px] h-[300px] rounded-full bg-[#059669] opacity-[0.08] blur-[100px]" />
-          <div className="absolute inset-0 dot-grid-dark" />
-        </div>
-
-        <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10">
-          <ScrollReveal>
-            <p className="text-[#34D399] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">Services</p>
-            <h2 className="text-white text-[28px] md:text-[36px] font-bold tracking-tight mb-14">
-              御社の課題に合わせた
-              <br className="md:hidden" />6つのサービス
-            </h2>
-          </ScrollReveal>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
-            {services.map((s, i) => (
-              <ScrollReveal key={s.title} delay={i * 60}>
-                <Link href={s.href} className="group relative glass-card-green p-5 md:p-7 hover:border-white/25 transition-all duration-500 overflow-hidden block">
-                  <p className="text-white/40 text-[11px] md:text-[12px] tracking-wide mb-1">{s.en}</p>
-                  <p className="text-white text-[17px] md:text-[20px] font-bold">{s.title}</p>
-                  <div className="max-h-0 group-hover:max-h-24 overflow-hidden transition-all duration-500 ease-out">
-                    <p className="text-white/50 text-[13px] leading-[1.7] mt-3 pr-4">{s.desc}</p>
-                  </div>
-                  <span className="absolute top-5 right-5 text-white/20 group-hover:text-[#34D399] transition-colors text-[18px]">→</span>
-                </Link>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ===== CHALLENGES (white bg, soft cards) ===== */}
       <section className="bg-white py-24 md:py-32 px-6">
         <div className="max-w-[1200px] mx-auto">
