@@ -16,6 +16,7 @@ export default function SiteFooter() {
             <Link href="/blog" className="hover:text-white transition-colors px-4 py-1.5 rounded-full hover:bg-white/10 min-h-[44px] flex items-center">ブログ</Link>
             <Link href="/contact" className="hover:text-white transition-colors px-4 py-1.5 rounded-full hover:bg-white/10 min-h-[44px] flex items-center">お問い合わせ</Link>
             <Link href="/privacy" className="hover:text-white transition-colors px-4 py-1.5 rounded-full hover:bg-white/10 min-h-[44px] flex items-center">プライバシーポリシー</Link>
+            <Link href="/tokushoho" className="hover:text-white transition-colors px-4 py-1.5 rounded-full hover:bg-white/10 min-h-[44px] flex items-center">特定商取引法に基づく表記</Link>
           </div>
         </div>
         {/* 関連サイト */}
