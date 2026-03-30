@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/dashboard/', '/auth/', '/api/'],
       },
     ],
-    sitemap: 'https://fomusglobal.com/sitemap.xml',
+    sitemap: 'https://studio.fomus.jp/sitemap.xml',
   }
 }

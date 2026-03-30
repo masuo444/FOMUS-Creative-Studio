@@ -6,7 +6,7 @@ export default function BreadcrumbSchema({ items }: { items: { name: string; hre
       '@type': 'ListItem',
       position: i + 1,
       name: item.name,
-      item: `https://fomusglobal.com${item.href}`,
+      item: `https://studio.fomus.jp${item.href}`,
     })),
   }
 

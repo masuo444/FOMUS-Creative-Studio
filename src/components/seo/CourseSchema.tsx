@@ -7,7 +7,7 @@ export default function CourseSchema() {
     provider: {
       '@type': 'Organization',
       name: 'FOMUS Creative Studio',
-      url: 'https://fomusglobal.com',
+      url: 'https://studio.fomus.jp',
     },
     educationalLevel: '初級〜中級',
     coursePrerequisites: 'AIの知識不要。PC操作ができれば参加可能。',
@@ -20,7 +20,7 @@ export default function CourseSchema() {
         '@type': 'Person',
         name: '増尾 圭亮',
         jobTitle: '合同会社FOMUS 代表',
-        url: 'https://fomusglobal.com/about/masuo',
+        url: 'https://studio.fomus.jp/about/masuo',
       },
     },
     teaches: [

@@ -163,13 +163,13 @@ export default function AuthorPage() {
             '@context': 'https://schema.org',
             '@type': 'Person',
             name: '増尾 圭亮',
-            url: 'https://fomusglobal.com/about/masuo',
-            image: 'https://fomusglobal.com/images/founder.jpg',
+            url: 'https://studio.fomus.jp/about/masuo',
+            image: 'https://studio.fomus.jp/images/founder.jpg',
             jobTitle: '代表',
             worksFor: {
               '@type': 'Organization',
               name: '合同会社FOMUS',
-              url: 'https://fomusglobal.com',
+              url: 'https://studio.fomus.jp',
             },
             knowsAbout: [
               'AI導入支援',

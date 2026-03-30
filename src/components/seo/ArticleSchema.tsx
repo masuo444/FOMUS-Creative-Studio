@@ -14,26 +14,26 @@ export default function ArticleSchema({ title, description, date, image, slug }:
     description,
     datePublished: date,
     dateModified: date,
-    image: image ? `https://fomusglobal.com${image}` : undefined,
-    url: `https://fomusglobal.com/blog/${slug}`,
+    image: image ? `https://studio.fomus.jp${image}` : undefined,
+    url: `https://studio.fomus.jp/blog/${slug}`,
     author: {
       '@type': 'Person',
       name: '増尾 圭亮',
-      url: 'https://fomusglobal.com/about/masuo',
+      url: 'https://studio.fomus.jp/about/masuo',
       jobTitle: '合同会社FOMUS 代表',
     },
     publisher: {
       '@type': 'Organization',
       name: 'FOMUS Creative Studio',
-      url: 'https://fomusglobal.com',
+      url: 'https://studio.fomus.jp',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://fomusglobal.com/fomus-logo.png',
+        url: 'https://studio.fomus.jp/fomus-logo.png',
       },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://fomusglobal.com/blog/${slug}`,
+      '@id': `https://studio.fomus.jp/blog/${slug}`,
     },
     inLanguage: 'ja',
   }

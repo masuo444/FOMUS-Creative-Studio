@@ -17,7 +17,7 @@ const instrumentSerif = Instrument_Serif({
   style: ['normal', 'italic'],
 })
 
-const siteUrl = 'https://fomusglobal.com'
+const siteUrl = 'https://studio.fomus.jp'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
