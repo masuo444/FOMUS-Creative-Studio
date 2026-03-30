@@ -300,72 +300,61 @@ export default function ServiceAIPage() {
             </div>
           </ScrollReveal>
 
-          {/* 機能一覧 */}
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
-            {[
-              {
-                icon: '💬',
-                title: 'AIチャットボット',
-                desc: '店舗のメニュー・ポリシー・アクセス等をAIが学習。8言語で24時間365日、接客品質を落とさず自動対応。外国語スタッフの採用コストを削減。',
-              },
-              {
-                icon: '📅',
-                title: '予約管理',
-                desc: '飲食・宿泊・美容・体験の7業種に最適化された予約フォーム。アレルギー・タトゥー有無・希望セラピスト等、業種ごとの必須情報を多言語で取得。',
-              },
-              {
-                icon: '💳',
-                title: '決済・インボイス',
-                desc: 'Stripe連携でクレジットカード決済に対応。適格請求書（インボイス）を自動発行。店舗のStripeアカウントで直接入金されるため、資金の安全性も確保。',
-              },
-              {
-                icon: '🛍️',
-                title: 'EC・物販',
-                desc: 'お土産・グッズ・地酒等を多言語で販売。在庫管理・注文追跡・レシート発行を自動化。店舗の売上機会を最大化。',
-              },
-              {
-                icon: '⭐',
-                title: 'レビュー管理',
-                desc: 'Google・TripAdvisorのレビューを一元管理。AIがレビューのトーンに合わせて、投稿者の言語で返信文を自動生成。返信率100%を実現。',
-              },
-              {
-                icon: '📊',
-                title: '売上分析',
-                desc: 'インバウンド比率・言語別売上・月次トレンドを自動でレポート。データに基づいた経営判断をサポート。',
-              },
-            ].map((item, i) => (
-              <ScrollReveal key={i} delay={i * 60}>
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 h-full">
-                  <span className="text-[24px] mb-3 block">{item.icon}</span>
-                  <h3 className="text-[16px] font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-[13px] text-white/60 leading-[1.9]">{item.desc}</p>
+          {/* 2カラム: 機能リスト + IT導入補助金 */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <ScrollReveal>
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 h-full">
+                <h3 className="text-[17px] font-bold text-white mb-6">KANADE AIでできること</h3>
+                <div className="space-y-4">
+                  {[
+                    { label: 'AIチャットボット', desc: '8言語対応。店舗の情報を学習し、24時間自動接客。' },
+                    { label: '予約管理', desc: '業種別フォーム（飲食・宿泊・美容・体験）。多言語で自動通知。' },
+                    { label: '決済・インボイス', desc: 'Stripe連携。適格請求書を自動発行。' },
+                    { label: 'EC機能', desc: 'お土産・物販を多言語で販売。在庫管理付き。' },
+                    { label: 'レビュー管理', desc: 'Google・TripAdvisorのレビューにAIが多言語で自動返信。' },
+                    { label: '売上分析', desc: 'インバウンド比率・言語別売上・月次トレンドを自動レポート。' },
+                  ].map((item) => (
+                    <div key={item.label} className="flex gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#34D399] flex-shrink-0 mt-2" />
+                      <div>
+                        <span className="text-[14px] font-bold text-white">{item.label}</span>
+                        <span className="text-[14px] text-white/60 ml-2">{item.desc}</span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              </ScrollReveal>
-            ))}
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={80}>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-8 h-full">
+                <h3 className="text-[17px] font-bold text-white mb-6">IT導入補助金で最大4/5補助</h3>
+                <p className="text-white/60 text-[14px] leading-[2] mb-6">
+                  KANADE AIは「IT導入補助金」の対象5プロセス（顧客対応・決済・在庫・会計・自動化）をカバー。小規模事業者枠で最大4/5の補助率が適用されます。
+                </p>
+                <div className="space-y-4 mb-8">
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-white/70 text-[14px]">補助上限額</span>
+                    <span className="text-[18px] font-bold text-white">350万円</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-white/70 text-[14px]">補助率（小規模事業者）</span>
+                    <span className="text-[18px] font-bold text-[#34D399]">4/5</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3">
+                    <span className="text-white/70 text-[14px]">御社の実質負担（目安）</span>
+                    <span className="text-[24px] font-bold text-[#34D399]">89万円〜</span>
+                  </div>
+                </div>
+                <Link href="/contact" className="inline-flex items-center justify-center bg-[#34D399] text-[#065F46] px-6 py-3 rounded-full text-[14px] font-bold hover:bg-[#6EE7B7] transition-colors min-h-[44px] w-full">
+                  補助金の活用方法を相談する
+                </Link>
+              </div>
+            </ScrollReveal>
           </div>
 
-          {/* 数字 */}
-          <ScrollReveal>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-              {[
-                { num: '8', unit: '言語', desc: '日英中韓タイ越仏西' },
-                { num: '7', unit: '業種', desc: '業種別予約フォーム' },
-                { num: '24/365', unit: '', desc: '自動接客' },
-                { num: '1行', unit: '', desc: 'で既存サイトに導入' },
-              ].map((item) => (
-                <div key={item.desc} className="bg-white/5 rounded-xl border border-white/10 p-5 text-center">
-                  <div className="mb-1">
-                    <span className="text-[28px] md:text-[36px] font-bold text-[#34D399] leading-none">{item.num}</span>
-                    {item.unit && <span className="text-[14px] text-white/50 ml-1">{item.unit}</span>}
-                  </div>
-                  <p className="text-[12px] text-white/40">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={60}>
-            <div className="mt-10 text-center">
+          <ScrollReveal delay={120}>
+            <div className="text-center">
               <a
                 href="https://kanade-ai.com"
                 target="_blank"
