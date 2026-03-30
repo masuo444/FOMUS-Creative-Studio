@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
 import SiteNav from '@/components/layout/SiteNav'
 import SiteFooter from '@/components/layout/SiteFooter'
 import ScrollReveal from '@/components/ui/ScrollReveal'
@@ -36,26 +35,6 @@ export default function CompanyPage() {
       {/* Warm cream content area */}
       <section className="bg-[#F5F3EE] py-20 md:py-28 px-6">
         <div className="max-w-[1100px] mx-auto">
-          {/* Founder */}
-          <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 mb-20">
-              <div className="md:col-span-4">
-                <Image src="/images/founder.jpg" alt="増尾 圭亮 - 合同会社FOMUS代表" width={600} height={800} className="aspect-[3/4] rounded-2xl object-cover w-full" />
-              </div>
-              <div className="md:col-span-7 md:col-start-6 flex flex-col justify-center">
-                <p className="text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">Founder</p>
-                <p className="text-[var(--gold)] text-[13px] font-medium mb-3">代表</p>
-                <h2 className="text-[24px] md:text-[28px] font-bold tracking-tight mb-6 text-[#1A1A18]">増尾 圭亮</h2>
-                <p className="text-[15px] md:text-[16px] text-[#4A4A46] leading-[2.1]">
-                  合同会社FOMUS代表。AI開発、Web制作、漫画制作までを一人で設計・実装する技術者です。大規模な開発チームではなく、意思決定者が直接手を動かすことで、伝言コスト・管理コストを排除します。
-                </p>
-                <p className="text-[15px] md:text-[16px] text-[#1A1A18] leading-[2.1] mt-4 font-bold">
-                  ITのことで困ったら、まず私に相談してください。
-                </p>
-              </div>
-            </div>
-          </ScrollReveal>
-
           {/* Company table */}
           <ScrollReveal delay={60}>
             <div className="lux-card rounded-xl overflow-hidden">
