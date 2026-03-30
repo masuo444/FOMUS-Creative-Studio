@@ -118,10 +118,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: 'FOMUS Creative Studio',
               url: siteUrl,
               logo: `${siteUrl}/fomus-logo.png`,
-              description: 'AI導入支援・Web制作・漫画制作・AI研修を提供する京都のクリエイティブスタジオ。中小企業の業務課題をAIで解決。',
+              description: 'AI導入支援・Web制作・漫画制作・AI研修を提供するクリエイティブスタジオ。中小企業の業務課題をAIで解決。',
               address: {
                 '@type': 'PostalAddress',
-                addressRegion: '京都府',
+                streetAddress: '本町3-33',
+                addressLocality: '坂戸市',
+                addressRegion: '埼玉県',
                 addressCountry: 'JP',
               },
               founder: {

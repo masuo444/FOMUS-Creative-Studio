@@ -59,7 +59,7 @@ export default function AuthorPage() {
               <ScrollReveal delay={60}>
                 <p className="text-[#059669] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">Founder & Engineer</p>
                 <h1 className="text-[28px] md:text-[36px] font-bold tracking-tight mb-2 text-[#1F2937]">増尾 圭亮</h1>
-                <p className="text-[14px] text-[#9CA3AF] mb-6">合同会社FOMUS 代表 / FOMUS Global Inc. (Dubai)</p>
+                <p className="text-[14px] text-[#9CA3AF] mb-6">合同会社FOMUS 代表</p>
                 <p className="text-[15px] md:text-[16px] text-[#6B7280] leading-[2.1] mb-6">
                   AI開発、Web制作、漫画制作までを一人で設計・実装する技術者。大規模な開発チームではなく、意思決定者が直接手を動かすことで、伝言コスト・管理コストを排除します。
                 </p>

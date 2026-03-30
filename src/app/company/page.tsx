@@ -7,7 +7,7 @@ import ScrollReveal from '@/components/ui/ScrollReveal'
 
 export const metadata: Metadata = {
   title: '会社概要 | 合同会社FOMUS',
-  description: '合同会社FOMUS。代表 増尾圭亮。日本酒メディア運営、伝統工芸品の海外展開、AI導入・Web制作・漫画制作・AI研修を提供するクリエイティブスタジオ。',
+  description: '合同会社FOMUS。代表 増尾圭亮。AI導入・Web制作・漫画制作・AI研修を提供するクリエイティブスタジオ。',
   alternates: { canonical: '/company' },
 }
 
@@ -63,13 +63,11 @@ export default function CompanyPage() {
                 <tbody>
                   {[
                     ['会社名', '合同会社FOMUS'],
-                    ['英文表記', 'FOMUS LLC'],
                     ['代表社員', '増尾 圭亮'],
                     ['設立', '2024年'],
-                    ['所在地', '京都府（詳細はお問い合わせください）'],
-                    ['海外法人', 'FOMUS Global Inc.（Dubai, UAE）'],
+                    ['所在地', '埼玉県坂戸市本町3-33'],
                     ['事業内容', '業務診断 / 仕組みの構築（AI・Web・クリエイティブ） / ITパートナー契約'],
-                    ['連絡先', 'お問い合わせフォームよりご連絡ください'],
+                    ['連絡先', 'info@fomus.jp'],
                   ].map(([label, value]) => (
                     <tr key={label} className="border-b border-[#E8E6DE] last:border-b-0">
                       <td className="px-4 md:px-6 py-5 text-[#8E8D88] font-medium w-[120px] md:w-[180px] align-top text-[14px] md:text-[15px]">{label}</td>
