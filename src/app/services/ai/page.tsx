@@ -9,8 +9,8 @@ import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 
 export const metadata: Metadata = {
-  title: 'AI導入支援 | AIチャットボット・業務自動化・多言語対応',
-  description: '問い合わせ対応工数-80%、24時間365日自動対応、多言語対応。AIチャットボット・FAQ自動応答・レビュー返信・予約管理の自動化を設計から運用まで一貫構築。',
+  title: 'AI導入支援 | KANADE AI・AIチャットボット・IT導入補助金対応',
+  description: '自社開発AI SaaS「KANADE AI」で接客・予約・決済・インボイスを自動化。8言語対応AIチャットボット。IT導入補助金で最大4/5補助。設計から運用まで一貫構築。',
   alternates: { canonical: '/services/ai' },
 }
 
@@ -164,6 +164,101 @@ export default function ServiceAIPage() {
           </Link>
         </div>
       </ScrollReveal>
+
+      {/* ===== KANADE AI ===== */}
+      <section className="bg-white py-20 md:py-28 px-6">
+        <div className="max-w-[1200px] mx-auto">
+          <ScrollReveal>
+            <p className="text-[#059669] text-[13px] font-bold tracking-[0.15em] uppercase mb-4">Flagship Product</p>
+            <h2 className="font-bold tracking-tight text-[#1F2937] mb-4">
+              <span className="text-[24px] md:text-[28px]">自社開発AI SaaS</span>
+              <br />
+              <span className="text-[36px] md:text-[48px] text-[#059669]">KANADE AI</span>
+            </h2>
+            <p className="text-[#6B7280] text-[15px] leading-[2] max-w-[600px] mb-12">
+              接客業向け多言語AIコンシェルジュ。チャットボット・予約・決済・インボイスを1つのプラットフォームに統合。<br />
+              IT導入補助金の対象ツールとして登録申請中。
+            </p>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <ScrollReveal>
+              <div className="bg-[#F9FAFB] rounded-2xl border border-[#E5E7EB] p-8 h-full">
+                <h3 className="text-[17px] font-bold text-[#1F2937] mb-6">KANADE AIでできること</h3>
+                <div className="space-y-4">
+                  {[
+                    { label: 'AIチャットボット', desc: '8言語対応。店舗の情報を学習し、24時間自動接客。' },
+                    { label: '予約管理', desc: '業種別フォーム（飲食・宿泊・美容・体験）。多言語で自動通知。' },
+                    { label: '決済・インボイス', desc: 'Stripe連携。適格請求書を自動発行。' },
+                    { label: 'EC機能', desc: 'お土産・物販を多言語で販売。在庫管理付き。' },
+                    { label: 'レビュー管理', desc: 'Google・TripAdvisorのレビューにAIが多言語で自動返信。' },
+                    { label: '売上分析', desc: 'インバウンド比率・言語別売上・月次トレンドを自動レポート。' },
+                  ].map((item) => (
+                    <div key={item.label} className="flex gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#059669] flex-shrink-0 mt-2" />
+                      <div>
+                        <span className="text-[14px] font-bold text-[#1F2937]">{item.label}</span>
+                        <span className="text-[14px] text-[#6B7280] ml-2">{item.desc}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={80}>
+              <div className="bg-[#065F46] rounded-2xl p-8 h-full text-white">
+                <h3 className="text-[17px] font-bold mb-6">IT導入補助金で最大4/5補助</h3>
+                <p className="text-white/60 text-[14px] leading-[2] mb-6">
+                  KANADE AIは「IT導入補助金」の対象5プロセス（顧客対応・決済・在庫・会計・自動化）をカバー。
+                  小規模事業者枠で最大4/5の補助率が適用されます。
+                </p>
+                <div className="space-y-4 mb-8">
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-white/70 text-[14px]">補助上限額</span>
+                    <span className="text-[18px] font-bold">350万円</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-white/70 text-[14px]">補助率（小規模事業者）</span>
+                    <span className="text-[18px] font-bold text-[#34D399]">4/5</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3">
+                    <span className="text-white/70 text-[14px]">御社の実質負担（目安）</span>
+                    <span className="text-[24px] font-bold text-[#34D399]">89万円〜</span>
+                  </div>
+                </div>
+                <a
+                  href="https://kanade-ai.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-white text-[#065F46] px-8 py-3 rounded-full text-[15px] font-bold hover:bg-[#D1FAE5] transition-colors min-h-[48px] w-full"
+                >
+                  KANADE AI の詳細を見る &#8599;
+                </a>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          <ScrollReveal delay={120}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { num: '8', unit: '言語', desc: '多言語AI対応' },
+                { num: '7', unit: '業種', desc: '業種別予約フォーム' },
+                { num: '24/365', unit: '', desc: '自動接客' },
+                { num: '即日', unit: '', desc: '導入可能' },
+              ].map((item) => (
+                <div key={item.desc} className="bg-[#F0FDF4] rounded-xl p-5 text-center">
+                  <div className="mb-1">
+                    <span className="text-[28px] md:text-[36px] font-bold text-[#059669] leading-none">{item.num}</span>
+                    {item.unit && <span className="text-[14px] text-[#6B7280] ml-1">{item.unit}</span>}
+                  </div>
+                  <p className="text-[12px] text-[#9CA3AF]">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
 
       {/* ===== 導入の流れ ===== */}
       <section className="bg-[#F0FDF4] py-20 md:py-28 px-6">
