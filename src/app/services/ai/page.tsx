@@ -289,9 +289,15 @@ export default function ServiceAIPage() {
               接客業・サービス業に特化した、多言語AIコンシェルジュプラットフォーム。<br />
               外国人観光客の「言葉の壁」を解消し、予約・決済・顧客対応を24時間自動化します。
             </p>
-            <p className="text-white/40 text-[14px] leading-[2] max-w-[640px] mb-12">
+            <p className="text-white/40 text-[14px] leading-[2] max-w-[640px] mb-8">
               日本を訪れる外国人観光客は年間4,200万人超。しかし多くの店舗は多言語対応ができず、目の前の売上を逃しています。KANADE AIは、1行のコードを既存サイトに貼るだけで、8言語対応のAIコンシェルジュを即日導入できます。AIが店舗の情報を学習し、メニュー案内・空き状況の回答・予約受付・決済・レシート発行まで自動で対応します。
             </p>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 max-w-[640px] mb-12">
+              <p className="text-[#34D399] text-[13px] font-bold mb-2">FOMUSが自社事業で使っているAIを、そのまま導入</p>
+              <p className="text-white/60 text-[13px] leading-[2]">
+                KANADE AIは外部ツールの再販ではありません。FOMUSが自社で運営するTerroir HUB（全国1,500蔵の日本酒ポータル）で実際に稼働しているAIコンシェルジュ技術をベースに開発。自分たちで使い、改善し続けているからこそ、机上の空論ではない実務品質を提供できます。
+              </p>
+            </div>
           </ScrollReveal>
 
           {/* 機能一覧 */}
@@ -355,36 +361,6 @@ export default function ServiceAIPage() {
                   <p className="text-[12px] text-white/40">{item.desc}</p>
                 </div>
               ))}
-            </div>
-          </ScrollReveal>
-
-          {/* 対象業種 */}
-          <ScrollReveal>
-            <div className="mb-16">
-              <h3 className="text-white text-[17px] font-bold mb-6">対象業種</h3>
-              <div className="flex flex-wrap gap-3">
-                {['美容室', 'マッサージ・整体', 'ネイルサロン', 'エステサロン', '飲食店・割烹・鮨', '旅館・ホテル', '体験・アクティビティ'].map((genre) => (
-                  <span key={genre} className="text-[13px] text-white/70 bg-white/10 px-4 py-2 rounded-full">{genre}</span>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* 料金 + CTA */}
-          <ScrollReveal>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-8">
-                <p className="text-[#34D399] text-[12px] font-bold tracking-[0.15em] mb-2">LIGHT PLAN</p>
-                <p className="text-white text-[28px] font-bold mb-1">月額5万円</p>
-                <p className="text-white/40 text-[13px] mb-4">AIチャットボット・予約管理・レビュー管理</p>
-                <p className="text-white/60 text-[13px] leading-[1.8]">初期費用なし。即日導入可能。まず試したい店舗向け。</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-8">
-                <p className="text-[#34D399] text-[12px] font-bold tracking-[0.15em] mb-2">PRO PLAN</p>
-                <p className="text-white text-[28px] font-bold mb-1">要見積もり</p>
-                <p className="text-white/40 text-[13px] mb-4">全機能 + 決済・EC・カスタムAI・月次レポート</p>
-                <p className="text-white/60 text-[13px] leading-[1.8]">IT導入補助金で最大4/5補助（実質89万円〜）。本格導入向け。</p>
-              </div>
             </div>
           </ScrollReveal>
 
