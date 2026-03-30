@@ -131,8 +131,6 @@ export default function IndustryHotelPage() {
 
       <section className="bg-[#F0FDF4] py-20 md:py-28 px-6"><div className="max-w-[800px] mx-auto"><ScrollReveal><p className="text-[#059669] text-[13px] font-bold tracking-[0.15em] uppercase mb-4">FAQ</p><h2 className="text-[24px] md:text-[30px] font-bold tracking-tight text-[#1F2937] mb-12">よくある質問</h2></ScrollReveal><ScrollReveal><FAQ items={faqItems} /></ScrollReveal></div></section>
 
-      <section className="bg-[#065F46] py-20 md:py-28 px-6"><div className="max-w-[640px] mx-auto text-center"><ScrollReveal><h2 className="text-white text-[24px] md:text-[30px] font-bold tracking-tight mb-4">まずは無料でご相談ください</h2><p className="text-white/60 text-[15px] leading-[2] mb-8">御施設の課題をヒアリングし、最適なAI活用方法をご提案します。</p><Link href="/contact" className="inline-flex items-center justify-center bg-white text-[#065F46] px-10 py-4 rounded-full text-[16px] font-bold hover:bg-white/90 transition-colors min-h-[52px]">無料で相談する</Link><div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6 text-white/40 text-[13px]"><span>相談無料</span><span>営業電話なし</span><span>契約の義務なし</span></div></ScrollReveal></div></section>
-
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema items={[
         { name: 'ホーム', href: '/' },

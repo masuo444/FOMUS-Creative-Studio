@@ -527,11 +527,6 @@ export default function Home() {
             <Link href="/contact" className="inline-flex items-center justify-center bg-white text-[#065F46] px-10 py-4 rounded-full text-[16px] font-bold hover:bg-[#D1FAE5] transition-all hover:shadow-lg min-h-[52px]">
               無料で相談する
             </Link>
-            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6 text-white/50 text-[13px]">
-              <span>相談無料</span>
-              <span>営業電話なし</span>
-              <span>契約の義務なし</span>
-            </div>
           </ScrollReveal>
         </div>
       </section>

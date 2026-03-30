@@ -98,7 +98,6 @@ export default function CompanyPage() {
                   サービス一覧を見る
                 </Link>
               </div>
-              <p className="text-[13px] text-[#8E8D88] mt-3">相談無料 / 営業電話なし / 契約の義務なし</p>
             </div>
           </ScrollReveal>
         </div>

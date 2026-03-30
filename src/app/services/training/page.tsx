@@ -344,12 +344,7 @@ export default function ServiceTrainingPage() {
                 詳細サイト &#8599;
               </a>
             </div>
-            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6 text-white/40 text-[13px]">
-              <span>相談無料</span>
-              <span>営業電話なし</span>
-              <span>契約の義務なし</span>
-            </div>
-          </ScrollReveal>
+                      </ScrollReveal>
         </div>
       </section>
 
