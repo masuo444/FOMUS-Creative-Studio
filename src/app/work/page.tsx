@@ -34,7 +34,7 @@ const projects: Project[] = [
       '日本全国の酒蔵1,500蔵の情報を構造化データベースとして構築。AIコンシェルジュ「サクラ」による自然言語検索、32言語対応。嘘をつかない情報設計を徹底。',
     tech: ['Next.js', 'Supabase', 'Claude AI', 'Vercel'],
     metrics: ['1,500蔵を網羅', 'AI検索搭載', '32言語対応'],
-    image: '/images/work-web.png',
+    image: '/images/work-terroir-sake.jpg',
     url: 'https://terroir-hub.com',
     urlLabel: 'terroir-hub.com',
   },
@@ -60,7 +60,7 @@ const projects: Project[] = [
       'GPSアートで世界記録を持つランナー・清水直樹氏の公式サイトを制作。走った軌跡で絵を描くGPSアートの魅力を伝えるビジュアル設計と、メディア掲載・イベント情報の発信基盤を構築。',
     tech: ['Web制作', 'UI/UX', 'ブランディング'],
     metrics: ['公式サイト構築', 'ブランド設計'],
-    image: '/images/work-web.png',
+    image: '/images/work-gps-runner.jpg',
   },
   {
     id: 4,
