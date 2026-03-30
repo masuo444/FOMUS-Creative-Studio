@@ -273,6 +273,136 @@ export default function ServiceAIPage() {
         </div>
       </section>
 
+      {/* ===== KANADE AI 詳細 ===== */}
+      <section className="bg-[#065F46] py-20 md:py-28 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#10B981] opacity-[0.08] blur-[150px]" />
+        </div>
+
+        <div className="relative z-10 max-w-[1200px] mx-auto">
+          <ScrollReveal>
+            <p className="text-[#34D399] text-[13px] font-bold tracking-[0.25em] uppercase mb-4">Self-developed AI SaaS</p>
+            <h2 className="text-white font-bold tracking-tight mb-4">
+              <span className="text-[36px] md:text-[52px] leading-none">KANADE AI</span>
+            </h2>
+            <p className="text-white/50 text-[16px] leading-[2] max-w-[640px] mb-6">
+              接客業・サービス業に特化した、多言語AIコンシェルジュプラットフォーム。<br />
+              外国人観光客の「言葉の壁」を解消し、予約・決済・顧客対応を24時間自動化します。
+            </p>
+            <p className="text-white/40 text-[14px] leading-[2] max-w-[640px] mb-12">
+              日本を訪れる外国人観光客は年間4,200万人超。しかし多くの店舗は多言語対応ができず、目の前の売上を逃しています。KANADE AIは、1行のコードを既存サイトに貼るだけで、8言語対応のAIコンシェルジュを即日導入できます。AIが店舗の情報を学習し、メニュー案内・空き状況の回答・予約受付・決済・レシート発行まで自動で対応します。
+            </p>
+          </ScrollReveal>
+
+          {/* 機能一覧 */}
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
+            {[
+              {
+                icon: '💬',
+                title: 'AIチャットボット',
+                desc: '店舗のメニュー・ポリシー・アクセス等をAIが学習。8言語で24時間365日、接客品質を落とさず自動対応。外国語スタッフの採用コストを削減。',
+              },
+              {
+                icon: '📅',
+                title: '予約管理',
+                desc: '飲食・宿泊・美容・体験の7業種に最適化された予約フォーム。アレルギー・タトゥー有無・希望セラピスト等、業種ごとの必須情報を多言語で取得。',
+              },
+              {
+                icon: '💳',
+                title: '決済・インボイス',
+                desc: 'Stripe連携でクレジットカード決済に対応。適格請求書（インボイス）を自動発行。店舗のStripeアカウントで直接入金されるため、資金の安全性も確保。',
+              },
+              {
+                icon: '🛍️',
+                title: 'EC・物販',
+                desc: 'お土産・グッズ・地酒等を多言語で販売。在庫管理・注文追跡・レシート発行を自動化。店舗の売上機会を最大化。',
+              },
+              {
+                icon: '⭐',
+                title: 'レビュー管理',
+                desc: 'Google・TripAdvisorのレビューを一元管理。AIがレビューのトーンに合わせて、投稿者の言語で返信文を自動生成。返信率100%を実現。',
+              },
+              {
+                icon: '📊',
+                title: '売上分析',
+                desc: 'インバウンド比率・言語別売上・月次トレンドを自動でレポート。データに基づいた経営判断をサポート。',
+              },
+            ].map((item, i) => (
+              <ScrollReveal key={i} delay={i * 60}>
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 h-full">
+                  <span className="text-[24px] mb-3 block">{item.icon}</span>
+                  <h3 className="text-[16px] font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-[13px] text-white/60 leading-[1.9]">{item.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          {/* 数字 */}
+          <ScrollReveal>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+              {[
+                { num: '8', unit: '言語', desc: '日英中韓タイ越仏西' },
+                { num: '7', unit: '業種', desc: '業種別予約フォーム' },
+                { num: '24/365', unit: '', desc: '自動接客' },
+                { num: '1行', unit: '', desc: 'で既存サイトに導入' },
+              ].map((item) => (
+                <div key={item.desc} className="bg-white/5 rounded-xl border border-white/10 p-5 text-center">
+                  <div className="mb-1">
+                    <span className="text-[28px] md:text-[36px] font-bold text-[#34D399] leading-none">{item.num}</span>
+                    {item.unit && <span className="text-[14px] text-white/50 ml-1">{item.unit}</span>}
+                  </div>
+                  <p className="text-[12px] text-white/40">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+
+          {/* 対象業種 */}
+          <ScrollReveal>
+            <div className="mb-16">
+              <h3 className="text-white text-[17px] font-bold mb-6">対象業種</h3>
+              <div className="flex flex-wrap gap-3">
+                {['美容室', 'マッサージ・整体', 'ネイルサロン', 'エステサロン', '飲食店・割烹・鮨', '旅館・ホテル', '体験・アクティビティ'].map((genre) => (
+                  <span key={genre} className="text-[13px] text-white/70 bg-white/10 px-4 py-2 rounded-full">{genre}</span>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* 料金 + CTA */}
+          <ScrollReveal>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-8">
+                <p className="text-[#34D399] text-[12px] font-bold tracking-[0.15em] mb-2">LIGHT PLAN</p>
+                <p className="text-white text-[28px] font-bold mb-1">月額5万円</p>
+                <p className="text-white/40 text-[13px] mb-4">AIチャットボット・予約管理・レビュー管理</p>
+                <p className="text-white/60 text-[13px] leading-[1.8]">初期費用なし。即日導入可能。まず試したい店舗向け。</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-8">
+                <p className="text-[#34D399] text-[12px] font-bold tracking-[0.15em] mb-2">PRO PLAN</p>
+                <p className="text-white text-[28px] font-bold mb-1">要見積もり</p>
+                <p className="text-white/40 text-[13px] mb-4">全機能 + 決済・EC・カスタムAI・月次レポート</p>
+                <p className="text-white/60 text-[13px] leading-[1.8]">IT導入補助金で最大4/5補助（実質89万円〜）。本格導入向け。</p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={60}>
+            <div className="mt-10 text-center">
+              <a
+                href="https://kanade-ai.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-white text-[#065F46] px-10 py-4 rounded-full text-[16px] font-bold hover:bg-[#D1FAE5] transition-colors min-h-[52px]"
+              >
+                KANADE AI 公式サイト &#8599;
+              </a>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* ===== 導入の流れ ===== */}
       <section className="bg-[#F0FDF4] py-20 md:py-28 px-6">
         <div className="max-w-[1200px] mx-auto">
