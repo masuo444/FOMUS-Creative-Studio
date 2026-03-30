@@ -15,12 +15,12 @@ const services = [
   {
     id: 'ai', en: 'AI Solutions', title: 'AI導入支援', href: '/services/ai',
     desc: '業務の自動化・効率化を、AIの力で実現します。チャットボット構築、FAQ自動応答、多言語対応AI、レビュー自動返信、データ分析・可視化、予約管理の自動化まで対応。',
-    image: '/images/demo-desktop.png',
+    image: '/images/hero-ai.jpg',
   },
   {
     id: 'web', en: 'Web Production', title: 'Web制作・リニューアル', href: '/services/web',
     desc: '御社の「顔」となるWebサイトを、戦略的に構築します。コーポレートサイト、LP、予約システム、EC機能、多言語対応、CMS導入。',
-    image: '/images/work-web.png',
+    image: '/images/work-web-dev.jpg',
   },
   {
     id: 'dx', en: 'DX Consulting', title: 'DXコンサルティング', href: '/services/dx',
@@ -30,12 +30,12 @@ const services = [
   {
     id: 'creative', en: 'Manga & Creative', title: '漫画・クリエイティブ制作', href: '/services/manga',
     desc: '採用漫画・企業PR漫画・自己紹介漫画を制作し、自社プラットフォーム「MangaX」に無料掲載。制作から公開まで一気通貫で対応します。',
-    image: '/images/work-manga.jpg',
+    image: '/images/work-manga-studio.jpg',
   },
   {
     id: 'training', en: 'AI Training', title: '法人向けAI研修', href: '/services/training',
     desc: 'ツール操作ではなく、御社の業務を起点にAIを組み込む設計力を育てます。ChatGPT、Gemini、画像生成AI等を業務で活用する10時間の実務特化型研修。人材開発支援助成金（リスキリング支援）で最大75%OFF。',
-    image: '/images/demo-desktop.png',
+    image: '/images/work-training.jpg',
   },
   {
     id: 'maintenance', en: 'Maintenance', title: '保守・運用サポート', href: '/services/maintenance',
