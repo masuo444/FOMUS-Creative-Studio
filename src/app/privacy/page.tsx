@@ -1,6 +1,14 @@
+import type { Metadata } from 'next'
 import SiteNav from '@/components/layout/SiteNav'
 import SiteFooter from '@/components/layout/SiteFooter'
 import ScrollReveal from '@/components/ui/ScrollReveal'
+
+export const metadata: Metadata = {
+  title: 'プライバシーポリシー',
+  description: '合同会社FOUSのプライバシーポリシー。個人情報の取り扱いについて。',
+  alternates: { canonical: '/privacy' },
+  robots: { index: false, follow: true },
+}
 
 export default function PrivacyPage() {
   return (

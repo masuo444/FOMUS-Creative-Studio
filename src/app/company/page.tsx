@@ -1,7 +1,15 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import SiteNav from '@/components/layout/SiteNav'
 import SiteFooter from '@/components/layout/SiteFooter'
 import ScrollReveal from '@/components/ui/ScrollReveal'
+
+export const metadata: Metadata = {
+  title: '会社概要 | 合同会社FOMUS',
+  description: '合同会社FOMUS。代表 増尾圭亮。日本酒メディア運営、伝統工芸品の海外展開、AI導入・Web制作・漫画制作・AI研修を提供するクリエイティブスタジオ。',
+  alternates: { canonical: '/company' },
+}
 
 export default function CompanyPage() {
   return (
@@ -32,7 +40,7 @@ export default function CompanyPage() {
           <ScrollReveal>
             <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 mb-20">
               <div className="md:col-span-4">
-                <img src="/images/founder.jpg" alt="増尾 圭亮" className="aspect-[3/4] rounded-2xl object-cover w-full" />
+                <Image src="/images/founder.jpg" alt="増尾 圭亮 - 合同会社FOMUS代表" width={600} height={800} className="aspect-[3/4] rounded-2xl object-cover w-full" />
               </div>
               <div className="md:col-span-7 md:col-start-6 flex flex-col justify-center">
                 <p className="text-[var(--gold)] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">Founder</p>

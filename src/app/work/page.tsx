@@ -1,7 +1,14 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import SiteNav from '@/components/layout/SiteNav'
 import SiteFooter from '@/components/layout/SiteFooter'
+
+export const metadata: Metadata = {
+  title: '実績紹介 | Terroir HUB・MangaX・SAQT・AI研修',
+  description: '1,500蔵の酒蔵ポータル、970蒸留所の焼酎ポータル、漫画プラットフォームMangaX、Web制作サービスSAQTなど、FOMUSが構築した8つのプロジェクト。',
+  alternates: { canonical: '/work' },
+}
 
 /* ── Project data ── */
 
@@ -47,12 +54,12 @@ const featured: Project[] = [
     id: 4,
     category: 'Web制作 / サービス構築',
     title: 'FOMUS Manga Studio',
-    subtitle: 'AI漫画制作サービスのLP・プラットフォーム構築',
+    subtitle: '漫画制作 + 掲載プラットフォーム「MangaX」',
     description:
-      'AI×クリエイティブディレクションによる漫画制作サービスのランディングページを設計・構築。多言語対応（日英）、料金プラン、制作フロー、FAQ、資料請求フォームを含む完全なサービスサイト。',
-    tech: ['HTML/CSS/JS', 'レスポンシブ', 'SEO最適化'],
-    metrics: ['40言語対応', '最短1週間納品', 'MangaXプラットフォーム連携'],
-    image: '/images/work-manga.png',
+      'AI×クリエイティブディレクションによる漫画制作サービスと、制作した漫画を無料で掲載できるプラットフォーム「MangaX」を構築。制作から公開まで一気通貫で対応する、他社にはない独自の仕組み。',
+    tech: ['Next.js', 'Supabase', 'Vercel'],
+    metrics: ['40言語対応', '最短1週間納品', 'MangaX掲載無料'],
+    image: '/images/work-manga.jpg',
     url: 'https://creative-manga.fomusglobal.com',
     urlLabel: 'creative-manga.fomusglobal.com',
   },
@@ -65,7 +72,7 @@ const featured: Project[] = [
       '「古いサイトを最短3日でリニューアル」をコンセプトとしたWeb制作サービスのLP。SEO対策、チャットボット連携、自治体向けページも含む包括的なサービスサイト。',
     tech: ['HTML/CSS/JS', 'SEO最適化', 'チャットボット'],
     metrics: ['最短3日納品', 'SEO最適化', 'チャットボット搭載'],
-    image: '/images/hero-laptop.png',
+    image: '/images/hero-laptop.jpg',
     url: 'https://saqt-ai.com',
     urlLabel: 'saqt-ai.com',
   },
@@ -78,7 +85,7 @@ const featured: Project[] = [
       '接客業向けAI多言語コンシェルジュSaaSを設計・構築。LINE Webhook、Claude AI統合、多言語チャット、レビュー管理、予約処理、Stripe課金、施設管理ダッシュボードを含むフルスタックアプリケーション。',
     tech: ['Next.js 16', 'Supabase', 'Claude AI', 'Stripe', 'LINE API'],
     metrics: ['9言語対応', '13テーブルDB', '21APIルート'],
-    image: '/images/hero-laptop.png',
+    image: '/images/hero-laptop.jpg',
   },
 ]
 

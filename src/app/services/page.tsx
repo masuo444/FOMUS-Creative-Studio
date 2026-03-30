@@ -1,7 +1,15 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import SiteNav from '@/components/layout/SiteNav'
 import SiteFooter from '@/components/layout/SiteFooter'
+
+export const metadata: Metadata = {
+  title: 'サービス一覧 | AI導入・Web制作・漫画制作・AI研修',
+  description: 'AI導入支援、Web制作、漫画制作（MangaX掲載無料）、法人向けAI研修、DX推進、保守運用。中小企業の業務課題に合わせて最適なサービスを組み合わせて提案します。',
+  alternates: { canonical: '/services' },
+}
 
 const services = [
   {
@@ -17,12 +25,12 @@ const services = [
   {
     id: 'dx', en: 'DX Consulting', title: 'DXコンサルティング', href: '/services/dx',
     desc: '「何から始めるべきか」を、御社と一緒に設計します。業務フロー分析、IT投資の優先順位設計、ツール選定・導入支援、社内研修・定着支援。',
-    image: '/images/hero-laptop.png',
+    image: '/images/hero-laptop.jpg',
   },
   {
     id: 'creative', en: 'Manga & Creative', title: '漫画・クリエイティブ制作', href: '/services/manga',
-    desc: '言葉では伝わらないことを、ビジュアルで届けます。採用漫画、企業PR漫画、自己紹介漫画、ロゴデザイン、名刺、動画制作、SNS素材。',
-    image: '/images/work-manga.png',
+    desc: '採用漫画・企業PR漫画・自己紹介漫画を制作し、自社プラットフォーム「MangaX」に無料掲載。制作から公開まで一気通貫で対応します。',
+    image: '/images/work-manga.jpg',
   },
   {
     id: 'training', en: 'AI Training', title: '法人向けAI研修', href: '/services/training',
@@ -76,7 +84,7 @@ export default function ServicesPage() {
                 {/* Image */}
                 <div className="md:w-[48%] flex-shrink-0">
                   <div className="rounded-2xl overflow-hidden shadow-lg">
-                    <img src={s.image} alt={s.title} className="w-full aspect-[16/11] object-cover" />
+                    <Image src={s.image} alt={s.title} width={800} height={550} className="w-full aspect-[16/11] object-cover" />
                   </div>
                 </div>
                 {/* Text */}

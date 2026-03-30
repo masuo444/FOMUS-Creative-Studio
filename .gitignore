@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# misc images in root
+/2.png
+/3.png
+/Gemini_*
