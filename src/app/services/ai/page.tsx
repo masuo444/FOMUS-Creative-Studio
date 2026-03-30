@@ -256,20 +256,6 @@ export default function ServiceAIPage() {
             </ScrollReveal>
           </div>
 
-          {/* 補助金の補足 */}
-          <ScrollReveal delay={200}>
-            <div className="mt-10 bg-[#F0FDF4] rounded-2xl border border-[#D1FAE5] p-6 md:p-8">
-              <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
-                <div className="flex-1">
-                  <p className="text-[15px] font-bold text-[#1F2937] mb-1">IT導入補助金・ものづくり補助金が活用できます</p>
-                  <p className="text-[13px] text-[#6B7280] leading-[1.8]">パターン②③は国の補助金対象。小規模事業者枠で最大4/5（補助上限350万円）。申請準備もFOMUSがサポートします。</p>
-                </div>
-                <Link href="/contact" className="inline-flex items-center justify-center bg-[#059669] text-white px-6 py-3 rounded-full text-[14px] font-bold hover:bg-[#047857] transition-colors min-h-[44px] whitespace-nowrap">
-                  補助金について相談する
-                </Link>
-              </div>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
 
