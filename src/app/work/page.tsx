@@ -132,7 +132,7 @@ export default function WorkPage() {
                           alt={project.title}
                           width={800}
                           height={500}
-                          className="w-full aspect-[16/10] object-cover"
+                          className="w-full aspect-[16/10] object-contain"
                         />
                       </div>
                     </div>
