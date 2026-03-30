@@ -295,9 +295,9 @@ export default function ServiceAIPage() {
           </ScrollReveal>
 
           {/* 2カラム: 機能リスト + IT導入補助金 */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="mb-12">
             <ScrollReveal>
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 h-full">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 max-w-[640px]">
                 <h3 className="text-[17px] font-bold text-white mb-6">KANADE AIでできること</h3>
                 <div className="space-y-4">
                   {[
@@ -320,31 +320,6 @@ export default function ServiceAIPage() {
               </div>
             </ScrollReveal>
 
-            <ScrollReveal delay={80}>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-8 h-full">
-                <h3 className="text-[17px] font-bold text-white mb-6">IT導入補助金で最大4/5補助</h3>
-                <p className="text-white/60 text-[14px] leading-[2] mb-6">
-                  KANADE AIは「IT導入補助金」の対象5プロセス（顧客対応・決済・在庫・会計・自動化）をカバー。小規模事業者枠で最大4/5の補助率が適用されます。
-                </p>
-                <div className="space-y-4 mb-8">
-                  <div className="flex justify-between items-center py-3 border-b border-white/10">
-                    <span className="text-white/70 text-[14px]">補助上限額</span>
-                    <span className="text-[18px] font-bold text-white">350万円</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-white/10">
-                    <span className="text-white/70 text-[14px]">補助率（小規模事業者）</span>
-                    <span className="text-[18px] font-bold text-[#34D399]">4/5</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3">
-                    <span className="text-white/70 text-[14px]">御社の実質負担（目安）</span>
-                    <span className="text-[24px] font-bold text-[#34D399]">89万円〜</span>
-                  </div>
-                </div>
-                <Link href="/contact" className="inline-flex items-center justify-center bg-[#34D399] text-[#065F46] px-6 py-3 rounded-full text-[14px] font-bold hover:bg-[#6EE7B7] transition-colors min-h-[44px] w-full">
-                  補助金の活用方法を相談する
-                </Link>
-              </div>
-            </ScrollReveal>
           </div>
 
           <ScrollReveal delay={120}>
