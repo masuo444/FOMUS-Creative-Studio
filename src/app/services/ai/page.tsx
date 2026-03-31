@@ -9,8 +9,8 @@ import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 
 export const metadata: Metadata = {
-  title: 'AI導入支援 | KANADE AI・AIチャットボット・IT導入補助金対応',
-  description: '自社開発AI SaaS「KANADE AI」で接客・予約・決済・インボイスを自動化。8言語対応AIチャットボット。IT導入補助金で最大4/5補助。設計から運用まで一貫構築。',
+  title: 'AI導入支援 | KANADE AI・AIチャットボット・業務自動化',
+  description: '自社開発AI SaaS「KANADE AI」で接客・予約・決済・インボイスを自動化。8言語対応AIチャットボット。設計から運用まで一貫構築。',
   alternates: { canonical: '/services/ai' },
 }
 
@@ -206,12 +206,12 @@ export default function ServiceAIPage() {
             <ScrollReveal delay={80}>
               <div className="bg-[#065F46] rounded-2xl p-8 h-full flex flex-col text-white relative overflow-hidden">
                 <div className="absolute top-4 right-4">
-                  <span className="text-[11px] font-bold bg-[#34D399] text-[#065F46] px-3 py-1 rounded-full">補助金対応</span>
+                  <span className="text-[11px] font-bold bg-[#34D399] text-[#065F46] px-3 py-1 rounded-full">自社開発</span>
                 </div>
                 <p className="text-[#34D399] text-[12px] font-bold tracking-[0.15em] mb-3">PATTERN 02</p>
                 <h3 className="text-[20px] font-bold mb-1">KANADE AI 導入</h3>
                 <p className="text-[13px] text-white/50 mb-2">自社開発 AI SaaS</p>
-                <p className="text-[14px] text-[#34D399] font-bold mb-4">月5万円〜 / IT導入補助金で最大4/5補助</p>
+                <p className="text-[14px] text-[#34D399] font-bold mb-4">月5万円〜</p>
                 <p className="text-[14px] text-white/70 leading-[2] mb-6 flex-1">
                   接客業向け多言語AIコンシェルジュ。チャットボット・予約・決済・インボイスを1つに統合。8言語対応、即日導入可能。
                 </p>
@@ -239,7 +239,7 @@ export default function ServiceAIPage() {
               <div className="bg-[#F9FAFB] rounded-2xl border border-[#E5E7EB] p-8 h-full flex flex-col">
                 <p className="text-[#059669] text-[12px] font-bold tracking-[0.15em] mb-3">PATTERN 03</p>
                 <h3 className="text-[20px] font-bold text-[#1F2937] mb-2">フルカスタム開発</h3>
-                <p className="text-[14px] text-[#059669] font-bold mb-4">要見積もり / 補助金活用可能</p>
+                <p className="text-[14px] text-[#059669] font-bold mb-4">要見積もり</p>
                 <p className="text-[14px] text-[#6B7280] leading-[2] mb-6 flex-1">
                   御社の業務に完全に合わせたAIシステムをゼロから設計・開発。社内データと連携した独自のAI基盤を構築します。
                 </p>
