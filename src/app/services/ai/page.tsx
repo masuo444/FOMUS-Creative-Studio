@@ -266,49 +266,42 @@ export default function ServiceAIPage() {
         </div>
 
         <div className="relative z-10 max-w-[1200px] mx-auto">
+          {/* ヘッダー */}
           <ScrollReveal>
-            <p className="text-[#34D399] text-[13px] font-bold tracking-[0.25em] uppercase mb-4">Self-developed AI SaaS</p>
-            <h2 className="text-white font-bold tracking-tight mb-4">
-              <span className="text-[36px] md:text-[52px] leading-none">KANADE AI</span>
-            </h2>
-            <p className="text-white/50 text-[16px] leading-[2] max-w-[640px] mb-6">
-              接客業・サービス業に特化した、多言語AIコンシェルジュプラットフォーム。<br />
-              外国人観光客の「言葉の壁」を解消し、予約・決済・顧客対応を24時間自動化します。
-            </p>
-            <p className="text-white/40 text-[14px] leading-[2] max-w-[640px] mb-8">
-              日本を訪れる外国人観光客は年間4,200万人超。しかし多くの店舗は多言語対応ができず、目の前の売上を逃しています。KANADE AIは、1行のコードを既存サイトに貼るだけで、8言語対応のAIコンシェルジュを即日導入できます。AIが店舗の情報を学習し、メニュー案内・空き状況の回答・予約受付・決済・レシート発行まで自動で対応します。
-            </p>
+            <div className="text-center mb-16">
+              <p className="text-[#34D399] text-[13px] font-bold tracking-[0.25em] uppercase mb-6">Self-developed AI SaaS</p>
+              <h2 className="text-white font-bold tracking-tight mb-6">
+                <span className="text-[42px] md:text-[60px] leading-none">KANADE AI</span>
+              </h2>
+              <p className="text-white/60 text-[17px] leading-[2] max-w-[680px] mx-auto">
+                接客業に特化した多言語AIコンシェルジュ。<br />
+                チャットボット・予約・決済・インボイスを1つに統合し、<br className="hidden md:block" />
+                外国人観光客への対応を24時間自動化します。
+              </p>
+            </div>
           </ScrollReveal>
 
-          {/* 2カラム: 機能リスト + IT導入補助金 */}
-          <div className="mb-12">
-            <ScrollReveal>
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 max-w-[640px]">
-                <h3 className="text-[17px] font-bold text-white mb-6">KANADE AIでできること</h3>
-                <div className="space-y-4">
-                  {[
-                    { label: 'AIチャットボット', desc: '8言語対応。店舗の情報を学習し、24時間自動接客。' },
-                    { label: '予約管理', desc: '業種別フォーム（飲食・宿泊・美容・体験）。多言語で自動通知。' },
-                    { label: '決済・インボイス', desc: 'Stripe連携。適格請求書を自動発行。' },
-                    { label: 'EC機能', desc: 'お土産・物販を多言語で販売。在庫管理付き。' },
-                    { label: 'レビュー管理', desc: 'Google・TripAdvisorのレビューにAIが多言語で自動返信。' },
-                    { label: '売上分析', desc: 'インバウンド比率・言語別売上・月次トレンドを自動レポート。' },
-                  ].map((item) => (
-                    <div key={item.label} className="flex gap-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#34D399] flex-shrink-0 mt-2" />
-                      <div>
-                        <span className="text-[14px] font-bold text-white">{item.label}</span>
-                        <span className="text-[14px] text-white/60 ml-2">{item.desc}</span>
-                      </div>
-                    </div>
-                  ))}
+          {/* 機能カード 3x2 */}
+          <div className="grid md:grid-cols-3 gap-5 mb-16">
+            {[
+              { title: 'AIチャットボット', desc: '8言語対応。店舗のメニュー・ポリシー・アクセスをAIが学習し、24時間自動で接客。' },
+              { title: '予約管理', desc: '飲食・宿泊・美容・体験の7業種に最適化。アレルギーやタトゥー有無等も多言語で取得。' },
+              { title: '決済・インボイス', desc: 'Stripe連携のカード決済。適格請求書を自動発行。店舗のアカウントに直接入金。' },
+              { title: 'EC・物販', desc: 'お土産・地酒・グッズを多言語で販売。在庫管理・注文追跡・レシート発行を自動化。' },
+              { title: 'レビュー自動返信', desc: 'Google・TripAdvisorのレビューにAIが投稿者の言語で返信文を生成。返信率100%。' },
+              { title: '売上分析', desc: 'インバウンド比率・言語別売上・月次トレンドを自動レポート。' },
+            ].map((item, i) => (
+              <ScrollReveal key={i} delay={i * 50}>
+                <div className="bg-white/[0.07] rounded-2xl border border-white/10 p-6 h-full">
+                  <h3 className="text-[15px] font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-[13px] text-white/50 leading-[1.9]">{item.desc}</p>
                 </div>
-              </div>
-            </ScrollReveal>
-
+              </ScrollReveal>
+            ))}
           </div>
 
-          <ScrollReveal delay={120}>
+          {/* CTA */}
+          <ScrollReveal>
             <div className="text-center">
               <a
                 href="https://kanade-ai.com"
