@@ -7,17 +7,17 @@ import Breadcrumb from '@/components/ui/Breadcrumb'
 import DownloadForm from './DownloadForm'
 
 export const metadata: Metadata = {
-  title: '無料ダウンロード | AI導入チェックリスト | FOMUS',
-  description: '中小企業向けAI導入チェックリスト（PDF）を無料ダウンロード。自社に最適なAI活用方法が分かる15項目のセルフ診断。',
+  title: '資料請求 | FOMUS Creative Studio サービス案内',
+  description: 'FOMUS Creative Studioのサービス案内資料を無料でお届けします。AI導入・Web制作・漫画制作・AI研修の詳細をご確認いただけます。',
   alternates: { canonical: '/download/ai-checklist' },
 }
 
-const checklistItems = [
-  '自社の業務でAIが活用できる領域',
-  '最も効果の高い自動化ポイント',
-  'AI導入の優先順位',
-  '投資回収の目安',
-  '避けるべき失敗パターン',
+const contents = [
+  'AI導入・Web制作・漫画制作・AI研修の各サービス詳細',
+  '自社事業での導入実績と成果',
+  'FOMUSの強み（実務家が直接対応）',
+  '導入の流れとスケジュール',
+  'お問い合わせ方法',
 ]
 
 export default function AIChecklistPage() {
@@ -37,13 +37,13 @@ export default function AIChecklistPage() {
       <section className="bg-[#F0FDF4]">
         <div className="max-w-[1000px] mx-auto px-6 md:px-10 py-12 md:py-20">
           <ScrollReveal>
-            <p className="text-[12px] uppercase tracking-[0.15em] text-[#059669] font-medium mb-4">Free Download</p>
+            <p className="text-[12px] uppercase tracking-[0.15em] text-[#059669] font-medium mb-4">Service Guide</p>
             <h1 className="mb-4">
-              <span className="block text-[24px] md:text-[28px] font-bold text-[#1F2937] leading-tight">御社のAI導入、</span>
-              <span className="block text-[48px] md:text-[64px] font-bold text-[#059669] leading-tight tracking-tight">どこから？</span>
+              <span className="block text-[24px] md:text-[28px] font-bold text-[#1F2937] leading-tight">まずは</span>
+              <span className="block text-[48px] md:text-[64px] font-bold text-[#059669] leading-tight tracking-tight">資料請求</span>
             </h1>
             <p className="text-[15px] md:text-[17px] text-[#6B7280] leading-[1.8] max-w-[600px]">
-              15項目のチェックリストで、自社に最適なAI活用方法が分かります。
+              FOMUS Creative Studioのサービス案内資料を無料でお届けします。
             </p>
           </ScrollReveal>
         </div>
@@ -55,9 +55,9 @@ export default function AIChecklistPage() {
           {/* Left - Checklist description */}
           <ScrollReveal>
             <div>
-              <h2 className="text-[22px] md:text-[24px] font-bold text-[#1F2937] mb-6">このチェックリストで分かること</h2>
+              <h2 className="text-[22px] md:text-[24px] font-bold text-[#1F2937] mb-6">資料の内容</h2>
               <ul className="space-y-4">
-                {checklistItems.map((item) => (
+                {contents.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#D1FAE5] flex items-center justify-center mt-0.5">
                       <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -70,8 +70,9 @@ export default function AIChecklistPage() {
               </ul>
 
               <div className="mt-10 p-6 bg-[#F9FAFB] rounded-2xl border border-[#E5E7EB]">
-                <p className="text-[13px] text-[#6B7280] font-medium mb-1">対象</p>
-                <p className="text-[15px] text-[#1F2937] font-medium">中小企業の経営者・DX推進担当者</p>
+                <p className="text-[13px] text-[#6B7280] font-medium mb-1">資料送付後</p>
+                <p className="text-[15px] text-[#1F2937] font-medium">30〜60分の無料ミーティングもご案内しています</p>
+                <p className="text-[13px] text-[#6B7280] mt-1">御社の課題に合わせて、最適なプランをご提案します。</p>
               </div>
             </div>
           </ScrollReveal>
