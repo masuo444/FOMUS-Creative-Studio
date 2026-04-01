@@ -77,20 +77,19 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* ===== HERO (white/light-green, text left, image right, decorative curves) ===== */}
-      {/* ===== HERO (full-screen background image, object-right) ===== */}
-      <section className="relative min-h-[85vh] md:min-h-screen flex items-center overflow-hidden">
-        {/* 全画面背景画像 — 女性を右寄せ */}
-        <div className="absolute inset-0">
+      {/* ===== HERO ===== */}
+      <section className="relative md:min-h-screen md:flex md:items-center overflow-hidden">
+        {/* PC: 全画面背景画像 */}
+        <div className="absolute inset-0 hidden md:block">
           <Image src="/images/hero-ai.jpg" alt="AI活用で企業の競争力を高める" fill className="object-cover object-[75%_center]" priority />
         </div>
 
-        {/* テキストエリアの背景（左側だけ半透明） */}
-        <div className="absolute inset-y-0 left-0 w-full md:w-[40%] bg-white/80 backdrop-blur-sm" />
+        {/* PC: テキストエリアの背景（左側だけ半透明） */}
+        <div className="absolute inset-y-0 left-0 w-[40%] bg-white/80 backdrop-blur-sm hidden md:block" />
         <div className="absolute inset-y-0 left-[40%] w-[10%] hidden md:block bg-gradient-to-r from-white/80 to-transparent backdrop-blur-[2px]" style={{ maskImage: 'linear-gradient(to right, black, transparent)', WebkitMaskImage: 'linear-gradient(to right, black, transparent)' }} />
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 pt-[72px] w-full">
-          <div className="max-w-[580px]">
+          <div className="max-w-[580px] py-12 md:py-0">
             <ScrollReveal>
               <h1 className="text-[#1F2937] font-bold tracking-tight mb-6">
                 <span className="text-[clamp(24px,4vw,36px)] leading-[2]">AI活用を</span>
@@ -112,6 +111,11 @@ export default function Home() {
                 </a>
               </div>
             </ScrollReveal>
+          </div>
+
+          {/* スマホ用: ヒーロー画像 */}
+          <div className="md:hidden mt-8 -mx-6">
+            <Image src="/images/hero-ai.jpg" alt="AI活用で企業の競争力を高める" width={800} height={500} className="w-full aspect-[16/10] object-cover object-[70%_center]" priority />
           </div>
         </div>
       </section>
