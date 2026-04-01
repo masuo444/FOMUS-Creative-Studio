@@ -29,7 +29,7 @@ export async function POST(request: Request) {
     const FROM = process.env.EMAIL_FROM || 'FOMUS Creative Studio <noreply@fomus.jp>'
 
     if (!RESEND_API_KEY || RESEND_API_KEY === 'your_resend_api_key') {
-      return NextResponse.json({ error: 'Mail service not configured', debug: `key starts with: ${RESEND_API_KEY?.substring(0, 5)}` }, { status: 500 })
+      return NextResponse.json({ error: 'Mail service not configured' }, { status: 500 })
     }
 
     // 管理者への通知メール
@@ -71,11 +71,7 @@ export async function POST(request: Request) {
       `,
     })
 
-    return NextResponse.json({
-      success: r1.ok && r2.ok,
-      admin: { ok: r1.ok, id: r1.data?.id, error: r1.data?.message },
-      reply: { ok: r2.ok, id: r2.data?.id, error: r2.data?.message },
-    })
+    return NextResponse.json({ success: r1.ok && r2.ok })
   } catch (error) {
     console.error('Contact form error:', error)
     return NextResponse.json({ error: 'Internal error' }, { status: 500 })
