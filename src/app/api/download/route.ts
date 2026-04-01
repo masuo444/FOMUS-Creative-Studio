@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-const RESOURCE_URL = 'https://studio.fomus.jp/resources/service-guide'
+const RESOURCE_URL = 'https://studio.fomus.jp/resources/FOMUS-Creative-Studio-Service-Guide.pdf'
 const CONTACT_URL = 'https://studio.fomus.jp/contact'
 
 async function sendEmail(apiKey: string, payload: Record<string, unknown>) {
@@ -45,10 +45,10 @@ export async function POST(request: Request) {
         <p>資料をご請求いただきありがとうございます。</p>
 
         <h3 style="margin-top:24px;font-size:16px;color:#1F2937;">サービス案内資料</h3>
-        <p>以下のリンクからご覧いただけます。ページ内の「印刷 / PDF保存」ボタンからPDFとして保存も可能です。</p>
+        <p>以下のリンクからPDFをダウンロードいただけます。</p>
         <p style="margin:20px 0;">
           <a href="${RESOURCE_URL}" style="display:inline-block;background:#059669;color:#fff;padding:12px 32px;border-radius:9999px;text-decoration:none;font-weight:bold;font-size:15px;">
-            サービス案内資料を見る
+            サービス案内資料をダウンロード（PDF）
           </a>
         </p>
 

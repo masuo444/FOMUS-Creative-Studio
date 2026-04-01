@@ -1,334 +1,162 @@
-'use client'
-
+import Image from 'next/image'
 import SiteNav from '@/components/layout/SiteNav'
 import SiteFooter from '@/components/layout/SiteFooter'
 
-const services = [
-  {
-    number: '01',
-    title: 'AI導入支援',
-    description: 'AIチャットボット、FAQ自動応答、レビュー返信、予約管理の自動化。自社開発SaaS「KANADE AI」も提供。',
-  },
-  {
-    number: '02',
-    title: 'Web制作',
-    description: 'コーポレートサイト、LP、予約システム、EC。SEO対策込み。表示速度2秒以内。',
-  },
-  {
-    number: '03',
-    title: '漫画制作',
-    description: '採用漫画、企業PR漫画。最短1週間納品。MangaXに無料掲載。',
-  },
-  {
-    number: '04',
-    title: 'AI研修・リスキリング',
-    description: '御社の業務データを題材にした10時間の実務特化型研修。',
-  },
-  {
-    number: '05',
-    title: 'DXコンサルティング',
-    description: '業務フロー分析、IT投資の優先順位設計、ツール選定。',
-  },
-  {
-    number: '06',
-    title: '保守・運用',
-    description: '24時間障害対応、セキュリティ更新、月次効果測定。',
-  },
-]
-
-const works = [
-  {
-    name: 'Terroir HUB SAKE',
-    description: '全国1,500蔵の酒蔵ポータル。AI検索・32言語対応。',
-  },
-  {
-    name: 'MangaX',
-    description: '漫画制作+掲載プラットフォーム。40言語対応。',
-  },
-  {
-    name: 'KANADE AI',
-    description: '接客業向け多言語AIコンシェルジュSaaS。8言語・7業種対応。',
-  },
-]
-
-const steps = [
-  {
-    number: '1',
-    title: 'ヒアリング（無料・オンライン）',
-    description: '御社の課題を整理',
-  },
-  {
-    number: '2',
-    title: 'プロトタイプ提出（最短2週間）',
-    description: '実物を見てから判断',
-  },
-  {
-    number: '3',
-    title: '導入・運用',
-    description: '定着するまで支援',
-  },
-]
-
 export default function ServiceGuidePage() {
   return (
-    <>
-      <style jsx global>{`
-        @media print {
-          nav, footer, .no-print, .line-floating-button {
-            display: none !important;
-          }
-          body {
-            font-size: 11pt !important;
-            background: white !important;
-            color: #1F2937 !important;
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
-          }
-          .print-header {
-            display: flex !important;
-          }
-          .print-footer {
-            display: block !important;
-          }
-          .print-page-break {
-            page-break-before: always;
-          }
-          .screen-hero {
-            display: none !important;
-          }
-          @page {
-            margin: 15mm 12mm;
-            size: A4 portrait;
-          }
-          section {
-            page-break-inside: avoid;
-          }
-        }
-      `}</style>
+    <div className="min-h-screen bg-white">
+      <SiteNav />
 
-      {/* Screen nav */}
-      <div className="no-print">
-        <SiteNav />
-      </div>
+      {/* Hero */}
+      <section className="pt-[72px] bg-[#065F46] text-white relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#10B981] opacity-[0.1] blur-[150px]" />
+        </div>
+        <div className="relative z-10 max-w-[900px] mx-auto px-8 py-20 md:py-28 text-center">
+          <p className="text-[#34D399] text-[13px] font-bold tracking-[0.25em] uppercase mb-6">Service Guide</p>
+          <h1 className="text-[36px] md:text-[48px] font-bold tracking-tight mb-4">FOMUS Creative Studio</h1>
+          <p className="text-white/60 text-[18px] mb-2">サービス案内</p>
+          <p className="text-white/40 text-[14px]">合同会社FOMUS / studio.fomus.jp</p>
+        </div>
+      </section>
 
-      {/* Print header (hidden on screen) */}
-      <div className="print-header hidden items-center justify-between px-4 py-3 border-b border-gray-200">
-        <span className="text-[14pt] font-bold tracking-tight text-[#059669]">FOMUS Creative Studio</span>
-        <span className="text-[9pt] text-gray-500">{new Date().toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-      </div>
-
-      <main className="min-h-screen bg-white">
-        {/* Screen hero */}
-        <section className="screen-hero pt-[72px] bg-gradient-to-b from-[#F0FDF4] to-white">
-          <div className="max-w-[720px] mx-auto px-6 py-16 md:py-20">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-[12px] uppercase tracking-[0.15em] text-[#059669] font-medium mb-4">Company Profile</p>
-                <h1 className="text-[28px] md:text-[36px] font-bold text-[#1F2937] tracking-tight leading-tight mb-4">サービス案内資料</h1>
-                <p className="text-[15px] text-[#6B7280] leading-relaxed">合同会社FOMUS の会社概要・サービス一覧・導入実績</p>
-              </div>
-              <button
-                onClick={() => window.print()}
-                className="no-print flex-shrink-0 inline-flex items-center gap-2 bg-[#059669] text-white text-[14px] font-medium px-6 py-3 rounded-full hover:bg-[#065F46] transition-colors"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-                印刷 / PDF保存
-              </button>
-            </div>
-          </div>
-        </section>
-
-        {/* Document body */}
-        <div className="max-w-[720px] mx-auto px-6 pb-20">
-
-          {/* 表紙 (print only) */}
-          <div className="hidden print:flex print:flex-col print:items-center print:justify-center print:min-h-[60vh] text-center">
-            <div className="w-16 h-[3px] bg-[#059669] mx-auto mb-8" />
-            <h1 className="text-[28pt] font-bold text-[#1F2937] tracking-tight mb-2">FOMUS Creative Studio</h1>
-            <p className="text-[14pt] text-[#059669] font-medium mb-12">サービス案内</p>
-            <div className="text-[10pt] text-[#6B7280] space-y-1">
-              <p>合同会社FOMUS</p>
-              <p>studio.fomus.jp</p>
-            </div>
-          </div>
-
-          {/* 会社概要 */}
-          <section className="mb-14 print-page-break">
-            <SectionHeading number="1" title="会社概要" />
-            <div className="border border-[#E5E7EB] rounded-xl overflow-hidden">
-              <InfoRow label="会社名" value="合同会社FOMUS" />
-              <InfoRow label="代表" value="増尾 圭亮" />
-              <InfoRow label="設立" value="2024年" />
-              <InfoRow label="所在地" value="埼玉県坂戸市本町3-33" />
-              <InfoRow label="事業内容" value="AI導入支援 / Web制作 / 漫画制作 / AI研修 / DXコンサルティング / 保守運用" isLast />
-            </div>
-          </section>
-
-          {/* FOMUSの特徴 */}
-          <section className="mb-14">
-            <SectionHeading number="2" title="FOMUSの特徴" />
-            <div className="space-y-4">
-              <FeatureCard
-                number="01"
-                title="「AIで事業を回している会社」が導入を支援"
-                points={[
-                  '自社で全国1,500蔵の日本酒ポータル、多言語AIチャットボット、ECを運営',
-                  '机上の空論ではなく実務に基づいた提案',
-                ]}
-              />
-              <FeatureCard
-                number="02"
-                title="意思決定者が直接設計・実装"
-                points={[
-                  '大規模チームではなく代表が直接対応',
-                  '伝言コスト・管理コストが発生しない',
-                ]}
-              />
-              <FeatureCard
-                number="03"
-                title="導入して終わりではない"
-                points={[
-                  '定着するまで支援',
-                  '月次レポートで効果測定',
-                ]}
-              />
-            </div>
-          </section>
-
-          {/* サービス一覧 */}
-          <section className="mb-14 print-page-break">
-            <SectionHeading number="3" title="サービス一覧" />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {services.map((s) => (
-                <div key={s.number} className="border border-[#E5E7EB] rounded-xl p-5 hover:shadow-sm transition-shadow">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="text-[12px] font-bold text-[#059669]">{s.number}</span>
-                    <h3 className="text-[15px] font-bold text-[#1F2937]">{s.title}</h3>
-                  </div>
-                  <p className="text-[13px] text-[#6B7280] leading-relaxed">{s.description}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* 導入実績 */}
-          <section className="mb-14">
-            <SectionHeading number="4" title="導入実績" />
-            <div className="space-y-4">
-              {works.map((w) => (
-                <div key={w.name} className="flex items-start gap-4 border border-[#E5E7EB] rounded-xl p-5">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#F0FDF4] flex items-center justify-center">
-                    <span className="text-[#059669] text-[14px] font-bold">{w.name.charAt(0)}</span>
-                  </div>
-                  <div>
-                    <h3 className="text-[15px] font-bold text-[#1F2937] mb-1">{w.name}</h3>
-                    <p className="text-[13px] text-[#6B7280] leading-relaxed">{w.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* 導入の流れ */}
-          <section className="mb-14 print-page-break">
-            <SectionHeading number="5" title="導入の流れ" />
-            <div className="space-y-0">
-              {steps.map((s, i) => (
-                <div key={s.number} className="flex items-start gap-4">
-                  <div className="flex flex-col items-center">
-                    <span className="flex-shrink-0 w-10 h-10 rounded-full bg-[#059669] text-white text-[14px] font-bold flex items-center justify-center">{s.number}</span>
-                    {i < steps.length - 1 && <div className="w-[2px] h-8 bg-[#D1FAE5]" />}
-                  </div>
-                  <div className="pt-2 pb-4">
-                    <h3 className="text-[15px] font-bold text-[#1F2937] mb-1">{s.title}</h3>
-                    <p className="text-[13px] text-[#6B7280]">{s.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* お問い合わせ */}
-          <section className="mb-12">
-            <SectionHeading number="6" title="お問い合わせ" />
-            <div className="bg-[#065F46] text-white rounded-xl p-6 md:p-8">
-              <p className="text-[15px] leading-relaxed mb-6">
-                30分の無料ミーティングで、御社に最適なプランをご提案します。
+      {/* FOMUSとは */}
+      <section className="py-16 md:py-24 px-8">
+        <div className="max-w-[900px] mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-[#059669] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">About</p>
+              <h2 className="text-[24px] md:text-[30px] font-bold text-[#1F2937] tracking-tight mb-6">
+                AIで事業を回している会社が、<br />御社にも同じ仕組みを導入します。
+              </h2>
+              <p className="text-[15px] text-[#6B7280] leading-[2]">
+                FOMUSは「AIを教えるだけの会社」ではありません。全国1,500蔵の日本酒ポータル、多言語AIチャットボット、ECサイトを自社で運営。自分たちで使い、改善し続けている技術をベースに、御社の業務課題を解決します。
               </p>
-              <div className="space-y-3 text-[14px]">
-                <div className="flex items-center gap-3">
-                  <span className="text-[#34D399]">&#9679;</span>
-                  <span>メール: info@fomus.jp</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-[#34D399]">&#9679;</span>
-                  <span>サイト: studio.fomus.jp</span>
-                </div>
-              </div>
             </div>
-          </section>
-
-          {/* 印刷ボタン（画面用） */}
-          <div className="no-print text-center pb-8">
-            <button
-              onClick={() => window.print()}
-              className="inline-flex items-center gap-2 bg-[#059669] text-white text-[14px] font-medium px-8 py-3 rounded-full hover:bg-[#065F46] transition-colors"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-              印刷 / PDF保存
-            </button>
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <Image src="/images/work-terroir-sake.jpg" alt="Terroir HUB SAKE" width={600} height={375} className="w-full" />
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Print footer (hidden on screen) */}
-        <div className="print-footer hidden text-center text-[8pt] text-[#6B7280] border-t border-gray-200 pt-3 mt-8">
-          <p>&copy; 2026 合同会社FOMUS / FOMUS Creative Studio &mdash; studio.fomus.jp</p>
+      {/* 3つの特徴 */}
+      <section className="bg-[#F9FAFB] py-16 md:py-24 px-8">
+        <div className="max-w-[900px] mx-auto">
+          <p className="text-[#059669] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">Why FOMUS</p>
+          <h2 className="text-[24px] md:text-[30px] font-bold text-[#1F2937] tracking-tight mb-12">3つの強み</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { num: '01', title: '実務家が直接対応', desc: '代表が直接設計・実装。伝言コスト・管理コストが発生しません。' },
+              { num: '02', title: '自社実績がベース', desc: '自社で運営するサービスで実証済みの技術を、そのまま導入します。' },
+              { num: '03', title: '定着するまで支援', desc: '月次レポートで効果を測定し、継続的に改善します。' },
+            ].map((item) => (
+              <div key={item.num} className="bg-white rounded-2xl border border-[#E5E7EB] p-8">
+                <p className="text-[#059669] text-[32px] font-bold mb-3">{item.num}</p>
+                <h3 className="text-[17px] font-bold text-[#1F2937] mb-3">{item.title}</h3>
+                <p className="text-[14px] text-[#6B7280] leading-[1.9]">{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </main>
+      </section>
 
-      {/* Screen footer */}
-      <div className="no-print">
-        <SiteFooter />
-      </div>
-    </>
-  )
-}
+      {/* サービス一覧 */}
+      <section className="py-16 md:py-24 px-8">
+        <div className="max-w-[900px] mx-auto">
+          <p className="text-[#059669] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">Services</p>
+          <h2 className="text-[24px] md:text-[30px] font-bold text-[#1F2937] tracking-tight mb-12">サービス一覧</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              { title: 'AI導入支援', image: '/images/hero-ai.jpg', desc: 'AIチャットボット、FAQ自動応答、レビュー返信、予約管理の自動化。自社開発SaaS「KANADE AI」も提供。' },
+              { title: 'Web制作', image: '/images/work-web-dev.jpg', desc: 'コーポレートサイト、LP、予約システム、EC。SEO対策込み。表示速度2秒以内。' },
+              { title: '漫画制作', image: '/images/work-manga-studio.jpg', desc: '採用漫画、企業PR漫画。最短1週間納品。MangaXに無料掲載。' },
+              { title: 'AI研修・リスキリング', image: '/images/work-training.jpg', desc: '御社の業務データを題材にした10時間の実務特化型AI研修。' },
+            ].map((item) => (
+              <div key={item.title} className="rounded-2xl border border-[#E5E7EB] overflow-hidden">
+                <Image src={item.image} alt={item.title} width={500} height={280} className="w-full aspect-[16/9] object-cover" />
+                <div className="p-6">
+                  <h3 className="text-[17px] font-bold text-[#1F2937] mb-2">{item.title}</h3>
+                  <p className="text-[13px] text-[#6B7280] leading-[1.9]">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-/* ── Sub-components ── */
+      {/* 導入実績 */}
+      <section className="bg-[#F0FDF4] py-16 md:py-24 px-8">
+        <div className="max-w-[900px] mx-auto">
+          <p className="text-[#059669] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">Results</p>
+          <h2 className="text-[24px] md:text-[30px] font-bold text-[#1F2937] tracking-tight mb-12">導入実績</h2>
+          <div className="space-y-6">
+            {[
+              { title: 'Terroir HUB SAKE', image: '/images/work-terroir-sake.jpg', metrics: ['1,500蔵を網羅', 'AI検索搭載', '32言語対応'], desc: '全国の酒蔵情報ポータル。AIコンシェルジュ「サクラ」による自然言語検索。' },
+              { title: 'MangaX', image: '/images/work-manga.jpg', metrics: ['40言語対応', '最短1週間', '掲載無料'], desc: '漫画制作+掲載プラットフォーム。制作から公開まで一気通貫。' },
+              { title: 'KANADE AI', image: '/images/hero-ai.jpg', metrics: ['8言語対応', '7業種対応', '即日導入'], desc: '接客業向け多言語AIコンシェルジュSaaS。チャットボット・予約・決済を統合。' },
+            ].map((item) => (
+              <div key={item.title} className="bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden flex flex-col md:flex-row">
+                <div className="md:w-[40%] flex-shrink-0">
+                  <Image src={item.image} alt={item.title} width={400} height={250} className="w-full h-full object-cover" />
+                </div>
+                <div className="p-6 md:p-8 flex-1">
+                  <h3 className="text-[20px] font-bold text-[#1F2937] mb-2">{item.title}</h3>
+                  <p className="text-[14px] text-[#6B7280] leading-[1.9] mb-4">{item.desc}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {item.metrics.map((m) => (
+                      <span key={m} className="text-[12px] text-[#059669] bg-[#D1FAE5] px-3 py-1 rounded-full font-medium">{m}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-function SectionHeading({ number, title }: { number: string; title: string }) {
-  return (
-    <div className="flex items-center gap-3 mb-6">
-      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#059669] text-white text-[13px] font-bold flex items-center justify-center">{number}</span>
-      <h2 className="text-[20px] md:text-[24px] font-bold text-[#1F2937] tracking-tight">{title}</h2>
-    </div>
-  )
-}
+      {/* 導入の流れ */}
+      <section className="py-16 md:py-24 px-8">
+        <div className="max-w-[900px] mx-auto">
+          <p className="text-[#059669] text-[12px] font-bold tracking-[0.15em] uppercase mb-4">Flow</p>
+          <h2 className="text-[24px] md:text-[30px] font-bold text-[#1F2937] tracking-tight mb-12">導入の流れ</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { step: '01', title: 'ヒアリング', desc: '御社の課題をオンラインで伺います。', note: '無料' },
+              { step: '02', title: 'プロトタイプ', desc: '最短2週間で動作するプロトタイプを提出。', note: '見積もり後' },
+              { step: '03', title: '導入・運用', desc: '定着するまで支援。月次レポート付き。', note: '継続改善' },
+            ].map((item) => (
+              <div key={item.step} className="bg-[#F9FAFB] rounded-2xl border border-[#E5E7EB] p-8 text-center">
+                <p className="text-[#059669] text-[28px] font-bold mb-3">{item.step}</p>
+                <h3 className="text-[17px] font-bold text-[#1F2937] mb-3">{item.title}</h3>
+                <p className="text-[13px] text-[#6B7280] leading-[1.9] mb-3">{item.desc}</p>
+                <span className="text-[12px] text-[#059669] bg-[#D1FAE5] px-3 py-1 rounded-full font-medium">{item.note}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-function InfoRow({ label, value, isLast }: { label: string; value: string; isLast?: boolean }) {
-  return (
-    <div className={`flex ${!isLast ? 'border-b border-[#E5E7EB]' : ''}`}>
-      <div className="w-[140px] flex-shrink-0 bg-[#F9FAFB] px-5 py-3 text-[13px] font-medium text-[#6B7280]">{label}</div>
-      <div className="px-5 py-3 text-[14px] text-[#1F2937]">{value}</div>
-    </div>
-  )
-}
+      {/* 会社概要 + CTA */}
+      <section className="bg-[#065F46] py-16 md:py-24 px-8">
+        <div className="max-w-[640px] mx-auto text-center text-white">
+          <h2 className="text-[24px] md:text-[30px] font-bold tracking-tight mb-6">30〜60分の無料ミーティング</h2>
+          <p className="text-white/60 text-[15px] leading-[2] mb-8">
+            御社の業務内容をヒアリングし、最適なプランをご提案します。
+          </p>
+          <div className="bg-white/10 rounded-2xl p-6 mb-6 text-left text-[14px]">
+            <div className="grid grid-cols-2 gap-y-3">
+              <span className="text-white/50">会社名</span><span>合同会社FOMUS</span>
+              <span className="text-white/50">代表</span><span>増尾 圭亮</span>
+              <span className="text-white/50">メール</span><span>info@fomus.jp</span>
+              <span className="text-white/50">サイト</span><span>studio.fomus.jp</span>
+            </div>
+          </div>
+          <p className="text-white/40 text-[13px]">studio.fomus.jp/contact からお問い合わせください</p>
+        </div>
+      </section>
 
-function FeatureCard({ number, title, points }: { number: string; title: string; points: string[] }) {
-  return (
-    <div className="border border-[#E5E7EB] rounded-xl p-5">
-      <div className="flex items-center gap-3 mb-3">
-        <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#F0FDF4] text-[#059669] text-[12px] font-bold flex items-center justify-center">{number}</span>
-        <h3 className="text-[15px] font-bold text-[#1F2937]">{title}</h3>
-      </div>
-      <ul className="space-y-1.5 ml-11">
-        {points.map((p, i) => (
-          <li key={i} className="text-[13px] text-[#6B7280] leading-relaxed flex items-start gap-2">
-            <span className="text-[#059669] mt-1 flex-shrink-0">&#8226;</span>
-            <span>{p}</span>
-          </li>
-        ))}
-      </ul>
+      <SiteFooter />
     </div>
   )
 }
