@@ -12,7 +12,6 @@ import HowToSchema from '@/components/seo/HowToSchema'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import RelatedPosts from '@/components/ui/RelatedPosts'
 import ShareButtons from '@/components/ui/ShareButtons'
-import DownloadCTA from '@/components/ui/DownloadCTA'
 import { getPostBySlug, getAllSlugs, getAllPosts } from '@/lib/blog'
 
 const howToData: Record<string, { name: string; description: string; steps: { name: string; text: string }[] }> = {
@@ -133,9 +132,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <MDXRemote source={post.content} />
         </div>
       </article>
-
-      {/* ダウンロードCTA（AI関連記事のみ） */}
-      {post.tags.some(t => ['AI導入', 'DX', '業務自動化', 'AI研修'].includes(t)) && <DownloadCTA />}
 
       {/* シェアボタン */}
       <ShareButtons title={post.title} slug={post.slug} />
