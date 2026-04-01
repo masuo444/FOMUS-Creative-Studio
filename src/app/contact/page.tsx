@@ -167,6 +167,7 @@ export default function ContactPage() {
                     <option value="漫画・クリエイティブ制作について">漫画・クリエイティブ制作について</option>
                     <option value="AI研修について">AI研修について</option>
                     <option value="保守・運用について">保守・運用について</option>
+                    <option value="資料請求">資料請求</option>
                     <option value="その他">その他</option>
                   </select>
                 </div>
