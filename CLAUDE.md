@@ -149,7 +149,7 @@ src/
 
 ## 既存サービスサイト（外部リンク）
 - `saqt-ai.com` — SAQT Web制作サービス
-- `creative-manga.fomusglobal.com` — FOMUS Manga Studio
+- `creative-manga.fomus.jp` — FOMUS Manga Studio
 - `ai-training.fomus.jp` — FOMUS AI Training
 - `shop.fomus.jp` — FOMUS SHOP
 

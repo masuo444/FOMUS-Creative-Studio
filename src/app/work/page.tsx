@@ -48,8 +48,8 @@ const projects: Project[] = [
     tech: ['Next.js', 'Supabase', 'Vercel'],
     metrics: ['40言語対応', '最短1週間納品', '掲載無料'],
     image: '/images/work-manga.jpg',
-    url: 'https://creative-manga.fomusglobal.com',
-    urlLabel: 'creative-manga.fomusglobal.com',
+    url: 'https://creative-manga.fomus.jp',
+    urlLabel: 'creative-manga.fomus.jp',
   },
   {
     id: 3,

@@ -30,7 +30,7 @@ const expertise = [
 const projects = [
   { name: 'Terroir HUB SAKE', desc: '全国1,500蔵の酒蔵ポータル。AI検索・32言語対応。', url: 'https://sake.terroir-hub.com' },
   { name: 'Terroir HUB SHOCHU', desc: '全国970蒸留所の焼酎・泡盛ポータル。世界初の構造化DB。', url: 'https://shochu.terroir-hub.com' },
-  { name: 'FOMUS Manga Studio', desc: 'AI活用の漫画制作サービス + MangaXプラットフォーム。', url: 'https://creative-manga.fomusglobal.com' },
+  { name: 'FOMUS Manga Studio', desc: 'AI活用の漫画制作サービス + MangaXプラットフォーム。', url: 'https://creative-manga.fomus.jp' },
   { name: 'FOMUS AI Training', desc: '法人向けAI研修サービス。助成金対応。', url: 'https://ai-training.fomus.jp' },
 ]
 

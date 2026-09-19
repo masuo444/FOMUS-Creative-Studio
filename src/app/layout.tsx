@@ -95,7 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 jobTitle: '代表',
               },
               sameAs: [
-                'https://creative-manga.fomusglobal.com',
+                'https://creative-manga.fomus.jp',
                 'https://ai-training.fomus.jp',
                 'https://shop.fomus.jp',
               ],

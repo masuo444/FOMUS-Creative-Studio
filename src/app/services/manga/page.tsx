@@ -198,7 +198,7 @@ export default function ServiceMangaPage() {
           <ScrollReveal delay={200}>
             <div className="text-center mt-10">
               <a
-                href="https://creative-manga.fomusglobal.com"
+                href="https://creative-manga.fomus.jp"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#059669] text-white px-8 py-4 rounded-full text-[15px] font-bold hover:bg-[#047857] transition-colors min-h-[52px]"

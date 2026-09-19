@@ -23,7 +23,7 @@ export default function SiteFooter() {
         <div className="flex flex-wrap gap-x-4 gap-y-2 mb-8 text-[12px] text-white/40">
           <span>関連サイト:</span>
           <a href="https://ai-training.fomus.jp" target="_blank" rel="noopener noreferrer" className="hover:text-white/70 transition-colors">FOMUS AI Training</a>
-          <a href="https://creative-manga.fomusglobal.com" target="_blank" rel="noopener noreferrer" className="hover:text-white/70 transition-colors">FOMUS Manga Studio</a>
+          <a href="https://creative-manga.fomus.jp" target="_blank" rel="noopener noreferrer" className="hover:text-white/70 transition-colors">FOMUS Manga Studio</a>
           <a href="https://sake.terroir-hub.com" target="_blank" rel="noopener noreferrer" className="hover:text-white/70 transition-colors">Terroir HUB SAKE</a>
           <a href="https://shop.fomus.jp" target="_blank" rel="noopener noreferrer" className="hover:text-white/70 transition-colors">FOMUS SHOP</a>
         </div>

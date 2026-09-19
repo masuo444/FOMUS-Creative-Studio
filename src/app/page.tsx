@@ -20,7 +20,7 @@ const services = [
     metric: '+180%', metricLabel: '問い合わせ数',
   },
   {
-    title: '漫画制作（FOMUS MANGA STUDIO）', en: 'Manga & Creative', href: 'https://creative-manga.fomusglobal.com', image: '/images/work-manga-studio.jpg',
+    title: '漫画制作（FOMUS MANGA STUDIO）', en: 'Manga & Creative', href: 'https://creative-manga.fomus.jp', image: '/images/work-manga-studio.jpg',
     desc: '採用・営業・研修・CS、部門の課題に合わせた漫画を制作。MangaXに無料掲載。',
     highlights: ['最短1週間納品', 'MangaX掲載無料', 'コスト1/3'],
     metric: '1/3', metricLabel: 'コスト',
