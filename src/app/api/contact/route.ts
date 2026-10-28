@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { classifyInquiry } from '@/lib/inquiry-filter'
+import { allowContact, classifyInquiry, getClientIp, isBot } from '@/lib/inquiry-filter'
 
 async function sendEmail(apiKey: string, payload: Record<string, unknown>) {
   const res = await fetch('https://api.resend.com/emails', {
@@ -19,7 +19,15 @@ async function sendEmail(apiKey: string, payload: Record<string, unknown>) {
 
 export async function POST(request: Request) {
   try {
-    const { name, email, company, phone, type, message } = await request.json()
+    const { name, email, company, phone, type, message, website } = await request.json()
+
+    // ボット（おとり欄に入力あり）は何もせず成功を返す
+    if (isBot(website)) {
+      return NextResponse.json({ success: true })
+    }
+    if (!allowContact(getClientIp(request))) {
+      return NextResponse.json({ error: '送信回数の上限に達しました。時間をおいて再度お試しください。' }, { status: 429 })
+    }
 
     if (!name || !email || !type) {
       return NextResponse.json({ error: 'Required fields missing' }, { status: 400 })

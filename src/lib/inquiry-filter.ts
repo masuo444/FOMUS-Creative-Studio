@@ -21,9 +21,56 @@ unknown: どちらとも言い切れないもの、内容が短すぎる・意�
 
 const VERDICTS: InquiryVerdict[] = ['client', 'sales', 'unknown']
 
+// 荒らし対策（メモリ上で数えるため、サーバーの台数ごとの上限。確実な天井はAnthropic側の利用額上限で担保する）
+const IP_LIMITS = [
+  { windowMs: 10 * 60 * 1000, max: 3 },
+  { windowMs: 24 * 60 * 60 * 1000, max: 10 },
+]
+const AI_DAILY_LIMIT = 100
+
+const ipHits = new Map<string, number[]>()
+const aiUsage = { day: '', count: 0 }
+
+export function getClientIp(request: Request): string {
+  return request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown'
+}
+
+// 同じIPからの送信回数を制限する。超えたら false
+export function allowContact(ip: string): boolean {
+  const now = Date.now()
+  const longest = Math.max(...IP_LIMITS.map(l => l.windowMs))
+  const hits = (ipHits.get(ip) ?? []).filter(t => now - t < longest)
+  if (IP_LIMITS.some(l => hits.filter(t => now - t < l.windowMs).length >= l.max)) {
+    ipHits.set(ip, hits)
+    return false
+  }
+  hits.push(now)
+  ipHits.set(ip, hits)
+  if (ipHits.size > 5000) ipHits.clear()
+  return true
+}
+
+// フォームに隠したおとり欄に入力があればボットとみなす
+export function isBot(honeypot: unknown): boolean {
+  return typeof honeypot === 'string' && honeypot.trim() !== ''
+}
+
 export async function classifyInquiry(fields: Record<string, string | undefined>): Promise<InquiryVerdict> {
-  const apiKey = process.env.ANTHROPIC_API_KEY
+  // 判定専用キー（利用額上限つき）があればそれを使う
+  const apiKey = process.env.INQUIRY_FILTER_ANTHROPIC_API_KEY || process.env.ANTHROPIC_API_KEY
   if (!apiKey) return 'unknown'
+
+  // 1日の判定回数の上限を超えたらAIを呼ばずに通す
+  const today = new Date(Date.now() + 9 * 60 * 60 * 1000).toISOString().slice(0, 10)
+  if (aiUsage.day !== today) {
+    aiUsage.day = today
+    aiUsage.count = 0
+  }
+  if (aiUsage.count >= AI_DAILY_LIMIT) {
+    console.warn('Inquiry filter daily limit reached; passing through without AI')
+    return 'unknown'
+  }
+  aiUsage.count++
 
   const content = Object.entries(fields)
     .filter(([, v]) => v && v.trim())
@@ -36,7 +83,7 @@ export async function classifyInquiry(fields: Record<string, string | undefined>
       model: 'claude-haiku-5-5',
       max_tokens: 10,
       system: FILTER_PROMPT,
-      messages: [{ role: 'user', content: `<inquiry>\n${content.slice(0, 6000)}\n</inquiry>` }],
+      messages: [{ role: 'user', content: `<inquiry>\n${content.slice(0, 4000)}\n</inquiry>` }],
     })
     const text = response.content[0]?.type === 'text' ? response.content[0].text.trim().toLowerCase() : ''
     return VERDICTS.find(v => text.startsWith(v)) ?? 'unknown'

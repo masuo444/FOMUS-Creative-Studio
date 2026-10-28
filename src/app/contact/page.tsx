@@ -6,7 +6,7 @@ import SiteNav from '@/components/layout/SiteNav'
 import SiteFooter from '@/components/layout/SiteFooter'
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: '', email: '', company: '', phone: '', type: '', message: '' })
+  const [form, setForm] = useState({ name: '', email: '', company: '', phone: '', type: '', message: '', website: '' })
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -20,7 +20,7 @@ export default function ContactPage() {
       })
       if (res.ok) {
         setStatus('sent')
-        setForm({ name: '', email: '', company: '', phone: '', type: '', message: '' })
+        setForm({ name: '', email: '', company: '', phone: '', type: '', message: '', website: '' })
       } else {
         setStatus('error')
       }
@@ -83,6 +83,17 @@ export default function ContactPage() {
 
           {/* Form card */}
           <form onSubmit={handleSubmit}>
+            {/* ボット対策のおとり欄（人には見えない） */}
+            <div aria-hidden="true" style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, overflow: 'hidden' }}>
+              <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                value={form.website}
+                onChange={e => setForm(f => ({ ...f, website: e.target.value }))}
+              />
+            </div>
             <div className="bg-white rounded-xl p-8 md:p-10 mb-8 shadow-sm">
               <div className="space-y-8">
 
