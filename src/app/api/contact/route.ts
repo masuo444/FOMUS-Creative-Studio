@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { classifyInquiry } from '@/lib/inquiry-filter'
 
 async function sendEmail(apiKey: string, payload: Record<string, unknown>) {
   const res = await fetch('https://api.resend.com/emails', {
@@ -30,6 +31,13 @@ export async function POST(request: Request) {
 
     if (!RESEND_API_KEY || RESEND_API_KEY === 'your_resend_api_key') {
       return NextResponse.json({ error: 'Mail service not configured' }, { status: 500 })
+    }
+
+    // 売り込み・営業と判定したものは通知も自動返信も送らない（送信者には成功を返す）
+    const verdict = await classifyInquiry({ 会社名: company, お名前: name, メール: email, 種類: type, 内容: message })
+    if (verdict === 'sales') {
+      console.warn('Contact blocked as sales:', JSON.stringify({ name, email, company, phone, type, message }))
+      return NextResponse.json({ success: true })
     }
 
     // 管理者への通知メール
